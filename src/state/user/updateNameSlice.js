@@ -7,7 +7,8 @@ const initialState={
     updateName:[],
     isLoading:false,
     isError:false,
-    error:''
+    error:'',
+    success:false
 }
 
 export const updateName = createAsyncThunk(
@@ -35,6 +36,7 @@ const updateProfileSlice=createSlice({
                 state.isLoading = false;
                 state.isError = false;
                 state.updateName=action.payload;
+                state.success=true
             })
             .addCase(updateName.rejected, (state, action) => {
                 state.isLoading = false;

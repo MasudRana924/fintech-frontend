@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { RxCross1 } from "react-icons/rx";
 import { logout } from '../../state/user/loginSlice';
 import { fetchtuserDetails } from '../../state/user/userDetailsSlice';
-
+import Skeleton from '@mui/material/Skeleton';
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -35,7 +35,9 @@ const Main = () => {
                 <div className="flex">
                     <div className="w-16">
                         {
-                            user?.avatar?.url ? <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /> : <img src="hello" alt="" className="h-12 w-12 ml-2 mt-2 absolute " />
+                            user?.avatar?.url ? <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /> :
+                                <Skeleton variant="rectangular" className="h-32 w-12 ml-2 mt-5 absolute border rounded-lg " />
+                              
                         }
 
                     </div>

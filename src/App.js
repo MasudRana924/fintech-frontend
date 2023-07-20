@@ -15,6 +15,7 @@ import ConfirmCashout from './screen/cashout/ConfirmCashout';
 import PrivateRoute from './pages/privateroute/PrivateRoute';
 import Settings from './screen/settings/Settings';
 import UpdateName from './screen/update/UpdateName';
+import UpdateInfo from './screen/update/UpdateInfo';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ function App() {
           <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>
           <Route path="/settings" element={<Settings></Settings>}></Route>
           <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
+          <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>
        
         </Routes>
       </BrowserRouter>

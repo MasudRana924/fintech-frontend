@@ -25,7 +25,7 @@ const Login = () => {
     };
     useEffect(() => {
         if (user) {
-            navigate('/main');
+            navigate('/update');
             // toast.info('Login Succesfull');
         }
     }, [user, navigate,]);

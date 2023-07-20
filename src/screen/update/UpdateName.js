@@ -1,13 +1,13 @@
 import { InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
-import LockOpenIcon from '@mui/icons-material/LockOpen';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import { Link } from 'react-router-dom';
+import { FiArrowLeft, } from "react-icons/fi";
+
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateName } from '../../state/user/updateNameSlice';
 const UpdateName = () => {
     const dispatch = useDispatch();
+    const navigate=useNavigate()
   const { loggeduser } = useSelector(
     (state) => state.userDetails
   );
@@ -19,9 +19,14 @@ const UpdateName = () => {
         e.preventDefault();
         dispatch(updateName({data,userToken}));
     };
-    // useEffect(() => {
-       
-    // }, [user, navigate,]);
+    const { success } = useSelector(
+        (state) => state.updateName
+      );
+    useEffect(() => {
+       if(success){
+        navigate('/main')
+       }
+    }, [success,navigate,]);
     return (
         <div>
             <div className="bg-rose-500 h-10 flex">
