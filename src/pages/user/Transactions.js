@@ -10,21 +10,23 @@ const Transactions = () => {
     );
     const userToken = loggeduser.token;
     const dispatch = useDispatch();
-    const { transactions, isLoading, isError, error } = useSelector(state => state.transactions.mytransactions);
+    const { transactions, isLoading, isError,} = useSelector(state => state.transactions.mytransactions);
     useEffect(() => {
         dispatch(fetchtransactions({ userToken }));
     }, [dispatch, userToken]);
     let content;
     if (!isLoading && !isError && transactions?.length > 0) {
 
-        content = transactions.map(transaction => <Transaction key={transaction._id} transaction={transaction} />)
+        content = transactions.slice(0,3).map(transaction => <Transaction key={transaction._id} transaction={transaction} />)
     }
     return (
         <div className="w-full ">
             <div className="flex justify-between pl-3 pr-3">
-                <p className="text-sm font-thin">Transactions</p>
+                {/* <p className="text-sm font-thin">Transactions</p> */}
+                <p className="text-sm font-thin">লেনদেন সমূহ</p>
                <Link to="/all/transactions">
-               <p className="text-sm font-thin text-rose-500">all</p>
+               {/* <p className="text-sm font-semibold text-rose-500">see all</p> */}
+               <p className="text-sm font-semibold text-rose-500">সব দেখুন</p>
                </Link>
             </div>
             <div className="w-full grid grid-cols-12 mt-5 lg:mt-10 gap-5 pl-3 pr-3">

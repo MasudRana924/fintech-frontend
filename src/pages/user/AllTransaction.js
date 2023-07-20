@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Transaction = ({ transaction }) => {
-
+const AllTransaction = ({transaction}) => {
     return (
         <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 ">
             <div className="text-start flex justify-between gap-5">
@@ -37,4 +36,4 @@ const Transaction = ({ transaction }) => {
     );
 };
 
-export default Transaction;
+export default AllTransaction;

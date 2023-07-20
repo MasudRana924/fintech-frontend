@@ -1,21 +1,23 @@
-import { Button, InputAdornment, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
+import { InputAdornment, TextField } from '@mui/material';
+import {useState} from 'react';
 import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
+import { addPhoneToStore, addtypeToStore } from '../../state/transaction/sendSlice';
 import { useDispatch } from 'react-redux';
-import { addPhoneToStore,addtypeToStore } from '../../state/transaction/sendSlice';
-const SendMoney = () => {
+const Cashout = () => {
     const dispatch = useDispatch();
     const navigate=useNavigate()
     const [phone,setPhone]=useState('');
-    const type='Send Money'
+    const type='Cash Out'
     const handleStore = (e) => {
         e.preventDefault();
         if(phone){
             dispatch(addPhoneToStore(phone));
         dispatch(addtypeToStore(type));
-        navigate('/sendmoney');
+        navigate('/cash/out/money');
         }else{
             alert('enter phone')
         }
@@ -29,7 +31,7 @@ const SendMoney = () => {
                         <FiArrowLeft className="text-white text-2xl mt-2 ml-2"></FiArrowLeft>
                     </Link>
                 </div>
-                <p className="text-white text-md mt-2 ml-5">সেন্ড মানি</p>
+                <p className="text-white text-md mt-2 ml-5">ক্যাশ আউট</p>
             </div>
             <div className="w-full flex mt-16 pl-2">
 
@@ -45,13 +47,13 @@ const SendMoney = () => {
                     }}
                     variant="standard"
                     className="w-full"
-                value={phone} onChange={(e) => setPhone(e.target.value)}
+                    value={phone} onChange={(e) => setPhone(e.target.value)}
                 />
                 <button className="w-12 bg-rose-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
-               
+
             </div>
         </div>
     );
 };
 
-export default SendMoney;
+export default Cashout;

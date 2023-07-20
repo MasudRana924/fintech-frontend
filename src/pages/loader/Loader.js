@@ -17,7 +17,7 @@ const Loader = () => {
                 {/* <img src={logo} alt="" /> */}
 
             </div>
-            <p className="ml-16 lg:ml-24 text-md font-semibold leading-6 text-gray-900">M-pay</p>
+            {/* <p className="ml-16 lg:ml-24 text-md font-semibold leading-6 text-gray-900">M-pay</p> */}
         </div>
     );
 };

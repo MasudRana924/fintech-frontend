@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { privateGet} from '../../utilities/apiCaller';
 
 export const fetchtransactions = createAsyncThunk(
-    'doctors/fetchAppointments',
+    'fetchtransactions ',
     async ({userToken}, { rejectWithValue }) => {
         const transactions = await privateGet('/my/transactions',userToken);
         return transactions;
@@ -13,13 +13,11 @@ export const mytransactionsSlice = createSlice({
     initialState:{
         mytransactions: [],
         isLoading: false,
-        isError: false,
-        error: ''
+      
     },
     extraReducers: (builder) => {
         builder
             .addCase(fetchtransactions.pending, (state) => {
-                state.isError = false;
                 state.isLoading = true
             })
             .addCase(fetchtransactions.fulfilled, (state, action) => {
@@ -30,8 +28,7 @@ export const mytransactionsSlice = createSlice({
             .addCase(fetchtransactions.rejected, (state, action) => {
                 state.isLoading = true
                 state.mytransactions = [];
-                state.isError = true;
-                state.error = action.payload.error?.message;
+               
             })
     }
 });

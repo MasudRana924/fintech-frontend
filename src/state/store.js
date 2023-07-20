@@ -5,6 +5,9 @@ import  loginReducer  from "./user/loginSlice";
 import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import  signUpSlice  from "./user/signupSlice";
 import mytransactionsSlice  from "./user/mytransactionSlice";
+import storeReducer from '../state/transaction/sendSlice'
+import  sendMoneySlice  from "./transaction/sendMoneySlice";
+import updateProfileSlice from '../state/user/updateNameSlice'
 const persistConfig = {
   key: "authentication",
   storage
@@ -19,6 +22,9 @@ const rootReducer = combineReducers({
   userDetails: persistedReducer,
   signup: signUpSlice,
   transactions:mytransactionsSlice,
+  type:storeReducer,
+  sendMoney:sendMoneySlice,
+  updateName:updateProfileSlice,
 
 });
 

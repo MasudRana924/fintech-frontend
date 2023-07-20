@@ -33,7 +33,8 @@ const Signup = () => {
             <div className="lg:w-5/12 2xl:w-3/12">
                 <img src={logo} alt="" className="w-1/4 mx-auto h-8" />
                 <div className="mt-6 p-8">
-                    <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2>
+                    {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}
+                    <h2 className="text-start text-md font-medium leading-6 text-gray-900">একাউন্ট নেই ?  নতুন তৈরি করুন</h2>
                     {
                         error ? <Alert severity="error" className="mt-5">{error}</Alert> : null
                     }
@@ -41,7 +42,7 @@ const Signup = () => {
                         
                         <TextField
                             id="input-with-icon-textfield"
-                            label="Phone"
+                            label="একাউন্ট নাম্বার"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -55,7 +56,7 @@ const Signup = () => {
                         />
                         <TextField
                             id="input-with-icon-textfield"
-                            label="Password"
+                            label="এম-পে পিন"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -84,10 +85,10 @@ const Signup = () => {
                                     <span className="font-semibold text-white text-lg">Login</span>
                                 </button>
                             } */}
-                            <button className="h-12 w-full  bg-fuchsia-500 border-fuchsia-500 hover:bg-fuchsia-500 hover:border-fuchsia-500 mb-5">
-                                <span className="font-semibold text-white text-lg">Create </span>
+                            <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                                <span className="font-semibold text-white text-lg">পরবর্তী </span>
                             </button>
-                            <span className="text-sm tracking-wide text-gray-400 mt-5">Already have an account ?</span> <Link to="/login"> <span className="text-sm font-semibold leading-6 text-gray-900">Login</span>
+                            <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/login"> <span className="text-sm font-semibold leading-6 text-rose-500">লগইন করুন</span>
                             </Link>
                         </div>
                     </form>
