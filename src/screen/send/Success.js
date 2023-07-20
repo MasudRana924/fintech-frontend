@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowLeft,} from "react-icons/fi";
 import { GiCheckMark } from "react-icons/gi";
 import { useSelector } from 'react-redux';
 const Success = () => {
@@ -24,7 +24,7 @@ const Success = () => {
             {
                 transactions ? <div>
                     <div className="w-2/4 mx-auto">
-                <p className="text-gray-900 mt-5 font-semibold">{transactions.phone}</p>
+                <p className="text-gray-900 mt-5 font-semibold">{transactions.receiverphone}</p>
             </div>
             <hr />
             <div className="pl-3 pr-3">

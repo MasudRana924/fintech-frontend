@@ -13,9 +13,11 @@ const ConfirmCashout = () => {
     );
     const userToken = loggeduser.token
     const navigate = useNavigate();
-    const { type, phone } = useSelector(state => state.type);
+    const { type,receiverType} = useSelector(state => state.type.type);
+    const {receiverphone ,senderphone} = useSelector(state => state.type.receiverphone);
+    console.log(senderphone);
     const [amount, setAmount] = useState('');
-    const data = { phone, type, amount }
+    const data = { receiverphone, type, amount,receiverType ,senderphone}
     const handleTransfer = (e) => {
         e.preventDefault();
         if (amount) {
@@ -29,6 +31,7 @@ const ConfirmCashout = () => {
         }
 
     }
+  
     return (
         <div className="bg-rose-500 h-10 rounded-b-lg ">
             <div className="flex">
@@ -43,7 +46,7 @@ const ConfirmCashout = () => {
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="Amount"
+                    label="টাকার পরিমাণ"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

@@ -1,26 +1,33 @@
-import { Button, InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addPhoneToStore,addtypeToStore } from '../../state/transaction/sendSlice';
 const SendMoney = () => {
+    const { loggeduser, } = useSelector(
+        (state) => state.userDetails
+    );
+  const user=loggeduser.user;
     const dispatch = useDispatch();
     const navigate=useNavigate()
-    const [phone,setPhone]=useState('');
-    const type='Send Money'
+    const [receiverphone,setPhone]=useState('');
+    const senderphone=user.phone
+    const type='Send Money';
+    const receiverType="Received Money"
     const handleStore = (e) => {
         e.preventDefault();
-        if(phone){
-            dispatch(addPhoneToStore(phone));
-        dispatch(addtypeToStore(type));
+        if(receiverphone){
+        dispatch(addPhoneToStore({receiverphone,senderphone}));
+        dispatch(addtypeToStore({type,receiverType}));
         navigate('/sendmoney');
         }else{
             alert('enter phone')
         }
         
     }
+    console.log(receiverphone);
     return (
         <div className="bg-rose-500 h-10 rounded-b-lg ">
             <div className="flex">
@@ -35,7 +42,7 @@ const SendMoney = () => {
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="Phone"
+                    label="এম-পে একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -45,7 +52,7 @@ const SendMoney = () => {
                     }}
                     variant="standard"
                     className="w-full"
-                value={phone} onChange={(e) => setPhone(e.target.value)}
+                value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                 />
                 <button className="w-12 bg-rose-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                

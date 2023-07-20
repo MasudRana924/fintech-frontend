@@ -6,17 +6,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 import { addPhoneToStore, addtypeToStore } from '../../state/transaction/sendSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 const Cashout = () => {
+    const { loggeduser, } = useSelector(
+        (state) => state.userDetails
+    );
+  const user=loggeduser.user;
     const dispatch = useDispatch();
     const navigate=useNavigate()
-    const [phone,setPhone]=useState('');
-    const type='Cash Out'
+    const [receiverphone,setPhone]=useState('');
+    const senderphone=user.phone
+    const type='Cash Out';
+    const receiverType="Received Money"
     const handleStore = (e) => {
         e.preventDefault();
-        if(phone){
-            dispatch(addPhoneToStore(phone));
-        dispatch(addtypeToStore(type));
+        if(receiverphone){
+            dispatch(addPhoneToStore({receiverphone,senderphone}));
+            dispatch(addtypeToStore({type,receiverType}));
         navigate('/cash/out/money');
         }else{
             alert('enter phone')
@@ -37,7 +43,7 @@ const Cashout = () => {
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="Phone"
+                    label="এম-পে একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -47,7 +53,7 @@ const Cashout = () => {
                     }}
                     variant="standard"
                     className="w-full"
-                    value={phone} onChange={(e) => setPhone(e.target.value)}
+                    value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                 />
                 <button className="w-12 bg-rose-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
 

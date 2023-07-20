@@ -5,8 +5,8 @@ const initialState = {
    type: localStorage.getItem("sendType")
     ? JSON.parse(localStorage.getItem("sendType"))
     : [],
-    phone: localStorage.getItem("setPhone")
-    ? JSON.parse(localStorage.getItem("setPhone"))
+    receiverphone: localStorage.getItem("receiverphone")
+    ? JSON.parse(localStorage.getItem("receiverphone"))
     : [],
     // phone:[]
 };
@@ -16,8 +16,8 @@ const storeTypeSlice = createSlice({
     initialState,
     reducers: {
         addPhoneToStore(state, action) {
-            state.phone=action.payload;
-             localStorage.setItem("setPhone", JSON.stringify(state.phone));
+            state.receiverphone=action.payload;
+             localStorage.setItem("receiverphone", JSON.stringify(state.receiverphone));
         },
         addtypeToStore(state, action) {
 
@@ -28,10 +28,10 @@ const storeTypeSlice = createSlice({
         },
         clearStore(state,) {
             state.type = [];
-            state.phone = [];
+            state.receiverphone = [];
 
             localStorage.setItem("sendType", JSON.stringify(state.type));
-            localStorage.setItem("setPhone", JSON.stringify(state.phone));
+            localStorage.setItem("setPhone", JSON.stringify(state.receiverphone));
         },
     },
 });
