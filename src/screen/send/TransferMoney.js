@@ -16,8 +16,7 @@ const TransferMoney = () => {
     const navigate = useNavigate();
     const { type,receiverType} = useSelector(state => state.type.type);
     const {receiverphone ,senderphone} = useSelector(state => state.type.receiverphone);
-    console.log(senderphone);
-    const [amount, setAmount] = useState('');
+    const [amount, setAmount] = useState();
     const data = { receiverphone, type, amount,receiverType ,senderphone}
     const handleTransfer = (e) => {
         e.preventDefault();

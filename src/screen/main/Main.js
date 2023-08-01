@@ -49,7 +49,7 @@ const Main = () => {
                             firstname && lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{firstname}{lastname}</p> : null
                         } */}
                         {
-                            user?.amount ? <p className="pl-1 text-start text-rose-500 text-sm  font-thin w-20 bg-white rounded-lg mt-1">Tk <span className="">{user.amount}</span></p> : null
+                            user?.amount ? <p className="pl-1 text-start text-rose-500 text-sm  font-thin w-28 bg-white rounded-lg mt-1">Tk <span className="">{user.amount}</span></p> : null
                         }
 
                     </div>

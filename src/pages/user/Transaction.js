@@ -76,7 +76,7 @@ const Transaction = ({ transaction }) => {
                     }
                     {
                         user._id === transaction.receiveuserId ? <div>
-                            <p className="text-xs font-medium  mt-2 text-start text-green-500">+ {transaction.amount}.00TK</p>
+                            <p className="text-xs font-medium mt-2 text-start text-green-500">+ {transaction.amount}.00TK</p>
 
                         </div> : null
                     }
