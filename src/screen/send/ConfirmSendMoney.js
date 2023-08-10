@@ -32,7 +32,6 @@ const ConfirmSendMoney = () => {
         } else {
             alert('enter phone')
         }
-
     }
     return (
         <div className="bg-rose-500 h-10 rounded-b-lg ">
