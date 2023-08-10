@@ -18,6 +18,7 @@ import UpdateName from './screen/update/UpdateName';
 import UpdateInfo from './screen/update/UpdateInfo';
 import PreLoader from './pages/loader/PreLoader';
 import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
+import CashoutPinPage from './screen/cashout/CashoutPinPage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/success" element={<Success></Success>}></Route>
           <Route path="/cashout" element={<Cashout></Cashout>}></Route>
           <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>
+          <Route path="/cash/out/confirm" element={<CashoutPinPage></CashoutPinPage>}></Route>
           <Route path="/settings" element={<Settings></Settings>}></Route>
           <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
           <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>

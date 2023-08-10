@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { createSendMoney } from '../../state/transaction/sendMoneySlice';
-import { clearStore } from '../../state/transaction/sendSlice';
+import { addAmountToStore} from '../../state/transaction/sendSlice';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { InputAdornment, TextField } from '@mui/material';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 const ConfirmCashout = () => {
     const dispatch = useDispatch();
-    const {loggeduser } = useSelector(
-        (state) => state.userDetails
-    );
-    const userToken = loggeduser.token
+    // const {loggeduser } = useSelector(
+    //     (state) => state.userDetails
+    // );
+    // const userToken = loggeduser.token
     const navigate = useNavigate();
-    const { type,receiverType} = useSelector(state => state.type.type);
-    const {receiverphone ,senderphone} = useSelector(state => state.type.receiverphone);
+    // const { type,receiverType} = useSelector(state => state.type.type);
+    // const {receiverphone ,senderphone} = useSelector(state => state.type.receiverphone);
     const [amount, setAmount] = useState();
-    const data = { receiverphone, type, amount,receiverType ,senderphone}
+    // const data = { receiverphone, type, amount,receiverType ,senderphone}
     const handleTransfer = (e) => {
         e.preventDefault();
+        // if (amount) {
+        //     dispatch(createSendMoney({
+        //         data, userToken
+        //     }));
+        //      dispatch(clearStore());
+        //     navigate('/success');
+        // } else {
+        //     alert('enter phone')
+        // }
         if (amount) {
-            dispatch(createSendMoney({
-                data, userToken
-            }));
-             dispatch(clearStore());
-            navigate('/success');
+            dispatch(addAmountToStore({amount}));
+            navigate('/cash/out/confirm');
         } else {
             alert('enter phone')
         }
