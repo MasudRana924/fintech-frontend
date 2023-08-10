@@ -32,9 +32,9 @@ const Success = () => {
                         type ==='Cash Out' ? <p className="text-rose-500 mt-5 text-md text-start">আপনার ক্যাশ আউট </p>:null
                     }
                    
-                    <p className="text-rose-500 mt-2 text-md text-start">সফল হয়েছে </p>
+                    <p className="text-green-500 mt-2 text-md text-start">সফল হয়েছে </p>
                 </div>
-                <GiCheckMark className="text-rose-500 text-xl mt-6 ml-2"></GiCheckMark>
+                <GiCheckMark className="text-green-500 text-xl mt-6 ml-2"></GiCheckMark>
 
             </div>
             
