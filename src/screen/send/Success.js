@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FiArrowLeft,} from "react-icons/fi";
+import {useNavigate } from 'react-router-dom';
 import { GiCheckMark } from "react-icons/gi";
 import { useDispatch, useSelector } from 'react-redux';
 import { BiUserCircle } from 'react-icons/bi';
@@ -17,11 +16,6 @@ const Success = () => {
     return (
         <div>
             <div className="flex">
-                {/* <div className="w-1/4">
-                    <Link to="/main">
-                        <FiArrowLeft className="text-rose-500 text-2xl mt-5 ml-2"></FiArrowLeft>
-                    </Link>
-                </div> */}
             </div>
             <div className="w-full p-2 flex justify-between">
                 <div className="">
@@ -40,9 +34,7 @@ const Success = () => {
             
             {
                 transactions ? <div>
-                    {/* <div className="w-2/4 mx-auto">
-                <p className="text-gray-900 mt-5 font-semibold">{transactions.receiverphone}</p>
-            </div> */}<div className="flex ml-6 mt-6 mb-6">
+                    <div className="flex ml-6 mt-6 mb-6">
                         <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
                         <p className="mt-2 text-sm">{transactions.receiverphone}</p>
                     </div>
@@ -64,11 +56,6 @@ const Success = () => {
                 </div>:null
             }
             <div className="w-full h-12 bg-rose-500 success-btn">
-            {/* <p className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</p> */}
-               {/* <Link to="/main">
-              
-               <p className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</p>
-               </Link> */}
                <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
             </div>
         </div>
