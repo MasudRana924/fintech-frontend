@@ -20,8 +20,8 @@ const UpdateInfo = () => {
           dispatch(updateName({data,userToken}));
       };
     return (
-        <div>
-        <div className=" h-10 flex justify-between">
+        <div className="lg:w-5/12 2xl:w-3/12 mx-auto lg:mt-36">
+        <div className="h-10 flex justify-between">
             <div className="w-1/4">
                 <Link to="/main">
                     <FiArrowLeft className="text-rose-500 text-2xl mt-2 ml-2"></FiArrowLeft>

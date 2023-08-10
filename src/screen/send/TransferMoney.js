@@ -3,29 +3,18 @@ import {InputAdornment, TextField } from '@mui/material';
 import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import { createSendMoney } from '../../state/transaction/sendMoneySlice';
-import { clearStore } from '../../state/transaction/sendSlice';
+import { addAmountToStore} from '../../state/transaction/sendSlice';
 const TransferMoney = () => {
     const dispatch = useDispatch();
-    const {loggeduser } = useSelector(
-        (state) => state.userDetails
-    );
-    const userToken = loggeduser.token
     const navigate = useNavigate();
-    const { type,receiverType} = useSelector(state => state.type.type);
-    const {receiverphone ,senderphone} = useSelector(state => state.type.receiverphone);
     const [amount, setAmount] = useState();
-    const data = { receiverphone, type, amount,receiverType ,senderphone}
     const handleTransfer = (e) => {
         e.preventDefault();
         if (amount) {
-            dispatch(createSendMoney({
-                data, userToken
-            }));
-             dispatch(clearStore());
-            navigate('/success');
+            dispatch(addAmountToStore({amount}));
+            navigate('/confirm/sendmoney');
         } else {
             alert('enter phone')
         }

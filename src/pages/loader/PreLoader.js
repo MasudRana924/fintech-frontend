@@ -1,0 +1,26 @@
+import React from 'react';
+import {Rings} from 'react-loader-spinner';
+import logo from '../../images/download.webp'
+const PreLoader = () => {
+    return (
+        <div className="container w-2/4 mx-auto md:w-2/4 lg:w-1/4 lg:mx-auto mt-60 lg:mt-96 justify-items-center">
+        <div className="ml-5 w-3/4 mx-auto lg:ml-28 lg:w-1/4 ">
+            {/* <Rings
+                height="90"
+                width="90"
+                color="	#DC143C"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+            /> */}
+           
+            <img src={logo} alt="" className="w-full h-20"/>
+
+        </div>
+        {/* <p className="ml-16 lg:ml-24 text-md font-semibold leading-6 text-gray-900">M-pay</p> */}
+    </div>
+    );
+};
+
+export default PreLoader;

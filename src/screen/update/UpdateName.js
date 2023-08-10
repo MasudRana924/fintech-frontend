@@ -28,7 +28,7 @@ const UpdateName = () => {
        }
     }, [success,navigate,]);
     return (
-        <div>
+        <div >
             <div className="bg-rose-500 h-10 flex">
                 <div className="w-1/4">
                     <Link to="/main">

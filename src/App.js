@@ -16,6 +16,8 @@ import PrivateRoute from './pages/privateroute/PrivateRoute';
 import Settings from './screen/settings/Settings';
 import UpdateName from './screen/update/UpdateName';
 import UpdateInfo from './screen/update/UpdateInfo';
+import PreLoader from './pages/loader/PreLoader';
+import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,7 @@ function App() {
   return (
     <div>
     {loading ? <div>
-      <Loader></Loader>
+      <PreLoader></PreLoader>
     </div> : <div className="App">
     
       <BrowserRouter>
@@ -41,6 +43,7 @@ function App() {
           <Route path="/send" element={<SendMoney></SendMoney>}></Route>
           <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
           <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
+          <Route path="/confirm/sendmoney" element={<ConfirmSendMoney></ConfirmSendMoney>}></Route>
           <Route path="/success" element={<Success></Success>}></Route>
           <Route path="/cashout" element={<Cashout></Cashout>}></Route>
           <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>

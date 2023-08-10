@@ -1,23 +1,18 @@
 import React from 'react';
-import {Rings } from 'react-loader-spinner'
+import { RotatingLines } from 'react-loader-spinner'
 const Loader = () => {
     return (
-        <div className="container w-2/4 mx-auto md:w-2/4 lg:w-1/4 lg:mx-auto mt-60 lg:mt-96 justify-items-center">
-            <div className="ml-10 w-2/4 mx-auto lg:ml-28 lg:w-1/4 ">
-                <Rings
-                    height="90"
-                    width="90"
-                    color="#F510EB "
-                    ariaLabel="triangle-loading"
-                    wrapperStyle={{}}
-                    wrapperClassName=""
+        <div className="container w-2/4 mx-auto md:w-2/4 lg:w-1/4 lg:mx-auto mt-12 lg:mt-12 justify-items-center">
+            <div className="ml-16 w-2/4 mx-auto lg:ml-28 lg:w-1/4 ">
+
+                <RotatingLines
+                    strokeColor="#000000"
+                    strokeWidth="3"
+                    animationDuration="0.75"
+                    width="36"
                     visible={true}
                 />
-               
-                {/* <img src={logo} alt="" /> */}
-
             </div>
-            {/* <p className="ml-16 lg:ml-24 text-md font-semibold leading-6 text-gray-900">M-pay</p> */}
         </div>
     );
 };

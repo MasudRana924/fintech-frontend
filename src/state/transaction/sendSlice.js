@@ -9,6 +9,9 @@ const initialState = {
     ? JSON.parse(localStorage.getItem("receiverphone"))
     : [],
     // phone:[]
+    amount: localStorage.getItem("amount")
+    ? JSON.parse(localStorage.getItem("amount"))
+    : [],
 };
 
 const storeTypeSlice = createSlice({
@@ -26,6 +29,13 @@ const storeTypeSlice = createSlice({
             localStorage.setItem("sendType", JSON.stringify(state.type));
 
         },
+        addAmountToStore(state, action) {
+
+            state.amount=action.payload;
+        //    const type=state.type
+            localStorage.setItem("amount", JSON.stringify(state.amount));
+
+        },
         clearStore(state,) {
             state.type = [];
             state.receiverphone = [];
@@ -36,7 +46,7 @@ const storeTypeSlice = createSlice({
     },
 });
 
-export const { addPhoneToStore,addtypeToStore,  clearStore } =
+export const { addPhoneToStore,addtypeToStore,addAmountToStore,  clearStore } =
 storeTypeSlice.actions;
 
 export default storeTypeSlice.reducer;

@@ -81,7 +81,7 @@ const Login = () => {
                             <div>
 
                                 {
-                                    isLoading ? <button className=" btn btn-md w-1/4 mx-auto  bg-white border-white hover:bg-white hover:border-white mb-16">
+                                    isLoading ? <div className="w-1/4 mx-auto">
                                         <Rings
                                             height={40}
                                             width={60}
@@ -91,13 +91,11 @@ const Login = () => {
                                             className="border"
 
                                         />
-                                    </button> : <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                                    </div> : <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
                                         <span className="font-semibold text-white text-lg">পরবর্তী</span>
                                     </button>
                                 }
-                                {/* <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
-                                <span className="font-semibold text-white text-lg">পরবর্তী</span>
-                            </button> */}
+
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? ?</span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-rose-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>

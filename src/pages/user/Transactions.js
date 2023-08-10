@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchtransactions } from '../../state/user/mytransactionSlice';
 import Transaction from './Transaction';
 import { Link } from 'react-router-dom';
+import Loader from '../loader/Loader';
 
 const Transactions = () => {
     const { loggeduser } = useSelector(
@@ -10,7 +11,8 @@ const Transactions = () => {
     );
     const userToken = loggeduser.token;
     const dispatch = useDispatch();
-    const { transactions, isLoading, isError,} = useSelector(state => state.transactions.mytransactions);
+    const { transactions, isError,} = useSelector(state => state.transactions.mytransactions);
+    const {isLoading} = useSelector(state => state.transactions);
     useEffect(() => {
         dispatch(fetchtransactions({ userToken }));
     }, [dispatch, userToken]);
@@ -29,9 +31,14 @@ const Transactions = () => {
                <p className="text-sm font-semibold text-rose-500">সব দেখুন</p>
                </Link>
             </div>
+           {
+            isLoading ? <div>
+                  <Loader></Loader>
+            </div>: 
             <div className="w-full grid grid-cols-12 mt-5 lg:mt-10 gap-5 pl-3 pr-3">
-                {content}
-            </div>
+            {content}
+        </div>
+           }
 
         </div>
     );
