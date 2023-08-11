@@ -80,7 +80,7 @@ const Login = () => {
                             </div>
                             <div>
 
-                                {
+                                {/* {
                                     isLoading ? <div className="w-1/4 mx-auto">
                                         <Rings
                                             height={40}
@@ -94,8 +94,10 @@ const Login = () => {
                                     </div> : <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
                                         <span className="font-semibold text-white text-lg">পরবর্তী</span>
                                     </button>
-                                }
-
+                                } */}
+<button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
+                                    </button>
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? ?</span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-rose-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>
