@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPhoneToStore,addtypeToStore } from '../../state/transaction/sendSlice';
+import { BiUserCircle } from 'react-icons/bi';
 const SendMoney = () => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails
@@ -56,6 +57,39 @@ const SendMoney = () => {
                 />
                 <button className="w-12 bg-rose-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                
+            </div>
+            <div className="mt-6 w-full pl-2 pr-2">
+                <div className="">
+                    <p className="text-start text-sm pt-3 ml-3">Suggest</p>
+                    <div className="flex mt-4">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254063</p>
+                    </div>
+                    <div className="flex  mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254063</p>
+                    </div>
+                    <div className="flex  mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254064</p>
+                    </div>
+                    <div className="flex  mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254065</p>
+                    </div>
+                    <div className="flex  mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254066</p>
+                    </div>
+                    <div className="flex  mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254067</p>
+                    </div>
+                    <div className="flex mt-2">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">+8801952254068</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

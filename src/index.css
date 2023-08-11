@@ -15,7 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.main-navbar{
+  position: fixed;
+	top: 0;
+	z-index: 200;
+}
 .bootom-button {
   position: absolute;
   bottom: 10%;

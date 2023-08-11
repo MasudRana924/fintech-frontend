@@ -40,8 +40,8 @@ function App() {
           <Route path="/home" element={<Login></Login>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/signup" element={<Signup></Signup>}></Route>
-          {/* <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route> */}
-          <Route path="/main" element={<Main></Main>}></Route>
+          <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
+          {/* <Route path="/main" element={<Main></Main>}></Route> */}
           <Route path="/send" element={<SendMoney></SendMoney>}></Route>
           <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
           <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>

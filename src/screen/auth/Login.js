@@ -1,6 +1,6 @@
 import { Alert, Button, InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Rings } from 'react-loader-spinner';
+import { Rings, RotatingLines } from 'react-loader-spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
@@ -80,9 +80,9 @@ const Login = () => {
                             </div>
                             <div>
 
-                                {/* {
+                                {
                                     isLoading ? <div className="w-1/4 mx-auto">
-                                        <Rings
+                                        {/* <Rings
                                             height={40}
                                             width={60}
                                             color="red"
@@ -90,14 +90,21 @@ const Login = () => {
                                             secondaryColor="red"
                                             className="border"
 
-                                        />
+                                        /> */}
+                                          <RotatingLines
+                    strokeColor="#F51021"
+                    strokeWidth="3"
+                    animationDuration="0.75"
+                    width="36"
+                    visible={true}
+                />
                                     </div> : <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
                                         <span className="font-semibold text-white text-lg">পরবর্তী</span>
                                     </button>
-                                } */}
-<button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                                }
+{/* <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
                                         <span className="font-semibold text-white text-lg">পরবর্তী</span>
-                                    </button>
+                                    </button> */}
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? ?</span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-rose-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>

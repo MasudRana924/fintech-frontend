@@ -34,7 +34,7 @@ const Main = () => {
 
     return (
         <div className="">
-            <div className="bg-rose-500 h-16 rounded-b-lg flex justify-between">
+            <div className="w-full bg-rose-500 h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
                         {
@@ -65,7 +65,7 @@ const Main = () => {
             <Sliderr></Sliderr>
             <SUggestion ></SUggestion>
             <Others></Others>
-            <Transactions ></Transactions>
+            {/* <Transactions ></Transactions> */}
 
             {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block  text-black text-start ml-16 ' : 'hidden'}>

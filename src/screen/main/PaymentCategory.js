@@ -6,7 +6,7 @@ import { RiWechatPayLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 const PaymentCategory = () => {
     return (
-        <div className="mt-5">
+        <div className="mt-20">
                 <div className="flex justify-around">
                     <div>
                         <Link to="/send">
