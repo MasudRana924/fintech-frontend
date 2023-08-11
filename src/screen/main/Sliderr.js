@@ -45,16 +45,16 @@ const Sliderr = () => {
         ]
     };
     return (
-        <div className="mt-10 w-3/4 mx-auto ">
+        <div className="mt-4 w-3/4 mx-auto ">
         <Slider {...settings}>
           <div>
-          <img src={ban} alt="" className="w-full h-40 "/>
+          <img src={ban} alt="" className="w-full h-24 "/>
           </div>
           <div>
-          <img src={ban2} alt="" className="w-full h-40 "/>
+          <img src={ban2} alt="" className="w-full h-24 "/>
           </div>
           <div>
-          <img src={ban3} alt="" className="w-full h-40 "/>
+          <img src={ban3} alt="" className="w-full h-24 "/>
           </div>
         </Slider>
       </div>

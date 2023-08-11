@@ -28,7 +28,7 @@ const Transactions = () => {
                 <p className="text-sm font-thin">লেনদেন সমূহ</p>
                <Link to="/all/transactions">
                {/* <p className="text-sm font-semibold text-rose-500">see all</p> */}
-               <p className="text-sm font-semibold text-rose-500">সব দেখুন</p>
+               <p className="text-sm font-thin text-rose-500">সব দেখুন</p>
                </Link>
             </div>
            {

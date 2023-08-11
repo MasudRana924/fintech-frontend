@@ -11,6 +11,9 @@ import { RxCross1 } from "react-icons/rx";
 import { logout } from '../../state/user/loginSlice';
 import { fetchtuserDetails } from '../../state/user/userDetailsSlice';
 import Skeleton from '@mui/material/Skeleton';
+import Mybkash from './Mybkash';
+import SUggestion from './SUggestion';
+import Others from './Others';
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -36,20 +39,16 @@ const Main = () => {
                     <div className="w-16">
                         {
                             user?.avatar?.url ? <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /> :
-                                <Skeleton variant="circular" width={40} height={40} className="ml-3 mt-2"/>
+                                <Skeleton variant="circular" width={40} height={40} className="ml-3 mt-2" />
 
                         }
-
                     </div>
                     <div>
                         {
-                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname}{user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25}/>
+                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname}{user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
                         }
-                        {/* {
-                            firstname && lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{firstname}{lastname}</p> : null
-                        } */}
                         {
-                            user?.amount ? <p className="pl-1 text-start text-rose-500 text-sm  font-thin w-28 bg-white rounded-lg mt-1">Tk <span className="">{user.amount}</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30}/>
+                            user?.amount ? <p className="pl-1 text-start text-rose-500 text-sm  font-thin w-28 bg-white rounded-lg mt-1">Tk <span className="">{user.amount}</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30} />
                         }
 
                     </div>
@@ -62,23 +61,15 @@ const Main = () => {
             </div>
 
             <PaymentCategory></PaymentCategory>
+            <Mybkash></Mybkash>
+            <Sliderr></Sliderr>
+            <SUggestion ></SUggestion>
+            <Others></Others>
+            <Transactions ></Transactions>
 
-            <div className="mb-10">
-                <Sliderr></Sliderr>
-            </div>
-            <Transactions></Transactions>
-
-
+            {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block  text-black text-start ml-16 ' : 'hidden'}>
-                {/* <div className="h-16 bg-rose-500 w-full border border-rose-500">
-                   <div className="w-1/4 mx-auto ">
-                   {
-                        user?.avatar?.url ? <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /> :
-                            <Skeleton variant="rectangular" className="h-32 w-12 ml-2 mt-5 absolute border rounded-lg " />
 
-                    }
-                   </div>
-                </div> */}
                 <div className="flex justify-between mt-8">
                     <p className="text-md text-rose-500 ml-5 ">এম-পে মেন্যু</p>
                     <RxCross1 className="text-xl mr-2  text-rose-500" onClick={showMenu}></RxCross1>
