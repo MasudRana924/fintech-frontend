@@ -1,4 +1,4 @@
-https://github.com/MasudRana15924/fintech-frontend/issues/1#issue-1898547949
+[Capture](https://github.com/MasudRana15924/fintech-frontend/assets/125243201/120dedb1-b2b6-4ae3-8779-834a84e904e8)
 
 # M-pay (Fintech App) 
 
