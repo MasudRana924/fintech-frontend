@@ -27,8 +27,6 @@ const AllTransaction = ({ transaction }) => {
                         }
                     </div>
                     <div>
-
-                        {/* <p className="text-xs font-thin ml-2">{transaction.type}</p> */}
                         {
                             user._id === transaction.senduserId ? <div>
                                 <p className="text-xs font-thin ml-2 mt-1">{transaction.type}</p>
@@ -46,49 +44,24 @@ const AllTransaction = ({ transaction }) => {
                             </div> : null
                         }
 
-
-                        {/* {
-                            transaction.type === 'Send Money' ? <p className="text-sm  text-red-400 font-thin ml-2">সেন্ড মানি </p> : null
-                        }
-                        {
-                            transaction.type === 'Cash Out' ? <p className="text-sm  text-rose-500 font-thin ml-2">ক্যাশ আউট </p> : null
-                        }
-                        {
-                            transaction.type === 'Mobile Recharge ' ? <p className="text-sm  text-rose-500 font-thin ml-2">রিচার্জ </p> : null
-                        }
-                        {
-                            transaction.receiverType === 'Received Money ' ? <p className="text-sm  text-rose-500 font-thin ml-2">রিচার্জ </p> : null
-                        } */}
-
-
-                        {/* <p className="text-xs font-thin ml-2 mt-1">{transaction.phone}</p> */}
                         <p className="text-xs font-thin ml-2 mt-1">Trans ID : {transaction.tranId}</p>
                     </div>
                 </div>
                 <div>
-                    {/* {
-                        transaction.type === 'Send Money' ? <p className="text-sm  text-red-400 font-semibold"> - {transaction.amount}.00 TK</p> : null
-                    }
-                    {
-                        transaction.type === 'Cash Out' ? <p className="text-sm  text-rose-500 font-semibold"> - {transaction.amount}.00 TK</p> : null
-                    }
-                    {
-                        transaction.type === 'Mobile Recharge ' ? <p className="text-sm  text-rose-500 font-semibold"> - {transaction.amount}.00 TK</p> : null
-                    } */}
                     {
                         user._id === transaction.senduserId ? <div>
-                            <p className="text-xs font-medium mt-2 text-start text-red-500">- {transaction.amount}.00TK</p>
+                            <p className="text-xs font-medium mt-2 text-end text-red-500">- {transaction.amount}.00TK</p>
 
                         </div> : null
                     }
                      {
                         user._id === transaction.receiveuserId ? <div>
-                            <p className="text-xs font-medium  mt-2 text-start text-green-500">+ {transaction.amount}.00TK</p>
+                            <p className="text-xs font-medium  mt-2 text-end text-green-500">+ {transaction.amount}.00TK</p>
 
                         </div> : null
                     }
                     <div>
-                        <p className="text-xs font-thin text-start mt-5">{formatDate(transaction.createdAt)}</p>
+                        <p className="text-xs font-thin text-end mt-5">{formatDate(transaction.createdAt)}</p>
                     </div>
                 </div>
 

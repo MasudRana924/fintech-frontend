@@ -20,16 +20,15 @@ const Success = () => {
             <div className="w-full p-2 flex justify-between">
                 <div className="">
                     {
-                        type ==='Send Money' ? <p className="text-rose-500 mt-5 text-md text-start">আপনার সেন্ড মানি</p>: null
+                        type ==='Send Money' ? <p className="text-violet-500 mt-5 text-md text-start">আপনার সেন্ড মানি</p>: null
                     }
                      {
-                        type ==='Cash Out' ? <p className="text-rose-500 mt-5 text-md text-start">আপনার ক্যাশ আউট </p>:null
+                        type ==='Cash Out' ? <p className="text-violet-500 mt-5 text-md text-start">আপনার ক্যাশ আউট </p>:null
                     }
                    
                     <p className="text-green-500 mt-2 text-md text-start">সফল হয়েছে </p>
                 </div>
-                <GiCheckMark className="text-green-500 text-xl mt-6 ml-2"></GiCheckMark>
-
+                
             </div>
             
             {
@@ -41,21 +40,21 @@ const Success = () => {
             <hr />
             <div className="pl-3 pr-3">
                 <div className="flex justify-between">
-                    <p className=" mt-5  text-start text-rose-500 text-md">ট্রানজেকশন আইডি</p>
+                    <p className=" mt-5  text-start text-violet-500 text-md">ট্রানজেকশন আইডি</p>
                     <p className="text-gray-900 mt-5 f text-start text-md">{transactions.tranId}</p>
                 </div>
                 <div className="flex justify-between">
-                    <p className=" mt-5  text-start text-rose-500 text-md">সর্বমোট</p>
+                    <p className=" mt-5  text-start text-violet-500 text-md">সর্বমোট</p>
                     <p className="text-gray-900 mt-5  text-start text-md ">{transactions.amount}.00 TK</p>
                 </div>
                 <div className="flex justify-between">
-                    <p className=" mt-5  text-start text-rose-500 text-md">চার্জ</p>
+                    <p className=" mt-5  text-start text-violet-500 text-md">চার্জ</p>
                     <p className="text-gray-900 mt-5  text-start text-md">00.00 TK</p>
                 </div>
             </div>
                 </div>:null
             }
-            <div className="w-full h-12 bg-rose-500 success-btn">
+            <div className="w-full h-12 bg-violet-500 success-btn">
                <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
             </div>
         </div>

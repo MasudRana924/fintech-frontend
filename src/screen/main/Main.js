@@ -5,7 +5,6 @@ import { FiLogOut, FiSettings } from "react-icons/fi";
 import { BiHomeAlt2, BiTransfer } from "react-icons/bi";
 import Sliderr from './Sliderr';
 import PaymentCategory from './PaymentCategory';
-import Transactions from '../../pages/user/Transactions';
 import { Link } from 'react-router-dom';
 import { RxCross1 } from "react-icons/rx";
 import { logout } from '../../state/user/loginSlice';
@@ -33,8 +32,8 @@ const Main = () => {
     );
 
     return (
-        <div className="">
-            <div className="w-full bg-rose-500 h-16 rounded-b-lg flex justify-between main-navbar">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
+            <div className="w-full  bg-violet-500 h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
                         {
@@ -48,15 +47,16 @@ const Main = () => {
                             user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname}{user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
                         }
                         {
-                            user?.amount ? <p className="pl-1 text-start text-rose-500 text-sm  font-thin w-28 bg-white rounded-lg mt-1">Tk <span className="">{user.amount}</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30} />
+                            user?.amount ? <p className="pl-2 text-start text-violet-500 text-medium  font-medium w-28 bg-white rounded-lg mt-1">ট <span className="">{user.amount}.00</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30} />
                         }
 
                     </div>
                 </div>
                 <div className="flex justify-between mt-3 mr-3">
+                    <Link to="/reward">
                     <AiFillTrophy className="text-white text-3xl"></AiFillTrophy>
+                    </Link>
                     <AiOutlineMenu className="text-white text-3xl ml-5" onClick={showMenu}></AiOutlineMenu>
-                    {/* <GrDocumentTransfer className="text-white text-3xl"></GrDocumentTransfer> */}
                 </div>
             </div>
 
@@ -65,30 +65,29 @@ const Main = () => {
             <Sliderr></Sliderr>
             <SUggestion ></SUggestion>
             <Others></Others>
-            {/* <Transactions ></Transactions> */}
 
             {/* navbar for small device */}
-            <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4 uppercase   gap-6  md: lg:block  text-black text-start ml-16 ' : 'hidden'}>
+            <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
 
-                <div className="flex justify-between mt-8">
-                    <p className="text-md text-rose-500 ml-5 ">এম-পে মেন্যু</p>
+                <div className="flex justify-between mt-8 ">
+                    <p className="text-md text-violet-500 ml-5 ">এম-পে মেন্যু</p>
                     <RxCross1 className="text-xl mr-2  text-rose-500" onClick={showMenu}></RxCross1>
 
                 </div>
                 <ul className="">
                     <Link to="/main">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiHomeAlt2 className="mr-1 text-xl text-rose-500"></BiHomeAlt2> <span className="ml-5">
+                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiHomeAlt2 className="mr-1 text-xl text-violet-500"></BiHomeAlt2> <span className="ml-5">
                             হোম </span></button>
                     </Link>
                     <Link to="/all/transactions">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-rose-500"></BiTransfer> <span className="ml-5">
+                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
                             লেনদেন সমূহ</span></button>
                     </Link>
                     <Link to="/settings">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-rose-500"></FiSettings> <span className="ml-5">
+                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-violet-500"></FiSettings> <span className="ml-5">
                             সেটিংস </span></button>
                     </Link>
-                    <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-rose-500"></FiLogOut> <span className="ml-5">
+                    <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-violet-500"></FiLogOut> <span className="ml-5">
                         লগআউট</span></button>
 
                 </ul>

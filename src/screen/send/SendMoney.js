@@ -30,20 +30,20 @@ const SendMoney = () => {
     }
     console.log(receiverphone);
     return (
-        <div className="bg-rose-500 h-10 rounded-b-lg ">
-            <div className="flex">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
+            <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
-                        <FiArrowLeft className="text-white text-2xl mt-2 ml-2"></FiArrowLeft>
+                        <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
                     </Link>
                 </div>
-                <p className="text-white text-md mt-2 ml-5">সেন্ড মানি</p>
+                <p className="text-white text-md mt-4 ml-5">সেন্ড মানি</p>
             </div>
-            <div className="w-full flex mt-16 pl-2">
+            <div className="w-full flex mt-12 pl-2">
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="এম-পে একাউন্ট"
+                    label="ট্রাস্ট পে একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -54,11 +54,12 @@ const SendMoney = () => {
                     variant="standard"
                     className="w-full"
                 value={receiverphone} onChange={(e) => setPhone(e.target.value)}
+                required
                 />
-                <button className="w-12 bg-rose-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                
             </div>
-            <div className="mt-6 w-full pl-2 pr-2">
+            <div className="mt-6 w-full pl-2 pr-2 mb-12">
                 <div className="">
                     <p className="text-start text-sm pt-3 ml-3">Suggest</p>
                     <div className="flex mt-4">

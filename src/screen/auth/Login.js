@@ -1,10 +1,10 @@
-import { Alert, Button, InputAdornment, TextField } from '@mui/material';
+import { Alert, InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Rings, RotatingLines } from 'react-loader-spinner';
+import { RotatingLines } from 'react-loader-spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
-import logo from '../../images/loggo.png';
+import logo from '../../images/logo (2).png';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 const Login = () => {
@@ -31,13 +31,12 @@ const Login = () => {
     }, [user, navigate,]);
     return (
         <div>
-            <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
-                <div className="lg:w-5/12 2xl:w-3/12">
-                    <img src={logo} alt="" className="w-1/4 mx-auto h-8" />
+            <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20 ">
+                <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
+                    <img src={logo} alt="" className="w-2/4 mx-auto h-12 lg:mt-8" />
                     <div className="mt-6 p-8">
-                        {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Welcome to Login</h2> */}
-                        <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার এম-পে একাউন্টে</h2>
-                        <h2 className="text-start text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
+                        <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
+                        <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
                         {
                             error ? <Alert severity="error" className="mt-5">{error}</Alert> : null
                         }
@@ -75,37 +74,25 @@ const Login = () => {
                             />
 
                             <div className="mt-5 text-start">
-                                <Link to="/forgot/password"> <span className="text-sm font-thin leading-6 text-rose-500">পিন ভূলে গেছেন ?</span>
+                                <Link to="/forgot/password"> <span className="text-sm font-medium leading-6 text-violet-500">পিন ভূলে গেছেন ?</span>
                                 </Link>
                             </div>
                             <div>
 
                                 {
-                                    isLoading ? <div className="w-1/4 mx-auto">
-                                        {/* <Rings
-                                            height={40}
-                                            width={60}
-                                            color="red"
+                                    isLoading ? <div className="ml-36 w-1/4 mx-auto mb-4">
+                                        <RotatingLines
+                                            strokeColor="#741ADF"
+                                            strokeWidth="3"
+                                            animationDuration="0.75"
+                                            width="36"
                                             visible={true}
-                                            secondaryColor="red"
-                                            className="border"
-
-                                        /> */}
-                                          <RotatingLines
-                    strokeColor="#F51021"
-                    strokeWidth="3"
-                    animationDuration="0.75"
-                    width="36"
-                    visible={true}
-                />
-                                    </div> : <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                                        />
+                                    </div> :<button className={password.length >4 ? 'h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5':'h-12 w-full  bg-gray-300 border-gray-300 hover:bg-gray-300 hover:border-gray-300 mb-5'}>
                                         <span className="font-semibold text-white text-lg">পরবর্তী</span>
                                     </button>
                                 }
-{/* <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
-                                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
-                                    </button> */}
-                                <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? ?</span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-rose-500">নতুন তৈরি করুন</span>
+                                <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? </span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-violet-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>
                         </form>

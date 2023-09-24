@@ -1,10 +1,9 @@
-import { Alert, Button, InputAdornment, TextField } from '@mui/material';
+import { Alert,InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Rings } from 'react-loader-spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
-import logo from '../../images/loggo.png';
+import logo from '../../images/logo (2).png';
 import { createSignUp } from '../../state/user/signupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 const Signup = () => {
@@ -24,14 +23,14 @@ const Signup = () => {
     };
     useEffect(() => {
         if (success) {
-          navigate('/login');
+          navigate('/main');
         }
       }, [success, navigate]);
     return (
         <div>
         <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
-            <div className="lg:w-5/12 2xl:w-3/12">
-                <img src={logo} alt="" className="w-1/4 mx-auto h-8" />
+            <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
+                <img src={logo} alt="" className="w-2/4 mx-auto h-12 lg:mt-8" />
                 <div className="mt-6 p-8">
                     {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}
                     <h2 className="text-start text-md font-medium leading-6 text-gray-900">একাউন্ট নেই ?  নতুন তৈরি করুন</h2>
@@ -70,25 +69,11 @@ const Signup = () => {
                         />
 
                         <div>
-                            {/* {
-                                isLoading ? <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
-                                    <Rings
-                                        height={40}
-                                        width={60}
-                                        color="red"
-                                        visible={true}
-                                        secondaryColor="red"
-                                        className="border"
-
-                                    />
-                                </button> : <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
-                                    <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
-                            } */}
-                            <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                            
+                            <button className={password.length >4 ? 'h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5':'h-12 w-full  bg-gray-300 border-gray-300 hover:bg-gray-300 hover:border-gray-300 mb-5'}>
                                 <span className="font-semibold text-white text-lg">পরবর্তী </span>
                             </button>
-                            <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/login"> <span className="text-sm font-semibold leading-6 text-rose-500">লগইন করুন</span>
+                            <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/login"> <span className="text-sm font-semibold leading-6 text-violet-500">লগইন করুন</span>
                             </Link>
                         </div>
                     </form>

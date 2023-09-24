@@ -28,14 +28,14 @@ const UpdateName = () => {
        }
     }, [success,navigate,]);
     return (
-        <div >
-            <div className="bg-rose-500 h-10 flex">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg">
+            <div className="bg-violet-500 h-16 flex">
                 <div className="w-1/4">
                     <Link to="/main">
-                        <FiArrowLeft className="text-white text-2xl mt-2 ml-2"></FiArrowLeft>
+                        <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
                     </Link>
                 </div>
-                <p className="text-white text-md mt-2 ml-5">নাম পরিবর্তন করুন</p>
+                <p className="text-white text-md mt-4 ml-5">নাম পরিবর্তন করুন</p>
             </div>
             <form action="" className="space-y-6 mt-12  p-4" onSubmit={registerSubmit}>
                         
@@ -70,22 +70,8 @@ const UpdateName = () => {
                             value={lastname} onChange={(e) => setLastName(e.target.value)}
                         />
                         <div>
-                            {/* {
-                                isLoading ? <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
-                                    <Rings
-                                        height={40}
-                                        width={60}
-                                        color="red"
-                                        visible={true}
-                                        secondaryColor="red"
-                                        className="border"
-
-                                    />
-                                </button> : <button className=" btn btn-md w-full  bg-emerald-500 border-emerald-500 hover:bg-emerald-500 hover:border-emerald-500 mb-5">
-                                    <span className="font-semibold text-white text-lg">Login</span>
-                                </button>
-                            } */}
-                            <button className="h-12 w-full  bg-rose-500 border-rose-500 hover:bg-rose-500 hover:border-rose-500 mb-5">
+                            
+                            <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
                                 <span className="font-semibold text-white text-lg">পরবর্তী</span>
                             </button>
                             

@@ -34,8 +34,8 @@ const CashoutPinPage = () => {
         }
     }
     return (
-        <div className="bg-rose-500 h-10 rounded-b-lg ">
-            <div className="flex">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg  ">
+            <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-2 ml-2"></FiArrowLeft>
@@ -71,7 +71,7 @@ const CashoutPinPage = () => {
                 </div>
             </div>
 
-            <div className="w-full flex mt-16 pl-2">
+            <div className="w-full flex mt-16 pl-2 mb-44">
 
                 <TextField
                     id="input-with-icon-textfield"
@@ -87,7 +87,7 @@ const CashoutPinPage = () => {
                     className="w-full"
                      value={password} onChange={(e) => setPass(e.target.value)}
                 />
-                <button className="w-12 bg-rose-500" onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                <button className="w-12 bg-violet-500" onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
 
             </div>
         </div>

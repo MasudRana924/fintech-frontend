@@ -25,8 +25,7 @@ code {
   bottom: 10%;
   display: flex;
   justify-content: space-between;
-margin-left: 110px;
-
+  margin-left: 110px;
 }
 .success-btn{
   position: absolute;

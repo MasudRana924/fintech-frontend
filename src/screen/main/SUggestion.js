@@ -7,11 +7,11 @@ import railway from '../../images/railway.jpg';
 import { Link } from 'react-router-dom';
 const SUggestion = () => {
     return (
-        <div className="">
+        <div className="pl-2 pr-2">
             <div className="mt-4 h-20 border rounded-lg">
                 <div className="flex justify-between mt-2 pl-2 pr-2 ">
                     <p className="text-xs text-start ml-2">সাজেশন </p>
-                    <p className="text-xs text-start ml-2 text-red-500">সব দেখুন</p>
+                    <p className="text-xs text-start ml-2 text-violet-500">সব দেখুন</p>
                 </div>
                 <div className="flex  mt-2 pl-4 pr-2 mb-2">
                     <div>

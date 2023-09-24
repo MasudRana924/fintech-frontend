@@ -19,6 +19,9 @@ import UpdateInfo from './screen/update/UpdateInfo';
 import PreLoader from './pages/loader/PreLoader';
 import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
 import CashoutPinPage from './screen/cashout/CashoutPinPage';
+import ForgotPassword from './screen/auth/ForgotPassword';
+import OtpVerify from './screen/auth/OtpVerify';
+import Reward from './pages/user/Reward';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -41,7 +44,6 @@ function App() {
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
-          {/* <Route path="/main" element={<Main></Main>}></Route> */}
           <Route path="/send" element={<SendMoney></SendMoney>}></Route>
           <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
           <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
@@ -53,6 +55,9 @@ function App() {
           <Route path="/settings" element={<Settings></Settings>}></Route>
           <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
           <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>
+         <Route path="/forgot/password" element={<ForgotPassword></ForgotPassword>}></Route>
+         <Route path="/verify" element={<OtpVerify></OtpVerify>}></Route>
+         <Route path="/reward" element={<Reward></Reward>}></Route>
        
         </Routes>
       </BrowserRouter>
