@@ -12,11 +12,11 @@ This ia a online mobile banking website  build using Reactjs and Nodejs
 ## Available Feature 
 Now only few features is available like Login , Registration , Send Money , Cash out 
 
-#Account Management: 
+## Account Management:-
 
 Users can view their account balances, transaction history, and account details for various types of accounts, such as checking, savings, and credit cards.
 
-#Fund Transfers:
+## Fund Transfers:-
 
 These apps enable users to transfer money between their own accounts, as well as send money to other people or pay bills. Transfers can be made between different banks, domestically or internationally.
 
