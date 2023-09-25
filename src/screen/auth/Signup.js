@@ -30,7 +30,7 @@ const Signup = () => {
         <div>
         <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
             <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
-                <img src={logo} alt="" className="w-2/4 mx-auto h-12 lg:mt-8" />
+                <img src={logo} alt="" className="w-3/4 mx-auto h-16 lg:mt-8" />
                 <div className="mt-6 p-8">
                     {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}
                     <h2 className="text-start text-md font-medium leading-6 text-gray-900">একাউন্ট নেই ?  নতুন তৈরি করুন</h2>
@@ -40,7 +40,8 @@ const Signup = () => {
                     <form action="" className="space-y-6 py-6 mt-6" onSubmit={registerSubmit}>
                         
                         <TextField
-                            id="input-with-icon-textfield"
+                            // id="input-with-icon-textfield"
+                            id="standard-basic"
                             label="একাউন্ট নাম্বার"
                             InputProps={{
                                 startAdornment: (
@@ -49,13 +50,13 @@ const Signup = () => {
                                     </InputAdornment>
                                 ),
                             }}
-                            variant="outlined"
+                            variant="standard"
                             className="w-full py-3 px-6"
                             value={phone} onChange={(e) => setPhone(e.target.value)}
                         />
                         <TextField
-                            id="input-with-icon-textfield"
-                            label="এম-পে পিন"
+                            id="standard-basic"
+                            label="ট্রাস্ট-পে পিন"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -63,7 +64,7 @@ const Signup = () => {
                                     </InputAdornment>
                                 ),
                             }}
-                            variant="outlined"
+                            variant="standard"
                             className="w-full py-3 px-6"
                             value={password} onChange={(e) => setPassword(e.target.value)}
                         />

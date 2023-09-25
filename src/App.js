@@ -56,7 +56,7 @@ function App() {
             <Route path="/cash/out/confirm" element={<CashoutPinPage></CashoutPinPage>}></Route>
             <Route path="/settings" element={<Settings></Settings>}></Route>
             <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
-            <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>
+            <Route path="/update" element={<PrivateRoute><UpdateInfo></UpdateInfo></PrivateRoute>}></Route>
             <Route path="/forgot/password" element={<ForgotPassword></ForgotPassword>}></Route>
             <Route path="/verify" element={<OtpVerify></OtpVerify>}></Route>
             <Route path="/reward" element={<Reward></Reward>}></Route>
