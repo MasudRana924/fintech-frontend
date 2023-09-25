@@ -1,32 +1,61 @@
-import React from 'react';
-import { BiUserCircle } from 'react-icons/bi';
-import { FiArrowLeft } from 'react-icons/fi';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { createSendMoney } from '../../state/transaction/sendMoneySlice';
-import { clearStore } from '../../state/transaction/sendSlice';
-
-const ConfirmSendMoney = () => {
+import { addPasswordToStore, clearStore } from '../../state/transaction/sendSlice';
+import { InputAdornment, TextField } from '@mui/material';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { BiUserCircle } from 'react-icons/bi';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { createTakePassword } from '../../state/transaction/takePasswordSlice';
+import { message } from 'antd';
+const TakePassword = () => {
     const dispatch = useDispatch();
     const { loggeduser } = useSelector(
         (state) => state.userDetails
     );
     const userToken = loggeduser.token;
+    const { success, errorr } = useSelector(
+        (state) => state.takePassword
+    );
     const navigate = useNavigate();
     const { type, receiverType } = useSelector(state => state.type.type);
     const { receiverphone, senderphone } = useSelector(state => state.type.receiverphone);
     const { amount } = useSelector(state => state.type.amount);
-    const { password } = useSelector(state => state.type.password);
-    const data = { receiverphone, type, amount, receiverType, senderphone, password }
+    const [password, setPass] = useState();
+    const data={password}
+    // const data = { receiverphone, type, amount, receiverType, senderphone,password }
     const handleTransfer = (e) => {
         e.preventDefault();
-
-        dispatch(createSendMoney({
-            data, userToken
-        }));
-        dispatch(clearStore());
-        navigate('/success');
+        if (password) {
+            dispatch(createTakePassword({
+                data, userToken
+            }));
+            dispatch(addPasswordToStore({ password }))
+            // dispatch(createSendMoney({
+            //     data, userToken
+            // }));
+            // dispatch(clearStore());
+            // navigate('/success');
+            // if(success){
+            //     dispatch(createSendMoney({
+            //         data, userToken
+            //     }));
+            //     dispatch(clearStore());
+            // }
+        } else {
+            message.error("পাসওয়ার্ড প্রদান করুণ")
+        }
     }
+
+    useEffect(() => {
+        if (success) {
+             navigate('/confirm/sendmoney');
+        }if(errorr){
+            message.error("সটিক পাসওয়ার্ড দিন")
+        }
+    }, [success, navigate,errorr]);
     return (
         <div className=" lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg">
             <div className="flex bg-violet-500 h-16 rounded-b-lg">
@@ -65,11 +94,27 @@ const ConfirmSendMoney = () => {
                 </div>
             </div>
 
-            <div className="w-full h-24 bg-violet-500 confirm-btn">
-                <button onClick={handleTransfer} className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
+            <div className="w-full flex mt-16 pl-2 mb-44">
+
+                <TextField
+                    id="input-with-icon-textfield"
+                    label="পিন নাম্বার দিন"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <LockOpenIcon />
+                            </InputAdornment>
+                        ),
+                    }}
+                    variant="standard"
+                    className="w-full"
+                     value={password} onChange={(e) => setPass(e.target.value)}
+                />
+                <button className={password?.length>4? 'w-12 bg-violet-500':'w-12 bg-gray-500 disabled'} onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+
             </div>
         </div>
     );
 };
 
-export default ConfirmSendMoney;
+export default TakePassword;

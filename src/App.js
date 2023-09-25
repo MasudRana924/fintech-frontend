@@ -17,11 +17,12 @@ import Settings from './screen/settings/Settings';
 import UpdateName from './screen/update/UpdateName';
 import UpdateInfo from './screen/update/UpdateInfo';
 import PreLoader from './pages/loader/PreLoader';
-import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
 import CashoutPinPage from './screen/cashout/CashoutPinPage';
 import ForgotPassword from './screen/auth/ForgotPassword';
 import OtpVerify from './screen/auth/OtpVerify';
 import Reward from './pages/user/Reward';
+import TakePassword from './screen/send/TakePassword';
+import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/send" element={<SendMoney></SendMoney>}></Route>
           <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
           <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
+          <Route path="/confirm/password" element={<TakePassword></TakePassword>}></Route>
           <Route path="/confirm/sendmoney" element={<ConfirmSendMoney></ConfirmSendMoney>}></Route>
           <Route path="/success" element={<Success></Success>}></Route>
           <Route path="/cashout" element={<Cashout></Cashout>}></Route>

@@ -39,7 +39,7 @@ const AllTransactions = () => {
                 isLoading ? <div className="mt-20">
                     <Loader ></Loader>
                 </div> : <div
-                    className="mt-20 grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 min-h-[300px]  md:mt-16 lg:mt-16 " >
+                    className="mt-20 grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0   md:mt-16 lg:mt-16 " >
                     {content}
                 </div>
             }

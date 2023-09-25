@@ -12,6 +12,9 @@ const initialState = {
     amount: localStorage.getItem("amount")
     ? JSON.parse(localStorage.getItem("amount"))
     : [],
+    password: localStorage.getItem("password")
+    ? JSON.parse(localStorage.getItem("password"))
+    : [],
 };
 
 const storeTypeSlice = createSlice({
@@ -36,17 +39,25 @@ const storeTypeSlice = createSlice({
             localStorage.setItem("amount", JSON.stringify(state.amount));
 
         },
+        addPasswordToStore(state, action) {
+
+            state.password=action.payload;
+        //    const type=state.type
+            localStorage.setItem("password", JSON.stringify(state.password));
+
+        },
         clearStore(state,) {
             state.type = [];
             state.receiverphone = [];
-
+            state.password=[];
             localStorage.setItem("sendType", JSON.stringify(state.type));
             localStorage.setItem("setPhone", JSON.stringify(state.receiverphone));
+            localStorage.setItem("setPassword", JSON.stringify(state.password));
         },
     },
 });
 
-export const { addPhoneToStore,addtypeToStore,addAmountToStore,  clearStore } =
+export const { addPhoneToStore,addtypeToStore,addAmountToStore,addPasswordToStore,  clearStore } =
 storeTypeSlice.actions;
 
 export default storeTypeSlice.reducer;

@@ -14,7 +14,7 @@ const TransferMoney = () => {
         e.preventDefault();
         if (amount) {
             dispatch(addAmountToStore({amount}));
-            navigate('/confirm/sendmoney');
+            navigate('/confirm/password');
         } else {
             alert('enter phone')
         }
