@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiSolidContact, BiSolidDonateHeart } from 'react-icons/bi';
+import { BiSolidDonateHeart } from 'react-icons/bi';
 import { BsTicket} from 'react-icons/bs';
 import { AiFillInsurance,AiFillShopping} from 'react-icons/ai';
 import { CgGames} from 'react-icons/cg';

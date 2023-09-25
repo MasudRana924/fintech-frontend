@@ -15,6 +15,9 @@ const initialState = {
     password: localStorage.getItem("password")
     ? JSON.parse(localStorage.getItem("password"))
     : [],
+    qrcode: localStorage.getItem("qrcode")
+    ? JSON.parse(localStorage.getItem("qrcode"))
+    : [],
 };
 
 const storeTypeSlice = createSlice({
@@ -46,18 +49,27 @@ const storeTypeSlice = createSlice({
             localStorage.setItem("password", JSON.stringify(state.password));
 
         },
+        addQRToStore(state, action) {
+
+            state.qrcode=action.payload;
+        //    const type=state.type
+            localStorage.setItem("qrcode", JSON.stringify(state.qrcode));
+
+        },
         clearStore(state,) {
             state.type = [];
             state.receiverphone = [];
             state.password=[];
+            state.qrcode=[];
             localStorage.setItem("sendType", JSON.stringify(state.type));
             localStorage.setItem("setPhone", JSON.stringify(state.receiverphone));
             localStorage.setItem("setPassword", JSON.stringify(state.password));
+            localStorage.setItem("setQR", JSON.stringify(state.qrcode));
         },
     },
 });
 
-export const { addPhoneToStore,addtypeToStore,addAmountToStore,addPasswordToStore,  clearStore } =
+export const { addPhoneToStore,addtypeToStore,addAmountToStore,addPasswordToStore,addQRToStore,  clearStore } =
 storeTypeSlice.actions;
 
 export default storeTypeSlice.reducer;

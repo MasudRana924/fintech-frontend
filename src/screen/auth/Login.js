@@ -8,7 +8,6 @@ import logo from '../../images/logo (2).png';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
-import Marquee from 'react-fast-marquee';
 import { Alert } from 'antd';
 
 const Login = () => {

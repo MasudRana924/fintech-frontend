@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { createSendMoney } from '../../state/transaction/sendMoneySlice';
-import { addPasswordToStore, clearStore } from '../../state/transaction/sendSlice';
+import { addPasswordToStore } from '../../state/transaction/sendSlice';
 import { InputAdornment, TextField } from '@mui/material';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { BiUserCircle } from 'react-icons/bi';
@@ -20,8 +19,7 @@ const TakePassword = () => {
         (state) => state.takePassword
     );
     const navigate = useNavigate();
-    const { type, receiverType } = useSelector(state => state.type.type);
-    const { receiverphone, senderphone } = useSelector(state => state.type.receiverphone);
+    const { receiverphone, } = useSelector(state => state.type.receiverphone);
     const { amount } = useSelector(state => state.type.amount);
     const [password, setPass] = useState();
     const data={password}

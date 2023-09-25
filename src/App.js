@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Loader from './pages/loader/Loader';
-import Home from './screen/home/Home';
 import Login from './screen/auth/Login';
 import Signup from './screen/auth/Signup';
 import Main from './screen/main/Main';
@@ -23,6 +21,8 @@ import OtpVerify from './screen/auth/OtpVerify';
 import Reward from './pages/user/Reward';
 import TakePassword from './screen/send/TakePassword';
 import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
+import Profile from './pages/user/Profile';
+import QRCode from './pages/user/QRCode';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,39 +33,41 @@ function App() {
   })
   return (
     <div>
-    {loading ? <div>
-      <PreLoader></PreLoader>
-    </div> : <div className="App">
-    
-      <BrowserRouter>
-       
-        <Routes >
-          <Route path="/" element={<Login></Login>}></Route>
-          <Route path="/home" element={<Login></Login>}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/signup" element={<Signup></Signup>}></Route>
-          <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
-          <Route path="/send" element={<SendMoney></SendMoney>}></Route>
-          <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
-          <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
-          <Route path="/confirm/password" element={<TakePassword></TakePassword>}></Route>
-          <Route path="/confirm/sendmoney" element={<ConfirmSendMoney></ConfirmSendMoney>}></Route>
-          <Route path="/success" element={<Success></Success>}></Route>
-          <Route path="/cashout" element={<Cashout></Cashout>}></Route>
-          <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>
-          <Route path="/cash/out/confirm" element={<CashoutPinPage></CashoutPinPage>}></Route>
-          <Route path="/settings" element={<Settings></Settings>}></Route>
-          <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
-          <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>
-         <Route path="/forgot/password" element={<ForgotPassword></ForgotPassword>}></Route>
-         <Route path="/verify" element={<OtpVerify></OtpVerify>}></Route>
-         <Route path="/reward" element={<Reward></Reward>}></Route>
-       
-        </Routes>
-      </BrowserRouter>
-    
-    </div>}
-  </div>
+      {loading ? <div>
+        <PreLoader></PreLoader>
+      </div> : <div className="App">
+
+        <BrowserRouter>
+
+          <Routes >
+            <Route path="/" element={<Login></Login>}></Route>
+            <Route path="/home" element={<Login></Login>}></Route>
+            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/signup" element={<Signup></Signup>}></Route>
+            <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
+            <Route path="/send" element={<SendMoney></SendMoney>}></Route>
+            <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
+            <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
+            <Route path="/confirm/password" element={<TakePassword></TakePassword>}></Route>
+            <Route path="/confirm/sendmoney" element={<ConfirmSendMoney></ConfirmSendMoney>}></Route>
+            <Route path="/success" element={<Success></Success>}></Route>
+            <Route path="/cashout" element={<Cashout></Cashout>}></Route>
+            <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>
+            <Route path="/cash/out/confirm" element={<CashoutPinPage></CashoutPinPage>}></Route>
+            <Route path="/settings" element={<Settings></Settings>}></Route>
+            <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
+            <Route path="/update" element={<UpdateInfo></UpdateInfo>}></Route>
+            <Route path="/forgot/password" element={<ForgotPassword></ForgotPassword>}></Route>
+            <Route path="/verify" element={<OtpVerify></OtpVerify>}></Route>
+            <Route path="/reward" element={<Reward></Reward>}></Route>
+            <Route path="/profile" element={<Profile></Profile>}></Route>
+            <Route path="/my/qrcode" element={<QRCode></QRCode>}></Route>
+
+          </Routes>
+        </BrowserRouter>
+
+      </div>}
+    </div>
   );
 }
 

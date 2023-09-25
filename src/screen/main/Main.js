@@ -37,14 +37,15 @@ const Main = () => {
                 <div className="flex">
                     <div className="w-16">
                         {
-                            user?.avatar?.url ? <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /> :
+                            user?.avatar?.url ? <Link to="/profile">
+                                <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /></Link> :
                                 <Skeleton variant="circular" width={40} height={40} className="ml-3 mt-2" />
 
                         }
                     </div>
                     <div>
                         {
-                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname}{user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
+                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname} {user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
                         }
                         {
                             user?.amount ? <p className="pl-2 text-start text-violet-500 text-medium  font-medium w-28 bg-white rounded-lg mt-1">ট <span className="">{user.amount}.00</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30} />
@@ -54,7 +55,7 @@ const Main = () => {
                 </div>
                 <div className="flex justify-between mt-3 mr-3">
                     <Link to="/reward">
-                    <AiFillTrophy className="text-white text-3xl"></AiFillTrophy>
+                        <AiFillTrophy className="text-white text-3xl"></AiFillTrophy>
                     </Link>
                     <AiOutlineMenu className="text-white text-3xl ml-5" onClick={showMenu}></AiOutlineMenu>
                 </div>
