@@ -36,8 +36,8 @@ const AllTransactions = () => {
                 <p className="text-white text-sm mt-4 ml-8">লেনদেন সমূহ</p>
             </div>
             {
-                isLoading ? <div className="mt-20">
-                    <Loader ></Loader>
+                isLoading ? <div className=" mt-20">
+                   <Loader ></Loader>
                 </div> : <div
                     className="mt-20 grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0   md:mt-16 lg:mt-16 " >
                     {content}

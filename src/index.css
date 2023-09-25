@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -35,4 +36,22 @@ code {
   position: absolute;
   bottom: 0%;
   border-radius: 140px 140px 0 0;
+}
+.rocket{
+  width:80px;
+  height:80px;
+  position: absolute;
+  left:0;
+  animation: rocket 4s linear infinite;
+  overflow: hidden;
+}
+@keyframes rocket {
+  0%{
+    left:0;
+    opacity:0;
+  }
+  100%{
+    left:105%;
+    opacity:1;
+  }
 }

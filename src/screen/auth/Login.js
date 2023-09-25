@@ -1,4 +1,4 @@
-import { Alert, InputAdornment, TextField } from '@mui/material';
+import {  InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +7,10 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import logo from '../../images/logo (2).png';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { message } from 'antd';
+import Marquee from 'react-fast-marquee';
+import { Alert } from 'antd';
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -21,14 +25,18 @@ const Login = () => {
         const myForm = new FormData();
         myForm.set("phone", phone);
         myForm.set("password", password);
-        dispatch(createLogin(myForm));
+        if(phone && password){
+            dispatch(createLogin(myForm));
+        }else{
+          message.error("Enter Phone or Password")
+        }
     };
     useEffect(() => {
         if (user) {
             navigate('/update');
             // toast.info('Login Succesfull');
         }
-    }, [user, navigate,]);
+    }, [user, navigate,error]);
     return (
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20 ">
@@ -37,8 +45,11 @@ const Login = () => {
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
                         <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
-                        {
+                        {/* {
                             error ? <Alert severity="error" className="mt-5">{error}</Alert> : null
+                        } */}
+                        {
+                            error ?<Alert message={error} type="error"  className="mt-4"/> : null
                         }
                         <form action="" className="space-y-6 py-6 mt-6" onSubmit={registerSubmit}>
 

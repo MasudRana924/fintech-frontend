@@ -65,8 +65,8 @@ const ConfirmSendMoney = () => {
                 </div>
             </div>
 
-            <div className="w-full h-24 bg-violet-500 confirm-btn">
-                <button onClick={handleTransfer} className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
+            <div className="w-full h-24 bg-violet-500 confirm-btn" onClick={handleTransfer}>
+                <button  className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
             </div>
         </div>
     );

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { addAmountToStore} from '../../state/transaction/sendSlice';
+import { message } from 'antd';
 const TransferMoney = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -16,7 +16,7 @@ const TransferMoney = () => {
             dispatch(addAmountToStore({amount}));
             navigate('/confirm/password');
         } else {
-            alert('enter phone')
+            message.error("টাকা প্রদান করুণ")
         }
 
     }
