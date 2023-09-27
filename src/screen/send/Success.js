@@ -16,7 +16,7 @@ const Success = () => {
         navigate('/main');
     }
     return (
-        <div>
+        <div className="lg:w-1/4 mx-auto">
             <div className="flex">
             </div>
             <div className="w-full p-2 flex justify-between">
@@ -37,7 +37,7 @@ const Success = () => {
 
             </div>
             {
-                isLoading ? <div className="mt-64">
+                isLoading ? <div className="mt-64 lg:w-1/4 mx-auto">
                     <img src={cycle} alt="" className="rocket" />
                 </div> : null
             }
@@ -66,14 +66,15 @@ const Success = () => {
                             <p className="text-gray-900 mt-5  text-start text-md">00.00 TK</p>
                         </div>
                     </div>
-                    <div className="w-full h-12 bg-violet-500 success-btn">
+                    <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+                        <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
+                    </div>
+                    <div className="w-full  lg:block h-12 bg-violet-500 mt-44">
                         <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                     </div>
                 </div> : null
             }
-            {/* <div className="w-full h-12 bg-violet-500 success-btn">
-                <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
-            </div> */}
+            
         </div>
     );
 };

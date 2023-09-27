@@ -21,7 +21,7 @@ const TransferMoney = () => {
 
     }
     return (
-        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg  ">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg  ">
             <div className="flex bg-violet-500 h-16 rounded-b-lg">
                 <div className="w-1/4">
                     <Link to="/main">

@@ -1,6 +1,6 @@
-import {  InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { RotatingLines } from 'react-loader-spinner';
+import { GiCheckMark } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
@@ -24,10 +24,10 @@ const Login = () => {
         const myForm = new FormData();
         myForm.set("phone", phone);
         myForm.set("password", password);
-        if(phone && password){
+        if (phone && password) {
             dispatch(createLogin(myForm));
-        }else{
-          message.error("Enter Phone or Password")
+        } else {
+            message.error("Enter Phone or Password")
         }
     };
     useEffect(() => {
@@ -35,7 +35,7 @@ const Login = () => {
             navigate('/main');
             // toast.info('Login Succesfull');
         }
-    }, [user, navigate,error]);
+    }, [user, navigate, error]);
     return (
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20 ">
@@ -48,7 +48,7 @@ const Login = () => {
                             error ? <Alert severity="error" className="mt-5">{error}</Alert> : null
                         } */}
                         {
-                            error ?<Alert message={error} type="error"  className="mt-4"/> : null
+                            error ? <Alert message={error} type="error" className="mt-4" /> : null
                         }
                         <form action="" className="space-y-6 py-6 mt-6" onSubmit={registerSubmit}>
 
@@ -68,8 +68,8 @@ const Login = () => {
                                 value={phone} onChange={(e) => setPhone(e.target.value)}
                             />
                             <TextField
-                                 id="standard-basic"
-                                
+                                id="standard-basic"
+
                                 label="ট্রাস্ট-পে পিন"
                                 InputProps={{
                                     startAdornment: (
@@ -83,25 +83,23 @@ const Login = () => {
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
 
-                            <div className="mt-5 text-start">
-                                <Link to="/forgot/password"> <span className="text-sm font-medium leading-6 text-violet-500">পিন ভূলে গেছেন ?</span>
-                                </Link>
-                            </div>
-                            <div>
+
+                            <div className="flex justify-between">
+                                <div className="text-start">
+                                    <Link to="/forgot/password"> <span className="mt-3 text-sm font-medium leading-6 text-violet-500">পিন ভূলে গেছেন ?</span>
+                                    </Link>
+                                </div>
 
                                 {
-                                    isLoading ? <div className="ml-36 w-1/4 mx-auto mb-4">
-                                        <RotatingLines
-                                            strokeColor="#741ADF"
-                                            strokeWidth="3"
-                                            animationDuration="0.75"
-                                            width="36"
-                                            visible={true}
-                                        />
-                                    </div> :<button className={password.length >4 ? 'h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5':'h-12 w-full  bg-gray-300 border-gray-300 hover:bg-gray-300 hover:border-gray-300 mb-5'}>
-                                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
+                                    isLoading ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full '>
+                                        <span className="font-semibold text-white text-xs">লোডিং</span>
+                                    </button> : <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                        <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
                                     </button>
                                 }
+
+                            </div>
+                            <div>
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? </span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-violet-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>

@@ -13,7 +13,7 @@ const PaymentCategory = () => {
 
     }
     return (
-        <div className="mt-24 ">
+        <div className="mt-24 lg:mt-24">
                 <div className="flex justify-around ">
                     <div>
                         <Link to="/send">

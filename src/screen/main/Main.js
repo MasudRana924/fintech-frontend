@@ -32,8 +32,8 @@ const Main = () => {
     );
 
     return (
-        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
-            <div className="w-full  bg-violet-500 h-16 rounded-b-lg flex justify-between main-navbar">
+        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg ">
+            <div className=" w-full lg:w-1/4  bg-violet-500 h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
                         {
@@ -57,7 +57,7 @@ const Main = () => {
                     <Link to="/reward">
                         <AiFillTrophy className="text-white text-3xl"></AiFillTrophy>
                     </Link>
-                    <AiOutlineMenu className="text-white text-3xl ml-5" onClick={showMenu}></AiOutlineMenu>
+                    <AiOutlineMenu className="text-white text-3xl ml-5 lg:hidden block" onClick={showMenu}></AiOutlineMenu>
                 </div>
             </div>
 
