@@ -40,7 +40,7 @@ const Login = () => {
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20 ">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
-                    <img src={logo} alt="" className="w-3/4 mx-auto h-16 lg:mt-8" />
+                    <img src={logo} alt="" className="w-2/4 mx-auto h-16 lg:mt-8" />
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
                         <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
