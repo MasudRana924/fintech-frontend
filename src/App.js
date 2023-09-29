@@ -42,8 +42,8 @@ function App() {
           <Routes >
             <Route path="/" element={<Login></Login>}></Route>
             <Route path="/home" element={<Login></Login>}></Route>
-            <Route path="/login" element={<Login></Login>}></Route>
-            <Route path="/signup" element={<Signup></Signup>}></Route>
+            <Route path="/account/login" element={<Login></Login>}></Route>
+            <Route path="/account/signup" element={<Signup></Signup>}></Route>
             <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
             <Route path="/send" element={<SendMoney></SendMoney>}></Route>
             <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>

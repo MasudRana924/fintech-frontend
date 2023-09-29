@@ -9,20 +9,21 @@ import flag from '../../images/bangladesh.png';
 import QRCode from "qrcode"
 import { useState } from 'react';
 import { addQRToStore } from '../../state/transaction/sendSlice';
-
+import { logout } from '../../state/user/loginSlice';
+import { FiLogOut } from "react-icons/fi";
 const Profile = () => {
-    const dispatch=useDispatch();
-    const navigate=useNavigate();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
     );
-    const [src,setSrc]=useState('');
-    const QRGenrator=(e)=>{
+    const [src, setSrc] = useState('');
+    const QRGenrator = (e) => {
         e.preventDefault();
         QRCode.toDataURL(`https://m-pay.vercel.app/${user?.phone}`).then(setSrc);
         dispatch(addQRToStore(src));
-        console.log('src',src);
-        if(src){
+        console.log('src', src);
+        if (src) {
             navigate("/my/qrcode")
         }
     }
@@ -52,7 +53,7 @@ const Profile = () => {
                     {
                         user?.firstname && user?.lastname ? <p className="pt-4 text-gray-900 text-center text-sm font-medium mb-4">{user.firstname} {user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
                     }
-                    <img src={flag} alt="" className="w-10 h-10"/>
+                    <img src={flag} alt="" className="w-10 h-10" />
                 </div>
             </div>
             <div className="w-full h-10 border border-slate-100 flex justify-between mt-10 ">
@@ -84,6 +85,20 @@ const Profile = () => {
                     <p className="text-start text-sm font-medium mt-2 ml-2">আমার কিউআরকোড</p>
                 </Link>
                 <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
+            </div>
+            <div className="hidden w-full h-10 border border-slate-100 lg:flex justify-between mt-5 ">
+                <Link to="/all/transactions">
+                    <BiImageAdd className="text-violet-500 text-2xl mt-2 ml-2"></BiImageAdd>
+                </Link>
+                <Link to="/all/transactions">
+                    <p className="text-start text-sm font-medium mt-2 ml-2">লেনদেন সমূহ</p>
+                </Link>
+                <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
+            </div>
+            <div className="hidden  lg:flex flex-1 justify-center items-center gap-2 mb-44 border border-slate-100 mt-5">
+                <FiLogOut className="mr-1 text-md mt-4 text-violet-500"></FiLogOut>
+                <button className=" text-md  text-start mt-5" onClick={() => dispatch(logout())}>  <span className="">
+                    লগআউট</span></button>
             </div>
         </div>
     );

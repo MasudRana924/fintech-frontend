@@ -27,13 +27,13 @@ const Login = () => {
         if (phone && password) {
             dispatch(createLogin(myForm));
         } else {
-            message.error("Enter Phone or Password")
+            message.error("নাম্বার ও পিন প্রদান করুণ")
         }
+        
     };
     useEffect(() => {
         if (user) {
             navigate('/main');
-            // toast.info('Login Succesfull');
         }
     }, [user, navigate, error]);
     return (
@@ -100,7 +100,7 @@ const Login = () => {
 
                             </div>
                             <div>
-                                <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? </span> <Link to="/signup"> <span className="text-sm font-semibold leading-6 text-violet-500">নতুন তৈরি করুন</span>
+                                <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? </span> <Link to="/account/signup"> <span className="text-sm font-semibold leading-6 text-violet-500">নতুন তৈরি করুন</span>
                                 </Link>
                             </div>
                         </form>

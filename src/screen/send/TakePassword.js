@@ -92,7 +92,7 @@ const TakePassword = () => {
                 </div>
             </div>
 
-            <div className="w-full flex mt-16 pl-2 mb-44">
+            <div className="w-full flex mt-16 pl-2 mb-96">
 
                 <TextField
                     id="input-with-icon-textfield"

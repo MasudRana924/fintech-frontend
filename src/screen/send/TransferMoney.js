@@ -1,10 +1,10 @@
 import React from 'react';
-import {InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import { useState } from 'react';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch} from 'react-redux';
-import { addAmountToStore} from '../../state/transaction/sendSlice';
+import { useDispatch } from 'react-redux';
+import { addAmountToStore } from '../../state/transaction/sendSlice';
 import { message } from 'antd';
 const TransferMoney = () => {
     const dispatch = useDispatch();
@@ -12,11 +12,14 @@ const TransferMoney = () => {
     const [amount, setAmount] = useState();
     const handleTransfer = (e) => {
         e.preventDefault();
-        if (amount) {
-            dispatch(addAmountToStore({amount}));
-            navigate('/confirm/password');
-        } else {
+        if (amount.length <= 1 ) {
+            message.error("সর্বনিম্ন সেন্ড মানি এমাউন্ট ১০ টাকা")
+        } if (!amount) {
             message.error("টাকা প্রদান করুণ")
+        }
+        if (amount) {
+            dispatch(addAmountToStore({ amount }));
+            navigate('/confirm/password');
         }
 
     }
@@ -48,7 +51,7 @@ const TransferMoney = () => {
                     className="w-full"
                     value={amount} onChange={(e) => setAmount(e.target.value)}
                 />
-                <button className="w-12 bg-violet-500" onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                <button className="w-12 bg-violet-500 " onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
 
             </div>
         </div>

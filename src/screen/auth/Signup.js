@@ -7,7 +7,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import logo from '../../images/logo (2).png';
 import { createSignUp } from '../../state/user/signupSlice';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { message } from 'antd';
 const Signup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
@@ -21,14 +21,26 @@ const Signup = () => {
         const myForm = new FormData();
         myForm.set("phone", phone);
         myForm.set("password", password);
-        dispatch(createSignUp(myForm));
+        if(!phone && !password){
+            message.error("নাম্বার ও পিন প্রদান করুণ")
+        }
+        if(!phone.length>=11){
+            // dispatch(createSignUp(myForm));
+          
+        }
+        if(phone && password){
+            dispatch(createSignUp(myForm));
+            message.success("ট্রাস্ট-পে একাউন্ট ক্রিয়েট");
+            navigate('/account/login');
+        }
+       
 
     };
-    useEffect(() => {
-        if (success) {
-            navigate('/login');
-        }
-    }, [success, navigate]);
+    // useEffect(() => {
+    //     if (success) {
+    //         navigate('/account/login');
+    //     }
+    // }, [success, navigate]);
     return (
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
@@ -75,7 +87,7 @@ const Signup = () => {
                             <div className="flex justify-between">
 
                                 <div>
-                                    <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/login"> <span className="text-sm font-semibold leading-6 text-violet-500">লগইন করুন</span>
+                                    <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/account/login"> <span className="text-sm font-semibold leading-6 text-violet-500">লগইন করুন</span>
                                     </Link>
                                 </div>
                                 <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>

@@ -6,5 +6,5 @@ export default  function PrivateRoute({children}){
     const { token,loggeduser } = useSelector(
                 (state) => state.userDetails
             );
-            return token? children:<Navigate to="/login"/>
+            return token? children:<Navigate to="/account/login"/>
 };

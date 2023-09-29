@@ -77,7 +77,7 @@ const SendMoney = () => {
                 <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
 
             </div>
-            <div className="mt-6 w-full pl-2 pr-2 mb-12">
+            <div className="mt-6 w-full pl-2 pr-2 mb-96">
                 <div className="">
                     <p className="text-start text-sm pt-3 ml-3">Suggest</p>
                     <div className="flex mt-4">
