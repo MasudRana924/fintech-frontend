@@ -58,9 +58,7 @@ const SendMoney = () => {
             }));
             dispatch(addPhoneToStore({ receiverphone, senderphone }));
             dispatch(addtypeToStore({ type, receiverType }));
-            
         }
-
     }
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg ">

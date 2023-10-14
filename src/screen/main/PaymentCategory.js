@@ -36,10 +36,11 @@ const PaymentCategory = () => {
                     {/* <p className="text-xs font-thin">mobile recharge</p> */}
                     <p className="text-xs font-medium text-gray-300">রিচার্জ</p>
                 </div>
-                <div onClick={handleClick}>
-                    <RiWechatPayLine className="text-xl text-gray-300 ml-3 mb-1"></RiWechatPayLine>
-                    <p className="text-xs font-medium text-gray-300">পেমেন্ট</p>
-                    {/* <p className="text-xs font-thin">make payment</p> */}
+                <div >
+                 <Link to="/payment/number">
+                    <RiWechatPayLine className="text-xl text-violet-500 ml-3 mb-1"></RiWechatPayLine>
+                    <p className="text-xs font-medium ">পেমেন্ট</p>
+                   </Link>
                 </div>
             </div>
             <div className="mt-5 flex justify-around" >

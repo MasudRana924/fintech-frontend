@@ -27,6 +27,11 @@ import Loan from './screen/loan/Loan';
 import Savings from './screen/savings/Savings';
 import Confirm from './screen/cashout/Confirm';
 import CashOutSuccess from './screen/cashout/Success';
+import PaymentNumber from './screen/payment/PaymentNumber';
+import Paymentamount from './screen/payment/Paymentamount';
+import PaymentPassword from './screen/payment/PaymentPassword';
+import ConfirmPayment from './screen/payment/ConfirmPayment';
+import PaymentSuccess from './screen/payment/PaymentSuccess';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,17 +54,31 @@ function App() {
             <Route path="/account/login" element={<Login></Login>}></Route>
             <Route path="/account/signup" element={<Signup></Signup>}></Route>
             <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
+            {/* sendmoney */}
             <Route path="/send" element={<PrivateRoute><SendMoney></SendMoney></PrivateRoute>}></Route>
             <Route path="/all/transactions" element={<PrivateRoute><AllTransactions></AllTransactions></PrivateRoute>}></Route>
             <Route path="/sendmoney" element={<PrivateRoute><TransferMoney></TransferMoney></PrivateRoute>}></Route>
             <Route path="/confirm/password" element={<PrivateRoute><TakePassword></TakePassword></PrivateRoute>}></Route>
             <Route path="/confirm/sendmoney" element={<PrivateRoute><ConfirmSendMoney></ConfirmSendMoney></PrivateRoute>}></Route>
             <Route path="/success" element={<PrivateRoute><Success></Success></PrivateRoute>}></Route>
+            {/* cashout */}
             <Route path="/cashout" element={<PrivateRoute><Cashout></Cashout></PrivateRoute>}></Route>
             <Route path="/cash/out/money" element={<PrivateRoute><ConfirmCashout></ConfirmCashout></PrivateRoute>}></Route>
             <Route path="/cash/out/confirm" element={<PrivateRoute><CashoutPinPage></CashoutPinPage></PrivateRoute>}></Route>
             <Route path="/confirm/cashout" element={<PrivateRoute><Confirm></Confirm></PrivateRoute>}></Route>
             <Route path="/cashout/success" element={<PrivateRoute><CashOutSuccess></CashOutSuccess></PrivateRoute>}></Route>
+            {/* payment */}
+            <Route path="/payment/number" element={<PrivateRoute><PaymentNumber></PaymentNumber></PrivateRoute>}></Route>
+            <Route path="/payment/amount" element={<PrivateRoute><Paymentamount></Paymentamount></PrivateRoute>}></Route>
+            <Route path="/payment/password" element={<PrivateRoute><PaymentPassword></PaymentPassword></PrivateRoute>}></Route>
+            <Route path="/confirm/payment" element={<PrivateRoute><ConfirmPayment></ConfirmPayment></PrivateRoute>}></Route>
+            <Route path="/payment/success" element={<PrivateRoute><PaymentSuccess></PaymentSuccess></PrivateRoute>}></Route>
+
+
+
+
+
+            {/* settings */}
             <Route path="/settings" element={<PrivateRoute><Settings></Settings></PrivateRoute>}></Route>
             <Route path="/update/name" element={<PrivateRoute><UpdateName></UpdateName></PrivateRoute>}></Route>
             <Route path="/update" element={<PrivateRoute><UpdateInfo></UpdateInfo></PrivateRoute>}></Route>
@@ -70,6 +89,7 @@ function App() {
             <Route path="/my/qrcode" element={<PrivateRoute><QRCode></QRCode></PrivateRoute>}></Route>
             <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
+
 
           </Routes>
         </BrowserRouter>
