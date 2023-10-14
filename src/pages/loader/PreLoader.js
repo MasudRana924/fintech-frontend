@@ -8,7 +8,7 @@ const PreLoader = () => {
         <div className="ml-5 w-3/4 mx-auto lg:ml-28  container">
             <div className="flex flex-1 items-center justify-center ">
                 <div >
-                <p className="pt-96 pl-12 text-2xl text-white pre-title-text">ট্রাস্ট-পে</p>
+                <p className="pt-64 pl-12 text-3xl text-white pre-title-text">ট্রাস্ট-পে</p>
                 <div className="pl-16">
                 <ThreeDots 
                      color="#fff"
