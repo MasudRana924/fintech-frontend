@@ -32,6 +32,9 @@ import Paymentamount from './screen/payment/Paymentamount';
 import PaymentPassword from './screen/payment/PaymentPassword';
 import ConfirmPayment from './screen/payment/ConfirmPayment';
 import PaymentSuccess from './screen/payment/PaymentSuccess';
+import Support from './pages/support/Support';
+import Cuppon from './pages/cuppon/Cuppon';
+import Info from './pages/trustpay/Info';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,9 +48,7 @@ function App() {
       {loading ? <div>
         <PreLoader></PreLoader>
       </div> : <div className="App">
-
         <BrowserRouter>
-
           <Routes >
             <Route path="/" element={<Login></Login>}></Route>
             <Route path="/home" element={<Login></Login>}></Route>
@@ -73,11 +74,6 @@ function App() {
             <Route path="/payment/password" element={<PrivateRoute><PaymentPassword></PaymentPassword></PrivateRoute>}></Route>
             <Route path="/confirm/payment" element={<PrivateRoute><ConfirmPayment></ConfirmPayment></PrivateRoute>}></Route>
             <Route path="/payment/success" element={<PrivateRoute><PaymentSuccess></PaymentSuccess></PrivateRoute>}></Route>
-
-
-
-
-
             {/* settings */}
             <Route path="/settings" element={<PrivateRoute><Settings></Settings></PrivateRoute>}></Route>
             <Route path="/update/name" element={<PrivateRoute><UpdateName></UpdateName></PrivateRoute>}></Route>
@@ -89,11 +85,11 @@ function App() {
             <Route path="/my/qrcode" element={<PrivateRoute><QRCode></QRCode></PrivateRoute>}></Route>
             <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
-
-
+            <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route>
+            <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
+            <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
-
       </div>}
     </div>
   );

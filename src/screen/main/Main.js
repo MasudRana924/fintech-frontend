@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AiFillTrophy, AiOutlineMenu } from "react-icons/ai";
-import { FiLogOut, FiSettings } from "react-icons/fi";
+import { AiFillTrophy, AiOutlineMenu ,AiOutlineFileUnknown} from "react-icons/ai";
+import { FiLogOut, FiSettings,FiInfo } from "react-icons/fi";
 import { BiHomeAlt2, BiTransfer } from "react-icons/bi";
+import { PiHeadsetDuotone} from "react-icons/pi";
+import { MdOutlineDiscount} from "react-icons/md";
 import Sliderr from './Sliderr';
 import PaymentCategory from './PaymentCategory';
 import { Link } from 'react-router-dom';
@@ -60,7 +62,6 @@ const Main = () => {
                     <AiOutlineMenu className="text-white text-3xl ml-5 lg:hidden block" onClick={showMenu}></AiOutlineMenu>
                 </div>
             </div>
-
             <PaymentCategory></PaymentCategory>
             <Mybkash></Mybkash>
             <Sliderr></Sliderr>
@@ -83,6 +84,22 @@ const Main = () => {
                     <Link to="/all/transactions">
                         <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
                             লেনদেন সমূহ</span></button>
+                    </Link>
+                    <Link to="/user/info">
+                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <FiInfo className="mr-1 text-xl text-violet-500"></FiInfo> <span className="ml-5">
+                        তথ্য হালনাগাদ</span></button>
+                    </Link>
+                    <Link to="/cuppon">
+                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOutlineDiscount className="mr-1 text-xl text-violet-500"></MdOutlineDiscount> <span className="ml-5">
+                        কুপন</span></button>
+                    </Link>
+                    <Link to="/info">
+                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <AiOutlineFileUnknown className="mr-1 text-xl text-violet-500"></AiOutlineFileUnknown> <span className="ml-5">
+                        ট্রাস্ট-পে নিয়ে জানুন </span></button>
+                    </Link>
+                    <Link to="/support">
+                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <PiHeadsetDuotone className="mr-1 text-xl text-violet-500"></PiHeadsetDuotone> <span className="ml-5">
+                        সাপোর্ট </span></button>
                     </Link>
                     <Link to="/settings">
                         <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-violet-500"></FiSettings> <span className="ml-5">

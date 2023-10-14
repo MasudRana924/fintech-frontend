@@ -33,7 +33,7 @@ const AllTransactions = () => {
                     </Link>
                 </div>
                 {/* <p className="text-white text-xl mt-1 ml-16">Inbox</p> */}
-                <p className="text-white text-sm mt-4 ml-8">লেনদেন সমূহ</p>
+                <p className="text-white text-md mt-4 ml-8">লেনদেন সমূহ</p>
             </div>
             {
                 isLoading ? <div className=" mt-20">
