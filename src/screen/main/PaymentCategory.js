@@ -5,6 +5,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { RiWechatPayLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import { message } from 'antd';
+
 const PaymentCategory = () => {
 
     const handleClick = (e) => {
@@ -52,9 +53,12 @@ const PaymentCategory = () => {
                     <BsLightbulb className="text-xl  text-gray-300 ml-6 mb-1"></BsLightbulb>
                     <p className="text-xs font-medium ml-4 text-gray-300">পে-বিল</p>
                 </div>
-                <div onClick={handleClick}>
-                    <BsSave className="text-xl text-gray-300 ml-6 mb-1"></BsSave>
-                    <p className="text-xs font-medium ml-4 text-gray-300">সেভিংস</p>
+                <div >
+                    <Link to="/savings">
+                        <BsSave className="text-xl text-violet-500 ml-6 mb-1"></BsSave>
+                        <p className="text-xs font-medium ml-3 ">সেভিংস</p>
+                    </Link>
+
                 </div>
                 <div>
                     <Link to="/apply/loan">

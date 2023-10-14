@@ -24,6 +24,7 @@ import ConfirmSendMoney from './screen/send/ConfirmSendMoney';
 import Profile from './pages/user/Profile';
 import QRCode from './pages/user/QRCode';
 import Loan from './screen/loan/Loan';
+import Savings from './screen/savings/Savings';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +65,7 @@ function App() {
             <Route path="/profile" element={<Profile></Profile>}></Route>
             <Route path="/my/qrcode" element={<QRCode></QRCode>}></Route>
             <Route path="/apply/loan" element={<Loan></Loan>}></Route>
+            <Route path="/savings" element={<Savings></Savings>}></Route>
 
           </Routes>
         </BrowserRouter>
