@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputAdornment, TextField } from '@mui/material';
-import {useState} from 'react';
-import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
+import { useState } from 'react';
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
@@ -11,24 +11,26 @@ const Cashout = () => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails
     );
-  const user=loggeduser.user;
+    const user = loggeduser.user;
+    
     const dispatch = useDispatch();
-    const navigate=useNavigate()
-    const [receiverphone,setPhone]=useState('');
-    const senderphone=user.phone
-    const type='Cash Out';
-    const receiverType="Received Money"
+    const navigate = useNavigate()
+    const [receiverphone, setPhone] = useState('');
+    const senderphone = user.phone
+    const type = 'Cash Out';
+    const receiverType = "Received Money"
     const handleStore = (e) => {
         e.preventDefault();
-        if(receiverphone){
-            dispatch(addPhoneToStore({receiverphone,senderphone}));
-            dispatch(addtypeToStore({type,receiverType}));
-        navigate('/cash/out/money');
-        }else{
+        if (receiverphone) {
+            dispatch(addPhoneToStore({ receiverphone, senderphone }));
+            dispatch(addtypeToStore({ type, receiverType }));
+            navigate('/cash/out/money');
+        } else {
             alert('enter phone')
         }
-        
+
     }
+   
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
@@ -55,7 +57,10 @@ const Cashout = () => {
                     className="w-full"
                     value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                 />
-                <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                {
+                    receiverphone.length === 11 ? <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                }
+                        
 
             </div>
         </div>

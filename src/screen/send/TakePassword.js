@@ -23,7 +23,6 @@ const TakePassword = () => {
     const { amount } = useSelector(state => state.type.amount);
     const [password, setPass] = useState();
     const data={password}
-    // const data = { receiverphone, type, amount, receiverType, senderphone,password }
     const handleTransfer = (e) => {
         e.preventDefault();
         if (password) {
@@ -31,20 +30,7 @@ const TakePassword = () => {
                 data, userToken
             }));
             dispatch(addPasswordToStore({ password }))
-            // dispatch(createSendMoney({
-            //     data, userToken
-            // }));
-            // dispatch(clearStore());
-            // navigate('/success');
-            // if(success){
-            //     dispatch(createSendMoney({
-            //         data, userToken
-            //     }));
-            //     dispatch(clearStore());
-            // }
-        } else {
-            message.error("পাসওয়ার্ড প্রদান করুণ")
-        }
+        } 
     }
 
     useEffect(() => {
@@ -108,7 +94,9 @@ const TakePassword = () => {
                     className="w-full"
                      value={password} onChange={(e) => setPass(e.target.value)}
                 />
-                <button className={password?.length>4? 'w-12 bg-violet-500':'w-12 bg-gray-500 disabled'} onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+              {
+                password ?  <button className='w-12 bg-violet-500' onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>: <button className='w-12 bg-gray-500' onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+              }
 
             </div>
         </div>

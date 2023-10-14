@@ -21,26 +21,18 @@ const Signup = () => {
         const myForm = new FormData();
         myForm.set("phone", phone);
         myForm.set("password", password);
-        if(!phone && !password){
+        if (!phone && !password) {
             message.error("নাম্বার ও পিন প্রদান করুণ")
         }
-        if(!phone.length>=11){
-            // dispatch(createSignUp(myForm));
-          
-        }
-        if(phone && password){
+        if (phone.length >= 11) {
             dispatch(createSignUp(myForm));
-            message.success("ট্রাস্ট-পে একাউন্ট ক্রিয়েট");
+        }
+    };
+    useEffect(() => {
+        if (success) {
             navigate('/account/login');
         }
-       
-
-    };
-    // useEffect(() => {
-    //     if (success) {
-    //         navigate('/account/login');
-    //     }
-    // }, [success, navigate]);
+    }, [success, navigate]);
     return (
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
@@ -84,15 +76,19 @@ const Signup = () => {
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
 
-                            <div className="flex justify-between">
+                            <div className="flex  items-center justify-between">
 
                                 <div>
                                     <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/account/login"> <span className="text-sm font-semibold leading-6 text-violet-500">লগইন করুন</span>
                                     </Link>
                                 </div>
-                                <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                {
+                                    phone.length > 10 && password.length===5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                        <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
+                                    </button> : <button disabled className='h-12 w-12  bg-gray-500 border-gray-500 hover:bg-gray-500  hover:border-gray-500 border rounded-full disabled'>
                                         <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
                                     </button>
+                                }
                             </div>
                         </form>
                     </div>

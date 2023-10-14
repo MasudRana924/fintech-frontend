@@ -22,7 +22,6 @@ const Profile = () => {
         e.preventDefault();
         QRCode.toDataURL(`https://m-pay.vercel.app/${user?.phone}`).then(setSrc);
         dispatch(addQRToStore(src));
-        console.log('src', src);
         if (src) {
             navigate("/my/qrcode")
         }
@@ -97,8 +96,9 @@ const Profile = () => {
             </div>
             <div className="hidden  lg:flex flex-1 justify-center items-center gap-2 mb-44 border border-slate-100 mt-5">
                 <FiLogOut className="mr-1 text-md mt-4 text-violet-500"></FiLogOut>
-                <button className=" text-md  text-start mt-5" onClick={() => dispatch(logout())}>  <span className="">
-                    লগআউট</span></button>
+                <button className="text-md  text-start mt-5 text-gray-900" onClick={() => dispatch(logout())}>
+                    লগআউট
+                </button>
             </div>
         </div>
     );

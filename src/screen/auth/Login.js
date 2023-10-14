@@ -29,7 +29,7 @@ const Login = () => {
         } else {
             message.error("নাম্বার ও পিন প্রদান করুণ")
         }
-        
+
     };
     useEffect(() => {
         if (user) {
@@ -44,9 +44,7 @@ const Login = () => {
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
                         <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
-                        {/* {
-                            error ? <Alert severity="error" className="mt-5">{error}</Alert> : null
-                        } */}
+
                         {
                             error ? <Alert message={error} type="error" className="mt-4" /> : null
                         }
@@ -84,7 +82,7 @@ const Login = () => {
                             />
 
 
-                            <div className="flex justify-between">
+                            <div className="flex items-center justify-between">
                                 <div className="text-start">
                                     <Link to="/forgot/password"> <span className="mt-3 text-sm font-medium leading-6 text-violet-500">পিন ভূলে গেছেন ?</span>
                                     </Link>
@@ -93,10 +91,19 @@ const Login = () => {
                                 {
                                     isLoading ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full '>
                                         <span className="font-semibold text-white text-xs">লোডিং</span>
-                                    </button> : <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                    </button> : <div>
+                                        {
+                                           phone.length===11 && password.length===5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                           <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
+                                       </button>:<button disabled className='h-12 w-12  bg-gray-500 border-gray-500 hover:bg-gray-500  hover:border-gray-500 border rounded-full disabled'>
                                         <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
                                     </button>
+                                        }
+                                    </div>
                                 }
+                                {/* <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                        <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
+                                    </button> */}
 
                             </div>
                             <div>

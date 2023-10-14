@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiUserCircle } from 'react-icons/bi';
 import { clearStore } from '../../state/transaction/sendSlice';
@@ -42,17 +42,17 @@ const Success = () => {
                 </div> : null
             }
 
-            
+
 
             {
                 transactions ? <div>
-                    <p className="ml-6 text-green-500 text-md">ধন্যবাদ আপনার লেনদেন টি সম্পূর্ণ হয়েছে</p>
-                    <div className="flex ml-6 mt-6 mb-6">
+                    <p className=" ml-4 text-green-500 text-md text-start">ধন্যবাদ আপনার লেনদেন টি সম্পূর্ণ হয়েছে</p>
+                    <div className="flex m-4  border h-12">
                         <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
                         <p className="mt-2 text-sm">{transactions.receiverphone}</p>
                     </div>
                     <hr />
-                    <div className="pl-3 pr-3">
+                    <div className="m-4">
                         <div className="flex justify-between">
                             <p className=" mt-5  text-start text-violet-500 text-md">ট্রানজেকশন আইডি</p>
                             <p className="text-gray-900 mt-5 f text-start text-md">{transactions.tranId}</p>
@@ -66,6 +66,14 @@ const Success = () => {
                             <p className="text-gray-900 mt-5  text-start text-md">00.00 TK</p>
                         </div>
                     </div>
+                    <div className="m-4 border ">
+                        <p className="text-xs text-center mt-2">লেনদেন করার জন্য আপনি রিওয়ার্ডস পয়েন্ট পেয়েছেন। </p>
+                        <Link to="/reward">
+                        <p className="text-xs text-center mt-2 mb-4 text-violet-500">রিওয়ার্ড দেখুন</p>
+                        </Link>
+
+                    </div>
+
                     <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
                         <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                     </div>
@@ -74,7 +82,7 @@ const Success = () => {
                     </div>
                 </div> : null
             }
-            
+
         </div>
     );
 };

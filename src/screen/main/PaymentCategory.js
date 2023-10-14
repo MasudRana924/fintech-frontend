@@ -22,11 +22,11 @@ const PaymentCategory = () => {
                         <p className="text-xs font-medium">সেন্ড মানি</p>
                         </Link>
                     </div>
-                    <div onClick={handleClick}>
-                        <Link to="">
-                        <BiMoneyWithdraw className="text-xl  text-gray-300 ml-5 mb-1"></BiMoneyWithdraw>
+                    <div >
+                        <Link to="/cashout">
+                        <BiMoneyWithdraw className="text-xl  text-violet-500 ml-5 mb-1"></BiMoneyWithdraw>
                         {/* <p className="text-xs font-thin">cashout</p> */}
-                        <p className="text-xs font-medium text-gray-300" >ক্যাশ আউট</p>
+                        <p className="text-xs font-medium " >ক্যাশ আউট</p>
                         </Link>
                        
                     </div>
