@@ -5,11 +5,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { addPasswordToStore} from '../../state/transaction/sendSlice';
 import { TextField,InputAdornment } from '@mui/material';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import { BiUserCircle } from 'react-icons/bi';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { createTakePassword } from '../../state/transaction/takePasswordSlice';
 import { useEffect } from 'react';
 import { message } from 'antd';
+import { BiUserCircle } from 'react-icons/bi';
 const CashoutPinPage = () => {
     const dispatch = useDispatch();
     const { loggeduser } = useSelector(
@@ -19,6 +19,10 @@ const CashoutPinPage = () => {
     const { success, errorr } = useSelector(
         (state) => state.takePassword
     );
+    const { receiverphone} = useSelector(
+        (state) => state.takeAgentNumber.number
+    );
+    const { amount } = useSelector(state => state.type.amount);
     const navigate = useNavigate();
     const [password, setPass] = useState();
     const data = {password }
@@ -33,7 +37,7 @@ const CashoutPinPage = () => {
     }
     useEffect(() => {
         if (success) {
-             navigate('/cash/out/confirm');
+             navigate('/confirm/cashout');
         }if(errorr){
             message.error("সটিক পাসওয়ার্ড দিন")
         }
@@ -48,6 +52,31 @@ const CashoutPinPage = () => {
                 </div>
                 {/* <p className="text-white text-xl mt-1 ml-5">Send Money</p> */}
                 <p className="text-white text-md mt-2 ml-5">ক্যাশ আউট</p>
+            </div>
+            <div className="mt-6 w-full pl-2 pr-2">
+                <div className="bg-gray-100 h-20 border rounded-lg">
+                    <p className="text-start text-sm pt-3 ml-3">প্রাপক</p>
+                    <div className="flex ml-14">
+                        <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
+                        <p className="mt-2 text-sm">{receiverphone}</p>
+                    </div>
+                </div>
+            </div>
+            <div className="mt-6 w-full pl-2 pr-2 ">
+                <div className="flex justify-between bg-gray-100 h-20 border rounded-lg">
+                    <div className="mt-4">
+                        <p className="text-sm ml-3 ">পরিমান</p>
+                        <p className="text-xs ml-3 mt-2">TK {amount}.00</p>
+                    </div>
+                    <div className="mt-4">
+                        <p className="text-sm ml-3 ">চার্জ</p>
+                        <p className="text-xs ml-3 mt-2">TK 00</p>
+                    </div>
+                    <div className="mt-4 mr-6">
+                        <p className="text-sm ml-3 ">সর্বমোট</p>
+                        <p className="text-xs ml-3 mt-2">TK {amount}.00</p>
+                    </div>
+                </div>
             </div>
 
             <div className=" flex mt-16 m-2 lg:mb-44">

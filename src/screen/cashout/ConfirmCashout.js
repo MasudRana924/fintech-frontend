@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector, } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { addAmountToStore } from '../../state/transaction/sendSlice';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { InputAdornment, TextField } from '@mui/material';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { BiUserCircle } from 'react-icons/bi';
 const ConfirmCashout = () => {
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
+    );
+    const { receiverphone} = useSelector(
+        (state) => state.takeAgentNumber.number
     );
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ const ConfirmCashout = () => {
                 <div className="flex  mt-2 mb-2">
 
                     <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
-                    <p className="mt-2 text-sm">+01914212078</p>
+                    <p className="mt-2 text-sm">{receiverphone}</p>
                 </div>
             </div>
             <div className="border m-2 ">

@@ -25,6 +25,8 @@ import Profile from './pages/user/Profile';
 import QRCode from './pages/user/QRCode';
 import Loan from './screen/loan/Loan';
 import Savings from './screen/savings/Savings';
+import Confirm from './screen/cashout/Confirm';
+import CashOutSuccess from './screen/cashout/Success';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -47,25 +49,27 @@ function App() {
             <Route path="/account/login" element={<Login></Login>}></Route>
             <Route path="/account/signup" element={<Signup></Signup>}></Route>
             <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
-            <Route path="/send" element={<SendMoney></SendMoney>}></Route>
-            <Route path="/all/transactions" element={<AllTransactions></AllTransactions>}></Route>
-            <Route path="/sendmoney" element={<TransferMoney></TransferMoney>}></Route>
-            <Route path="/confirm/password" element={<TakePassword></TakePassword>}></Route>
-            <Route path="/confirm/sendmoney" element={<ConfirmSendMoney></ConfirmSendMoney>}></Route>
-            <Route path="/success" element={<Success></Success>}></Route>
-            <Route path="/cashout" element={<Cashout></Cashout>}></Route>
-            <Route path="/cash/out/money" element={<ConfirmCashout></ConfirmCashout>}></Route>
-            <Route path="/cash/out/confirm" element={<CashoutPinPage></CashoutPinPage>}></Route>
-            <Route path="/settings" element={<Settings></Settings>}></Route>
-            <Route path="/update/name" element={<UpdateName></UpdateName>}></Route>
+            <Route path="/send" element={<PrivateRoute><SendMoney></SendMoney></PrivateRoute>}></Route>
+            <Route path="/all/transactions" element={<PrivateRoute><AllTransactions></AllTransactions></PrivateRoute>}></Route>
+            <Route path="/sendmoney" element={<PrivateRoute><TransferMoney></TransferMoney></PrivateRoute>}></Route>
+            <Route path="/confirm/password" element={<PrivateRoute><TakePassword></TakePassword></PrivateRoute>}></Route>
+            <Route path="/confirm/sendmoney" element={<PrivateRoute><ConfirmSendMoney></ConfirmSendMoney></PrivateRoute>}></Route>
+            <Route path="/success" element={<PrivateRoute><Success></Success></PrivateRoute>}></Route>
+            <Route path="/cashout" element={<PrivateRoute><Cashout></Cashout></PrivateRoute>}></Route>
+            <Route path="/cash/out/money" element={<PrivateRoute><ConfirmCashout></ConfirmCashout></PrivateRoute>}></Route>
+            <Route path="/cash/out/confirm" element={<PrivateRoute><CashoutPinPage></CashoutPinPage></PrivateRoute>}></Route>
+            <Route path="/confirm/cashout" element={<PrivateRoute><Confirm></Confirm></PrivateRoute>}></Route>
+            <Route path="/cashout/success" element={<PrivateRoute><CashOutSuccess></CashOutSuccess></PrivateRoute>}></Route>
+            <Route path="/settings" element={<PrivateRoute><Settings></Settings></PrivateRoute>}></Route>
+            <Route path="/update/name" element={<PrivateRoute><UpdateName></UpdateName></PrivateRoute>}></Route>
             <Route path="/update" element={<PrivateRoute><UpdateInfo></UpdateInfo></PrivateRoute>}></Route>
             <Route path="/forgot/password" element={<ForgotPassword></ForgotPassword>}></Route>
             <Route path="/verify" element={<OtpVerify></OtpVerify>}></Route>
-            <Route path="/reward" element={<Reward></Reward>}></Route>
-            <Route path="/profile" element={<Profile></Profile>}></Route>
-            <Route path="/my/qrcode" element={<QRCode></QRCode>}></Route>
-            <Route path="/apply/loan" element={<Loan></Loan>}></Route>
-            <Route path="/savings" element={<Savings></Savings>}></Route>
+            <Route path="/reward" element={<PrivateRoute><Reward></Reward></PrivateRoute>}></Route>
+            <Route path="/profile" element={<PrivateRoute><Profile></Profile></PrivateRoute>}></Route>
+            <Route path="/my/qrcode" element={<PrivateRoute><QRCode></QRCode></PrivateRoute>}></Route>
+            <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
+            <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
 
           </Routes>
         </BrowserRouter>

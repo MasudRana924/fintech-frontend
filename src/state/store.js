@@ -11,6 +11,8 @@ import updateProfileSlice from '../state/user/updateNameSlice'
 import userDetailsSlice from "./user/userDetailsSlice";
 import takeNumberSlice from "./transaction/takeNumberSlice";
 import takePasswordSlice from "./transaction/takePasswordSlice";
+import cashOutSlice from "./transaction/cashOutSlice";
+import  takeAgentNumberSlice  from "./transaction/agentNumberSlice";
 const persistConfig = {
   key: "authentication",
   storage
@@ -27,10 +29,12 @@ const rootReducer = combineReducers({
   transactions:mytransactionsSlice,
   type:storeReducer,
   takeReciverNumber:takeNumberSlice,
+  takeAgentNumber:takeAgentNumberSlice,
   takePassword:takePasswordSlice,
   sendMoney:sendMoneySlice,
   updateName:updateProfileSlice,
   userdetails:userDetailsSlice,
+  cashOut:cashOutSlice
 
 });
 

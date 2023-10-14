@@ -2,13 +2,11 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiUserCircle } from 'react-icons/bi';
-import { clearStore } from '../../state/transaction/sendSlice';
-import { Alert } from '@mui/material';
 import cycle from '../../images/bicycle.png'
-const Success = () => {
-    const { transactions } = useSelector(state => state.sendMoney.sendmoney);
-    const { error, isLoading } = useSelector(state => state.sendMoney);
-    const { type } = useSelector(state => state.type.type);
+import { clearStore } from '../../state/transaction/sendSlice';
+const CashOutSuccess = () => {
+    const { transactions } = useSelector(state => state.cashOut.cashout);
+    const { isLoading } = useSelector(state => state.cashOut);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
@@ -19,23 +17,7 @@ const Success = () => {
         <div className="lg:w-1/4 mx-auto">
             <div className="flex">
             </div>
-            <div className="w-full p-2 flex justify-between">
-                <div className="">
-                    {
-                        type === 'Send Money' ? <p className="text-violet-500 mt-5 text-md text-start">আপনার সেন্ড মানি</p> : null
-                    }
-                    {
-                        type === 'Cash Out' ? <p className="text-violet-500 mt-5 text-md text-start">আপনার ক্যাশ আউট </p> : null
-                    }
 
-                    {
-                        error ? <div>
-                            <Alert severity="error">{error}</Alert>
-                        </div> : null
-                    }
-                </div>
-
-            </div>
             {
                 isLoading ? <div className="mt-64 lg:w-1/4 mx-auto">
                     <img src={cycle} alt="" className="rocket" />
@@ -74,7 +56,7 @@ const Success = () => {
                     <div className="m-4 border ">
                         <p className="text-xs text-center mt-2">লেনদেন করার জন্য আপনি রিওয়ার্ডস পয়েন্ট পেয়েছেন। </p>
                         <Link to="/reward">
-                        <p className="text-xs text-center mt-2 mb-4 text-violet-500">রিওয়ার্ড দেখুন</p>
+                            <p className="text-xs text-center mt-2 mb-4 text-violet-500">রিওয়ার্ড দেখুন</p>
                         </Link>
 
                     </div>
@@ -92,4 +74,4 @@ const Success = () => {
     );
 };
 
-export default Success;
+export default CashOutSuccess;
