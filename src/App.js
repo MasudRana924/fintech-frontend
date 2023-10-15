@@ -35,6 +35,7 @@ import PaymentSuccess from './screen/payment/PaymentSuccess';
 import Support from './pages/support/Support';
 import Cuppon from './pages/cuppon/Cuppon';
 import Info from './pages/trustpay/Info';
+import CreateSavings from './screen/savings/CreateSavings';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -85,6 +86,7 @@ function App() {
             <Route path="/my/qrcode" element={<PrivateRoute><QRCode></QRCode></PrivateRoute>}></Route>
             <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
+            <Route path="/create/savings" element={<PrivateRoute><CreateSavings></CreateSavings></PrivateRoute>}></Route>
             <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route>
             <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
             <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
