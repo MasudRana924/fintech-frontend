@@ -14,13 +14,16 @@ const PreLoader = () => {
                      color="#fff"
                     strokeWidth="3"
                     animationDuration="0.75"
-                    width="36"
+                    width="48"
                     visible={true}
                 />
                 </div>
                 </div>
 
             </div>
+        </div>
+        <div className="w-1/4 mx-auto">
+        <p className=" text-center text-white text-sm version-text">version 1.0</p>
         </div>
     </div>
     );
