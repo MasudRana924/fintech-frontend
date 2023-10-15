@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatDate } from '../../utilities/helper';
 import { useSelector } from 'react-redux';
+import logo from '../../images/logo (2).png'
 
 const AllTransaction = ({ transaction }) => {
     const { loggeduser, } = useSelector(
@@ -18,7 +19,7 @@ const AllTransaction = ({ transaction }) => {
                         {
                             user._id === transaction.senduserId ? <div>
                                 <img src={transaction.receiveuserAvatar} alt="" className="h-10 w-10 mt-2" />
-                            </div> : null
+                            </div> :  <img src={logo} alt="" className="h-10 w-10 mt-2" />
                         }
                         {
                             user._id === transaction.receiveuserId ? <div>

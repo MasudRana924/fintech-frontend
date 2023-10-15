@@ -70,7 +70,7 @@ const Cashout = () => {
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="এম-পে একাউন্ট"
+                    label="ট্রাস্ট পে একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

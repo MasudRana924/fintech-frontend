@@ -2,6 +2,7 @@ import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+import MySavings from '../../pages/user/Savings';
 
 const Savings = () => {
     return (
@@ -15,22 +16,23 @@ const Savings = () => {
                 <p className="text-white text-md mt-4 ml-5">সেভিংস </p>
             </div>
             <div className="border m-4 rounded-lg p-2 shadow-md">
-                <div className="w-1/4 mx-auto mt-4">
+                <div className="w-1/4 mx-auto mt-2">
                     <GiReceiveMoney className=" h-12 w-16 text-violet-500"></GiReceiveMoney>
                 </div>
                 <p className="text-xs text-start pl-8 mt-4">জমানো টাকার সহজ হিসাব দেখুন</p>
                 <p className="text-xs text-start pl-8 mt-2">১০০ টাকা থেকে সেভিংস শুরু হোক ট্রাস্ট-পে তে </p>
                 <p className="text-xs text-start pl-8 mt-2">সাধারন সেভিংস </p>
-                <p className="text-xs text-start pl-8 mt-2">ইসলামিক সেভিংস </p>
-                <Link >
-                    {/* <p className="text-sm text-violet-500 text-center mt-4 mb-4">হোম-এ ফিরে যাই</p> */}
-                    {/* <button className="mt-4 mb-4 text-violet-500 text-xs border border-violet-500 p-1 rounded-md">আপনার সেভিংস স্কিম খুলুন  সহজেই</button> */}
-                </Link>
-
+                <p className="text-xs text-start pl-8 mt-2 mb-2">ইসলামিক সেভিংস </p>
             </div>
+           <MySavings></MySavings>
+
+
+
+
+
             <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
               <Link to="/create/savings">
-              <button className="text-white pl-2 pr-2 pt-2 text-sm ">আপনার সেভিংস স্কিম খুলুন  সহজেই</button>
+              <button className="text-white pl-2 pr-2 pt-2 text-sm ">নতুন সেভিংস স্কিম খুলুন  সহজেই</button>
               </Link>
             </div>
         </div>
