@@ -15,6 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.main-ui-container{
+  height: 100vh;
+}
 .main-navbar{
   position: fixed;
 	top: 0;

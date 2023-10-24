@@ -10,7 +10,7 @@ const AllTransaction = ({ transaction }) => {
     const user = loggeduser.user;
     
     return (
-        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 ">
+        <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 border-b">
             <div className="text-start flex justify-between gap-5">
 
                 <div className="flex">
