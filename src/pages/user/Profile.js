@@ -71,7 +71,7 @@ const Profile = () => {
                 <Link to="/update/name">
                     <BiImageAdd className="text-violet-500 text-2xl mt-2 ml-2"></BiImageAdd>
                 </Link>
-                <Link to="/update/image">
+                <Link to="/update/profile">
                     <p className="text-start text-sm font-medium mt-2 ml-2">ছবি পরিবর্তন</p>
                 </Link>
                 <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>

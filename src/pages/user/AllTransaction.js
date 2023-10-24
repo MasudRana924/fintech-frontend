@@ -18,7 +18,7 @@ const AllTransaction = ({ transaction }) => {
                     <div>
                         {
                             user._id === transaction.senduserId ? <div>
-                                <img src={transaction.receiveuserAvatar} alt="" className="h-10 w-10 mt-2" />
+                                <img src={transaction.receiveuserAvatar} alt="" className="h-10 w-10 mt-2 border border-violet-500 rounded-full shadow" />
                             </div> :  <img src={logo} alt="" className="h-10 w-10 mt-2" />
                         }
                         {
@@ -46,6 +46,7 @@ const AllTransaction = ({ transaction }) => {
                         }
 
                         <p className="text-xs font-thin ml-2 mt-1">Trans ID : {transaction.tranId}</p>
+                        <p className="text-xs font-thin text-end ml-2 mt-1">{formatDate(transaction.createdAt)}</p>
                     </div>
                 </div>
                 <div>
@@ -62,7 +63,7 @@ const AllTransaction = ({ transaction }) => {
                         </div> : null
                     }
                     <div>
-                        <p className="text-xs font-thin text-end mt-5">{formatDate(transaction.createdAt)}</p>
+                        <p className="text-xs font-thin text-end mt-5">Charge ট 0.00</p>
                     </div>
                 </div>
 

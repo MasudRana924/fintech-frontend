@@ -36,6 +36,7 @@ import Support from './pages/support/Support';
 import Cuppon from './pages/cuppon/Cuppon';
 import Info from './pages/trustpay/Info';
 import CreateSavings from './screen/savings/CreateSavings';
+import UpdateProfile from './pages/user/UpdateProfile';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -90,6 +91,7 @@ function App() {
             <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route>
             <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
             <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
+            <Route path="/update/profile" element={<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
       </div>}

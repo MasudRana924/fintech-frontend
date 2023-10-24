@@ -37,11 +37,11 @@ const AllTransactions = () => {
                 isLoading ? <div className=" mt-20">
                     <Loader ></Loader>
                 </div> : <div>
-                    <div className="mt-20 flex justify-between pl-2 pr-2">
+                    <div className="mt-20 pl-2 pr-2  flex items-center justify-between  border rounded h-12">
                         <p className="text-gray-900 text-xs">ফিল্টার করুন </p>
                         <div className="flex gap-4">
-                        <button className="border rounded-lg border-green-500 h-6 w-12 text-xs">ইন</button>
-                        <button className="border rounded-lg border-red-500 h-6 w-12 text-xs">আউট</button>
+                        <button className="border rounded-lg border-green-500 h-6 w-12 text-xs text-green-500">+ ইন</button>
+                        <button className="border rounded-lg border-red-500 h-6 w-12 text-xs text-red-500">- আউট</button>
                         </div>
                     </div>
                     <div

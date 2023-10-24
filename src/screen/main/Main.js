@@ -40,7 +40,7 @@ const Main = () => {
                     <div className="w-16">
                         {
                             user?.avatar?.url ? <Link to="/profile">
-                                <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute " /></Link> :
+                                <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute  " /></Link> :
                                 <Skeleton variant="circular" width={40} height={40} className="ml-3 mt-2" />
 
                         }
