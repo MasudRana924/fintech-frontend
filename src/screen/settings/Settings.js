@@ -23,7 +23,7 @@ const Settings = () => {
               
             </div>
             <div className="w-full h-10 border border-slate-100 flex justify-between mt-5 ">
-                <Link to="/update/name">
+                <Link to="/update/profile">
                    <p className="mt-2 ml-2">ছবি পরিবর্তন করুন</p>
                 </Link>
                 <FiArrowRight className="text-violet-500 text-2xl mt-2 mr-2"></FiArrowRight>
