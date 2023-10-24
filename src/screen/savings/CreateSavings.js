@@ -17,9 +17,13 @@ const CreateSavings = () => {
     const data=({amount,durations})
     const handleSubmit=(e)=>{
         e.preventDefault();
-        dispatch(createSavings({
-            data, userToken
-        }));
+        if(amount && durations){
+            dispatch(createSavings({
+                data, userToken
+            }));
+        }else{
+            message.error("জমার ধরন , টাকার পরিমান সিলেক্ট করুন")
+        }
     }
     const { successs, errorr } = useSelector(
         (state) => state.savings
@@ -30,7 +34,7 @@ const CreateSavings = () => {
         }if(errorr){
             message.error("এই নাম্বারে ক্যাশ আউট সম্ভব না")
         }
-    }, [successs,errorr,message]);
+    }, [successs,errorr]);
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg ">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">

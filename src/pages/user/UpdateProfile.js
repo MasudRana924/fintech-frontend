@@ -41,7 +41,7 @@ const UpdateProfile = () => {
 
             <div className="mt-12 w-2/4 mx-auto">
                 <div >
-                    <img src={avatarPreview} alt="Avatar Preview" className="h-28 w-28 mt-2 border border-violet-500 rounded-full shadow p-2 mb-4 ml-8" />
+                    <img src={avatarPreview} alt="" className="h-28 w-28 mt-2 border border-violet-500 rounded-full shadow p-2 mb-4 ml-8 text-sm text-center" />
                     <input
                         type="file"
                         name="avatar"

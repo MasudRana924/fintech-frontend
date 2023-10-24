@@ -20,7 +20,7 @@ const MySavings = () => {
     }
     return (
         <div>
-            <p className="text-sm text-start ml-4">আপনার সেভিংস</p>
+           
            {content}
         </div>
     );

@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { formatDate } from '../../utilities/helper';
 import { useSelector } from 'react-redux';
 import logo from '../../images/logo (2).png'
-
+import { FiCopy } from 'react-icons/fi';
+import {message } from 'antd';
 const AllTransaction = ({ transaction }) => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails
     );
     const user = loggeduser.user;
-    
+    const [copy,setCopy]=useState(transaction.tranId);
+    const fCopy=()=>{
+           navigator.clipboard.writeText(copy);
+           message.success("Copied")
+    }
     return (
         <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 border-b">
             <div className="text-start flex justify-between gap-5">
@@ -30,23 +35,26 @@ const AllTransaction = ({ transaction }) => {
                     <div>
                         {
                             user._id === transaction.senduserId ? <div>
-                                <p className="text-xs font-thin ml-2 mt-1">{transaction.type}</p>
+                                <p className="text-xs text-gray-500 font-medium ml-2 mt-1">{transaction.type}</p>
 
-                                <p className="text-xs font-thin ml-2 mt-1">{transaction.receiverphone}</p>
+                                <p className="text-xs text-gray-500 font-medium ml-2 mt-1">{transaction.receiverphone}</p>
 
                             </div> : null
                         }
                         {
                             user._id === transaction.receiveuserId ? <div>
-                                <p className="text-xs font-thin ml-2 mt-1">{transaction.receiverType}</p>
+                                <p className="text-xs text-gray-500 font-medium ml-2 mt-1">{transaction.receiverType}</p>
 
-                                <p className="text-xs font-thin ml-2 mt-1">{transaction.senderphone}</p>
+                                <p className="text-xs text-gray-500 font-medium ml-2 mt-1">{transaction.senderphone}</p>
 
                             </div> : null
                         }
 
-                        <p className="text-xs font-thin ml-2 mt-1">Trans ID : {transaction.tranId}</p>
-                        <p className="text-xs font-thin text-end ml-2 mt-1">{formatDate(transaction.createdAt)}</p>
+                        <div className="flex gap-4 mt-2">
+                        <p className="text-xs font-medium ml-2 text-gray-500">Trans ID : {transaction.tranId}</p>
+                        <FiCopy className="text-sm text-gray-900 font-medium" onClick={fCopy}></FiCopy>
+                        </div>
+                        <p className="text-xs font-medium ml-2 mt-1 mb-2 text-gray-500">{formatDate(transaction.createdAt)}</p>
                     </div>
                 </div>
                 <div>
@@ -63,7 +71,7 @@ const AllTransaction = ({ transaction }) => {
                         </div> : null
                     }
                     <div>
-                        <p className="text-xs font-thin text-end mt-5">Charge ট 0.00</p>
+                        <p className="text-xs text-gray-500 font-medium text-end mt-5">Charge ট 0.00</p>
                     </div>
                 </div>
 
