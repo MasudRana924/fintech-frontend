@@ -4,7 +4,7 @@ import { GiCheckMark } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
-import logo from '../../images/logo (2).png';
+import logo from '../../images/mainlogo.png';
 import { createSignUp } from '../../state/user/signupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
@@ -37,7 +37,7 @@ const Signup = () => {
         <div>
             <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
-                    <img src={logo} alt="" className="w-2/4 mx-auto h-16 lg:mt-8" />
+                    <img src={logo} alt="" className="w-2/4 mx-auto h-20 lg:mt-8" />
                     <div className="mt-6 p-8">
                         {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}
                         <h2 className="text-start text-md font-medium leading-6 text-gray-900">একাউন্ট নেই ?  নতুন তৈরি করুন</h2>
