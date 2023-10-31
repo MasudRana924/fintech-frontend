@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BiUserCircle } from 'react-icons/bi';
 import { clearStore } from '../../state/transaction/sendSlice';
 import { Alert } from '@mui/material';
-import cycle from '../../images/bicycle.png'
+import cycle from '../../images/bicycle.png';
+import Lottie from "lottie-react";
+import successAnimation from '../../images/success.json';
 const Success = () => {
     const { transactions } = useSelector(state => state.sendMoney.sendmoney);
     const { error, isLoading } = useSelector(state => state.sendMoney);
@@ -46,7 +48,10 @@ const Success = () => {
 
             {
                 transactions ? <div>
-                    <p className=" ml-4 text-green-500 text-md text-start">ধন্যবাদ আপনার লেনদেন টি সম্পূর্ণ হয়েছে</p>
+                    {/* <p className=" ml-4 text-green-500 text-md text-start">ধন্যবাদ আপনার লেনদেন টি সম্পূর্ণ হয়েছে</p> */}
+                      <div className='flex flex-1 items-center justify-center'>
+                      <Lottie animationData={successAnimation} className=" h-48 w-48"></Lottie>
+                      </div>
                     <div className="mt-6 w-full pl-2 pr-2">
                         <div className="bg-gray-100 h-20 border rounded-lg">
                             <p className="text-start text-sm pt-3 ml-3">প্রাপক</p>

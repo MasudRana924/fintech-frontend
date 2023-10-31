@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BiUserCircle } from 'react-icons/bi';
 import cycle from '../../images/bicycle.png'
 import { clearStore } from '../../state/transaction/sendSlice';
+import Lottie from "lottie-react";
+import successAnimation from '../../images/success.json';
 const CashOutSuccess = () => {
     const { transactions } = useSelector(state => state.cashOut.cashout);
     const { isLoading } = useSelector(state => state.cashOut);
@@ -28,7 +30,9 @@ const CashOutSuccess = () => {
 
             {
                 transactions ? <div>
-                    <p className=" ml-4 text-green-500 text-md text-start">ধন্যবাদ আপনার লেনদেন টি সম্পূর্ণ হয়েছে</p>
+                   <div className='flex flex-1 items-center justify-center'>
+                      <Lottie animationData={successAnimation} className=" h-48 w-48"></Lottie>
+                      </div>
                     <div className="mt-6 w-full pl-2 pr-2">
                         <div className="bg-gray-100 h-20 border rounded-lg">
                             <p className="text-start text-sm pt-3 ml-3">প্রাপক</p>
