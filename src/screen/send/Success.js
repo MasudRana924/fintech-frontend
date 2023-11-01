@@ -7,6 +7,7 @@ import { Alert } from '@mui/material';
 import cycle from '../../images/bicycle.png';
 import Lottie from "lottie-react";
 import successAnimation from '../../jsons/success.json';
+import senderAnimation from '../../jsons/transfer.json';
 const Success = () => {
     const { transactions } = useSelector(state => state.sendMoney.sendmoney);
     const { error, isLoading } = useSelector(state => state.sendMoney);
@@ -16,6 +17,7 @@ const Success = () => {
     const handleClick = () => {
         dispatch(clearStore());
         navigate('/main');
+        window.location.reload();
     }
     return (
         <div className="lg:w-1/4 mx-auto">
@@ -39,8 +41,9 @@ const Success = () => {
 
             </div>
             {
-                isLoading ? <div className="mt-64 lg:w-1/4 mx-auto">
-                    <img src={cycle} alt="" className="rocket" />
+                isLoading ? <div className="flex flex-1 justify-center items-center min-h-screen">
+                    {/* <img src={cycle} alt="" className="rocket" /> */}
+                    <Lottie animationData={senderAnimation} className=" h-52 w-52"></Lottie>
                 </div> : null
             }
 

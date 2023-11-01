@@ -63,7 +63,7 @@ const storeTypeSlice = createSlice({
             state.password=[];
             state.qrcode=[];
             localStorage.setItem("sendType", JSON.stringify(state.type));
-            localStorage.setItem("setPhone", JSON.stringify(state.receiverphone));
+            localStorage.setItem("receiverphone", JSON.stringify(state.receiverphone));
             localStorage.setItem("amount", JSON.stringify(state.amount));
             localStorage.setItem("setPassword", JSON.stringify(state.password));
             localStorage.setItem("setQR", JSON.stringify(state.qrcode));

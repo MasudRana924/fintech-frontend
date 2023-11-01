@@ -12,6 +12,9 @@ const TransferMoney = () => {
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
     );
+    const { receiverphone} = useSelector(
+        (state) => state.takeReciverNumber.number
+    );
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [amount, setAmount] = useState();
@@ -42,7 +45,7 @@ const TransferMoney = () => {
                 <div className="flex  mt-2 mb-2">
 
                     <BiUserCircle className="h-10 w-12 text-gray-400 "></BiUserCircle>
-                    <p className="mt-2 text-sm">+01914212078</p>
+                    <p className="mt-2 text-sm">{receiverphone}</p>
                 </div>
             </div>
             <div className="border m-2 ">

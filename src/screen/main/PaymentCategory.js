@@ -10,12 +10,11 @@ const PaymentCategory = () => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        message.error("কাজ চলিতেছে")
-
+        message.error("কাজ চলিতেছে");
     }
     return (
-        <div className="mt-24 lg:mt-24">
-            <div className="flex justify-around ">
+        <div className="mt-20 lg:mt-24 border rounded ml-2 mr-2">
+            <div className="flex justify-around mt-2">
                 <div>
                     <Link to="/send">
                         <BsSend className="text-xl text-violet-500 ml-4 mb-1"></BsSend>
@@ -69,7 +68,7 @@ const PaymentCategory = () => {
 
                 </div>
             </div>
-            <div className="mt-5 flex ">
+            <div className="mt-5 flex mb-4">
                 <div onClick={handleClick}>
                     <Link to="">
                         <BiSolidPlaneTakeOff className="text-xl text-gray-300 ml-12 mb-1"></BiSolidPlaneTakeOff>

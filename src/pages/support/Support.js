@@ -23,7 +23,7 @@ const Support = () => {
                     </div>
                     <div className="flex items-center justify-center  mt-4 gap-4">
                     <p className="text-violet-500 text-md"> ইমেইল</p>
-                    <p>+8801952254063</p>
+                    <p>support.trustpay@gmail.com</p>
                     </div>
                 </div>
             </div>

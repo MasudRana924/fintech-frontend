@@ -6,6 +6,7 @@ import { BiUserCircle } from 'react-icons/bi';
 import cycle from '../../images/bicycle.png';
 import Lottie from "lottie-react";
 import successAnimation from '../../jsons/success.json';
+import senderAnimation from '../../jsons/transfer.json';
 const PaymentSuccess = () => {
     const { transactions } = useSelector(state => state.payment.payment);
     const { isLoading } = useSelector(state => state.payment);
@@ -14,15 +15,17 @@ const PaymentSuccess = () => {
     const handleClick = () => {
         dispatch(clearStore());
         navigate('/main');
+        window.location.reload();
     }
     return (
         <div className="lg:w-1/4 mx-auto">
             <div className="flex">
             </div>
             {
-                isLoading ? <div className="mt-64 lg:w-1/4 mx-auto">
-                    <img src={cycle} alt="" className="rocket" />
-                </div> : null
+                isLoading ? <div className="flex flex-1 justify-center items-center min-h-screen">
+                {/* <img src={cycle} alt="" className="rocket" /> */}
+                <Lottie animationData={senderAnimation} className=" h-52 w-52"></Lottie>
+            </div> : null
             }
             {
                 transactions ? <div>

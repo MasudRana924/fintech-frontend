@@ -10,7 +10,7 @@ const ConfirmCashout = () => {
         (state) => state.userdetails.userdetails
     );
     const { receiverphone} = useSelector(
-        (state) => state.takeAgentNumber.number
+        (state) => state.type.receiverphone
     );
     const dispatch = useDispatch();
     const navigate = useNavigate();
