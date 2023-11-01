@@ -1,17 +1,12 @@
 import React from 'react';
-import { RotatingLines,ThreeDots  } from 'react-loader-spinner'
+import Lottie from "lottie-react";
+import preloaderAnimation from '../../jsons/preloader.json';
 const Loader = () => {
     return (
         <div className="container w-2/4 mx-auto md:w-2/4 lg:w-1/4 lg:mx-auto mt-12 lg:mt-12 justify-items-center">
-            <div className=" flex  w-3/4 mx-auto lg:ml-28 lg:w-1/4 gap-4 ">
+            <div className="flex flex-1 items-center justify-center mx-auto">
                 <p className="text-sm font-medium pt-8">লোড হচ্ছে</p>
-                <ThreeDots 
-                    strokeColor="#000000"
-                    strokeWidth="3"
-                    animationDuration="0.75"
-                    width="36"
-                    visible={true}
-                />
+                <Lottie animationData={preloaderAnimation} className=" h-24 w-24 mt-4"></Lottie>
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import { clearStore } from '../../state/transaction/sendSlice';
 import { Alert } from '@mui/material';
 import cycle from '../../images/bicycle.png';
 import Lottie from "lottie-react";
-import successAnimation from '../../images/success.json';
+import successAnimation from '../../jsons/success.json';
 const Success = () => {
     const { transactions } = useSelector(state => state.sendMoney.sendmoney);
     const { error, isLoading } = useSelector(state => state.sendMoney);

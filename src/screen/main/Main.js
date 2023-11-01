@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiFillTrophy, AiOutlineMenu ,AiOutlineFileUnknown} from "react-icons/ai";
 import { FiLogOut, FiSettings,FiInfo } from "react-icons/fi";
-import { BiHomeAlt2, BiTransfer } from "react-icons/bi";
+import { BiHomeAlt2, BiTransfer,BiMenuAltRight } from "react-icons/bi";
 import { PiHeadsetDuotone} from "react-icons/pi";
 import { MdOutlineDiscount} from "react-icons/md";
 import Sliderr from './Sliderr';
@@ -57,9 +57,9 @@ const Main = () => {
                 </div>
                 <div className="flex justify-between mt-3 mr-3">
                     <Link to="/reward">
-                        <AiFillTrophy className="text-white text-3xl"></AiFillTrophy>
+                        <AiFillTrophy className="text-white text-2xl mt-2"></AiFillTrophy>
                     </Link>
-                    <AiOutlineMenu className="text-white text-3xl ml-5 lg:hidden block" onClick={showMenu}></AiOutlineMenu>
+                    <BiMenuAltRight className="text-white text-2xl ml-5 lg:hidden block mt-2" onClick={showMenu}></BiMenuAltRight>
                 </div>
             </div>
             <PaymentCategory></PaymentCategory>

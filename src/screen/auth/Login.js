@@ -2,14 +2,13 @@ import { InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { GiCheckMark } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
 import logo from '../../images/mainlogo.png';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
 import { Alert } from 'antd';
-
+import Lottie from "lottie-react";
+import logoAnimation from '../../jsons/auth.json';
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -38,9 +37,12 @@ const Login = () => {
     }, [user, navigate, error]);
     return (
         <div>
-            <div className="flex flex-col items-center justify-center mt-12 lg:mt-52 mb-20 ">
+            <div className="flex flex-col items-center justify-center mt-12 lg:mt-52  ">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
-                    <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" />
+                    {/* <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" /> */}
+                    <div className="flex flex-1 items-center justify-center mx-auto ">
+                        <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie>
+                    </div>
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
                         <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
@@ -93,11 +95,11 @@ const Login = () => {
                                         <span className="font-semibold text-white text-xs">লোডিং</span>
                                     </button> : <div>
                                         {
-                                           phone.length===11 && password.length===5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
-                                           <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
-                                       </button>:<button disabled className='h-12 w-12  bg-gray-500 border-gray-500 hover:bg-gray-500  hover:border-gray-500 border rounded-full disabled'>
-                                        <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
-                                    </button>
+                                            phone.length === 11 && password.length === 5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
+                                                <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
+                                            </button> : <button disabled className='h-12 w-12  bg-gray-500 border-gray-500 hover:bg-gray-500  hover:border-gray-500 border rounded-full disabled'>
+                                                <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
+                                            </button>
                                         }
                                     </div>
                                 }

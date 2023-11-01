@@ -5,7 +5,7 @@ import { clearStore } from '../../state/transaction/sendSlice';
 import { BiUserCircle } from 'react-icons/bi';
 import cycle from '../../images/bicycle.png';
 import Lottie from "lottie-react";
-import successAnimation from '../../images/success.json';
+import successAnimation from '../../jsons/success.json';
 const PaymentSuccess = () => {
     const { transactions } = useSelector(state => state.payment.payment);
     const { isLoading } = useSelector(state => state.payment);
