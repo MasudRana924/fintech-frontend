@@ -2,7 +2,6 @@ import { InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { GiCheckMark } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../images/mainlogo.png';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
@@ -39,13 +38,12 @@ const Login = () => {
         <div>
             <div className="flex flex-col items-center justify-center mt-12 lg:mt-52  ">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
-                    {/* <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" /> */}
                     <div className="flex flex-1 items-center justify-center mx-auto ">
                         <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie>
                     </div>
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
-                        <h2 className="text-start mt-2 text-md font-medium leading-6 text-gray-800">লগ ইন করুন</h2>
+                        <h2 className="text-start mt-2 text-md font-medium leading-6 text-violet-500">লগ ইন করুন</h2>
 
                         {
                             error ? <Alert message={error} type="error" className="mt-4" /> : null
@@ -53,13 +51,13 @@ const Login = () => {
                         <form action="" className="space-y-6 py-6 mt-6" onSubmit={registerSubmit}>
 
                             <TextField
-                                // id="input-with-icon-textfield"
+
                                 id="standard-basic"
                                 label="একাউন্ট নাম্বার"
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            {/* <LocalPhoneIcon /> */}
+
                                         </InputAdornment>
                                     ),
                                 }}
@@ -74,7 +72,6 @@ const Login = () => {
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
-                                            {/* <LockOpenIcon /> */}
                                         </InputAdornment>
                                     ),
                                 }}
@@ -82,14 +79,11 @@ const Login = () => {
                                 className="w-full py-3 px-6"
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
-
-
                             <div className="flex items-center justify-between">
                                 <div className="text-start">
                                     <Link to="/forgot/password"> <span className="mt-3 text-sm font-medium leading-6 text-violet-500">পিন ভূলে গেছেন ?</span>
                                     </Link>
                                 </div>
-
                                 {
                                     isLoading ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full '>
                                         <span className="font-semibold text-white text-xs">লোডিং</span>
@@ -103,10 +97,6 @@ const Login = () => {
                                         }
                                     </div>
                                 }
-                                {/* <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
-                                        <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
-                                    </button> */}
-
                             </div>
                             <div>
                                 <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট নেই ? </span> <Link to="/account/signup"> <span className="text-sm font-semibold leading-6 text-violet-500">নতুন তৈরি করুন</span>

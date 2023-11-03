@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AiFillTrophy, AiOutlineMenu, AiOutlineFileUnknown } from "react-icons/ai";
+import { AiFillTrophy, AiOutlineFileUnknown, AiOutlineHome, AiOutlineQrcode } from "react-icons/ai";
 import { FiLogOut, FiSettings, FiInfo } from "react-icons/fi";
-import { BiHomeAlt2, BiTransfer, BiMenuAltRight } from "react-icons/bi";
+import { BiHomeAlt2, BiTransfer, BiMenuAltRight, BiMessageAlt } from "react-icons/bi";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import { MdOutlineDiscount } from "react-icons/md";
 import Sliderr from './Sliderr';
 import PaymentCategory from './PaymentCategory';
 import { Link } from 'react-router-dom';
-import { RxCross1 } from "react-icons/rx";
 import { logout } from '../../state/user/loginSlice';
 import { fetchtuserDetails } from '../../state/user/userDetailsSlice';
 import Skeleton from '@mui/material/Skeleton';
 import Mybkash from './Mybkash';
 import SUggestion from './SUggestion';
 import Others from './Others';
+import './Main.css'
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -103,6 +103,29 @@ const Main = () => {
                         লগআউট</span></button>
                 </ul>
             </ul>
+
+            <div className="main-bottom-bar w-full h-14 flex justify-between items-center p-4 rounded-t-lg">
+                <div>
+                    <Link to="/home">
+                        <AiOutlineHome className="text-2xl text-gray-600"></AiOutlineHome></Link>
+                    <Link to="/home">
+                        <p className="text-xs text-gray-600">হোম</p>
+                        </Link>
+                </div>
+                <div className="main-qr h-12 w-12 border border-gray-300 rounded-full flex items-center justify-center">
+                    <AiOutlineQrcode className="text-3xl text-violet-500"></AiOutlineQrcode>
+
+                </div>
+                <div>
+                    <Link to="/inbox">
+                        <BiMessageAlt className="text-2xl text-gray-600"></BiMessageAlt>
+                    </Link>
+                    <Link to="/inbox">
+                        <p className="text-xs text-gray-600">ইনবক্স</p>
+                    </Link>
+                </div>
+
+            </div>
         </div>
     );
 };

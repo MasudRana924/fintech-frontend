@@ -1,0 +1,25 @@
+.main-ui-container {
+    height: 100vh;
+}
+
+.main-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.main-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+    background-color: whitesmoke;
+}
+.main-qr{
+    position: relative;
+    margin-top: -60px;
+    background-color: white;
+}
+
+.paymentCategory-text {
+    font-size: 10px;
+}

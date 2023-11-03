@@ -1,11 +1,12 @@
 import React from 'react';
-import { BsSend, BsLightbulb, BsSave, BsBook } from "react-icons/bs";
-import { BiMoneyWithdraw, BiSolidPlaneTakeOff } from "react-icons/bi";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { RiWechatPayLine } from "react-icons/ri";
+import { BsSend, BsLightbulb,BsBagFill } from "react-icons/bs";
+import { BiMenuAltLeft } from "react-icons/bi";
+import { GiChipsBag } from "react-icons/gi";
+import { FaRegMoneyBillAlt, FaHandHoldingUsd } from "react-icons/fa";
+import { AiOutlineIdcard } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { message } from 'antd';
-
+import './Main.css'
 const PaymentCategory = () => {
 
     const handleClick = (e) => {
@@ -17,70 +18,60 @@ const PaymentCategory = () => {
             <div className="flex justify-around mt-2">
                 <div>
                     <Link to="/send">
-                        <BsSend className="text-xl text-violet-500 ml-4 mb-1"></BsSend>
-                        {/* <p className="text-xs font-thin">send money</p> */}
-                        <p className="text-xs font-medium">সেন্ড মানি</p>
+                        <AiOutlineIdcard className="text-3xl text-violet-500 mb-1"></AiOutlineIdcard>
+                        {/* <p className="paymentCategory-text font-thin">send money</p> */}
+                        <p className="paymentCategory-text font-medium">সেন্ড মানি</p>
                     </Link>
                 </div>
                 <div >
                     <Link to="/cashout">
-                        <BiMoneyWithdraw className="text-xl  text-violet-500 ml-5 mb-1"></BiMoneyWithdraw>
-                        {/* <p className="text-xs font-thin">cashout</p> */}
-                        <p className="text-xs font-medium " >ক্যাশ আউট</p>
+
+                        <div className="flex">
+                            <BiMenuAltLeft className="text-3xl  text-violet-500  mb-1">ট</BiMenuAltLeft>
+                            <p className="text-sm font-thin text-violet-500 mb-1 mt-2">ট</p>
+                        </div>
+                        <p className="paymentCategory-text  font-medium  text-start" >ক্যাশ আউট</p>
                     </Link>
 
                 </div>
                 <div onClick={handleClick}>
-                    <FaRegMoneyBillAlt className="text-xl text-gray-300 ml-2 mb-1"></FaRegMoneyBillAlt>
-                    {/* <p className="text-xs font-thin">mobile recharge</p> */}
-                    <p className="text-xs font-medium text-gray-300">রিচার্জ</p>
+                    <FaRegMoneyBillAlt className="text-3xl text-gray-300  mb-1"></FaRegMoneyBillAlt>
+                    <p className="paymentCategory-text font-medium text-gray-300  text-start">রিচার্জ</p>
                 </div>
                 <div >
-                 <Link to="/payment/number">
-                    <RiWechatPayLine className="text-xl text-violet-500 ml-3 mb-1"></RiWechatPayLine>
-                    <p className="text-xs font-medium ">পেমেন্ট</p>
-                   </Link>
+                    <Link to="/payment/number">
+                        <BsBagFill className="text-3xl text-violet-500 mb-1"></BsBagFill>
+                        <p className="paymentCategory-text font-medium  text-start">পেমেন্ট</p>
+                    </Link>
                 </div>
             </div>
-            <div className="mt-5 flex justify-around" >
+            <div className="mt-5 flex justify-around mb-4" >
                 <div onClick={handleClick}>
                     <Link to="">
-                        <BsSend className="text-xl text-gray-300 ml-4 mb-1"></BsSend>
-                        <p className="text-xs font-medium text-gray-300">এ্যাড মানি</p>
+                        <BsSend className="text-3xl text-gray-300 mb-1"></BsSend>
+                        <p className="paymentCategory-text  text-start font-medium text-gray-300">এ্যাড মানি</p>
                     </Link>
                 </div>
                 <div onClick={handleClick}>
-                    <BsLightbulb className="text-xl  text-gray-300 ml-6 mb-1"></BsLightbulb>
-                    <p className="text-xs font-medium ml-4 text-gray-300">পে-বিল</p>
+                    <BsLightbulb className="text-3xl  text-gray-300  mb-1"></BsLightbulb>
+                    <p className="paymentCategory-text text-start text-gray-300 font-medium">পে-বিল</p>
                 </div>
                 <div >
                     <Link to="/savings">
-                        <BsSave className="text-xl text-violet-500 ml-6 mb-1"></BsSave>
-                        <p className="text-xs font-medium ml-3 ">সেভিংস</p>
+                        <GiChipsBag className="text-3xl text-violet-500  mb-1"></GiChipsBag>
+                        <p className="paymentCategory-text text-start font-medium">সেভিংস</p>
                     </Link>
 
                 </div>
                 <div>
                     <Link to="/apply/loan">
-                        <RiWechatPayLine className="text-xl text-violet-500 mb-1"></RiWechatPayLine>
-                        <p className=" text-start text-xs font-medium ">লোন</p>
+                        <FaHandHoldingUsd className="text-3xl text-violet-500 mb-1"></FaHandHoldingUsd>
+                        <p className=" text-start paymentCategory-text  font-medium">লোন</p>
                     </Link>
 
                 </div>
             </div>
-            <div className="mt-5 flex mb-4">
-                <div onClick={handleClick}>
-                    <Link to="">
-                        <BiSolidPlaneTakeOff className="text-xl text-gray-300 ml-12 mb-1"></BiSolidPlaneTakeOff>
-                        <p className="text-start text-xs font-medium ml-10 text-gray-300">রেমিটেন্স</p>
-                    </Link>
-                </div>
-                <div onClick={handleClick}>
-                    <BsBook className="text-xl  text-gray-300 ml-20 mb-1"></BsBook>
-                    <p className=" text-start text-xs font-medium ml-16 text-gray-300">এডুকেশন ফি</p>
-                </div>
 
-            </div>
         </div>
     );
 };
