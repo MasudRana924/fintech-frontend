@@ -119,10 +119,10 @@ const Main = () => {
 
                 </div>
                 <div>
-                    <Link to="/inbox">
+                    <Link to="/all/transactions">
                         <BiMessageAlt className="text-2xl text-gray-600"></BiMessageAlt>
                     </Link>
-                    <Link to="/inbox">
+                    <Link to="/all/transactions">
                         <p className="text-xs text-gray-600">ইনবক্স</p>
                     </Link>
                 </div>
