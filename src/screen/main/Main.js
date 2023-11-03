@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AiFillTrophy, AiOutlineFileUnknown, AiOutlineHome, AiOutlineQrcode } from "react-icons/ai";
+import { AiFillTrophy, AiOutlineFileUnknown, AiOutlineHome, AiOutlineScan } from "react-icons/ai";
 import { FiLogOut, FiSettings, FiInfo } from "react-icons/fi";
 import { BiHomeAlt2, BiTransfer, BiMenuAltRight, BiMessageAlt } from "react-icons/bi";
 import { PiHeadsetDuotone } from "react-icons/pi";
@@ -15,6 +15,7 @@ import Mybkash from './Mybkash';
 import SUggestion from './SUggestion';
 import Others from './Others';
 import './Main.css'
+import Cashback from './Cashback';
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -34,7 +35,7 @@ const Main = () => {
     );
 
     return (
-        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container">
+        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container min-h-screen">
             <div className=" w-full lg:w-1/4  bg-violet-500 h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
@@ -65,7 +66,8 @@ const Main = () => {
             <Sliderr></Sliderr>
             <SUggestion ></SUggestion>
             <Others></Others>
-
+            <Cashback></Cashback>
+           
             {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
 
@@ -113,7 +115,7 @@ const Main = () => {
                         </Link>
                 </div>
                 <div className="main-qr h-12 w-12 border border-gray-300 rounded-full flex items-center justify-center">
-                    <AiOutlineQrcode className="text-3xl text-violet-500"></AiOutlineQrcode>
+                    <AiOutlineScan className="text-3xl text-violet-500"></AiOutlineScan>
 
                 </div>
                 <div>
