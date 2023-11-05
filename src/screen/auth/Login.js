@@ -33,10 +33,7 @@ const Login = () => {
         if (user) {
             navigate('/main');
         }
-        if(!user){
-            const phone = (localStorage.getItem('phone'))
-            setPhone(phone) 
-        }
+        
     }, [user, navigate, error]);
     return (
         <div>
