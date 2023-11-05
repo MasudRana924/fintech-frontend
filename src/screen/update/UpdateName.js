@@ -4,7 +4,7 @@ import { FiArrowLeft, } from "react-icons/fi";
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateName } from '../../state/user/updateNameSlice';
+import { errorClean, updateName } from '../../state/user/updateNameSlice';
 const UpdateName = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
@@ -22,7 +22,7 @@ const UpdateName = () => {
         e.preventDefault();
         dispatch(updateName({ data, userToken }));
     };
-    const { success } = useSelector(
+    const { updateNameSuccess } = useSelector(
         (state) => state.updateName
     );
     useEffect(() => {
@@ -30,10 +30,11 @@ const UpdateName = () => {
             setFirstName(user.firstname)
             setLastName(user.lastname)
         }
-        if (success) {
-            navigate('/main')
+        if (updateNameSuccess) {
+            navigate('/main');
+            dispatch(errorClean());
         }
-    }, [success, navigate,user]);
+    }, [updateNameSuccess, navigate,user,dispatch]);
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
             <div className="bg-violet-500 h-16 flex">

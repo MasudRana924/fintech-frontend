@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiFillTrophy, AiOutlineFileUnknown, AiOutlineHome, AiOutlineScan } from "react-icons/ai";
 import { FiLogOut, FiSettings, FiInfo } from "react-icons/fi";
-import { BiHomeAlt2, BiTransfer, BiMenuAltRight, BiMessageAlt } from "react-icons/bi";
+import { BiTransfer, BiMenuAltRight, BiMessageAlt } from "react-icons/bi";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import { MdOutlineDiscount } from "react-icons/md";
 import Sliderr from './Sliderr';
@@ -72,11 +72,8 @@ const Main = () => {
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
 
 
-                <ul className="">
-                    <Link to="/main">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-20" onClick={showMenu}> <BiHomeAlt2 className="mr-1 text-xl text-violet-500"></BiHomeAlt2> <span className="ml-5">
-                            হোম </span></button>
-                    </Link>
+                <ul className="mt-16">
+                    
                     <Link to="/all/transactions">
                         <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
                             লেনদেন সমূহ</span></button>
@@ -101,7 +98,7 @@ const Main = () => {
                         <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-violet-500"></FiSettings> <span className="ml-5">
                             সেটিংস </span></button>
                     </Link>
-                    <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-violet-500"></FiLogOut> <span className="ml-5">
+                    <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-red-500"></FiLogOut> <span className="ml-5">
                         লগআউট</span></button>
                 </ul>
             </ul>

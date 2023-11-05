@@ -36,7 +36,12 @@ const Reward = () => {
                                 <p className="text-sm text-violet-500">{user?.point}</p>
                             </div>
                         </div>
-                    </div> : null
+                    </div> : <div className="w-full border border-red-500 rounded h-12 ">
+                        <div>
+                            <p className="text-red-500 text-sm mb-4 m-2">দুঃখিত আপনার কোন রিওয়ার্ড পয়েন্ট নেই</p>
+                        </div>
+                        
+                    </div>
                 }
                 
 

@@ -2,12 +2,13 @@ import { Alert, InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { GiCheckMark } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../images/mainlogo.png';
+
 import { createSignUp } from '../../state/user/signupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
 import Lottie from "lottie-react";
 import logoAnimation from '../../jsons/auth.json';
+
 const Signup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
@@ -25,12 +26,14 @@ const Signup = () => {
             message.error("নাম্বার ও পিন প্রদান করুণ")
         }
         if (phone.length >= 11) {
-            dispatch(createSignUp(myForm));
+            dispatch(createSignUp(myForm));  
         }
+        
     };
     useEffect(() => {
+        
         if (success) {
-            navigate('/account/login');
+            navigate('/account/login'); 
         }
     }, [success, navigate]);
     return (

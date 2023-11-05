@@ -43,6 +43,7 @@ export const loginSlice = createSlice({
       state.isLoading = false;
       state.token = action.payload.token;
       state.loggeduser=action.payload;
+      localStorage.setItem("phone", action.payload.user.phone);
       state.error = '';
     });
     builder.addCase(createLogin.rejected, (state, action) => {
