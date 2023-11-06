@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { privatePut } from "../../utilities/apiCaller";
-
-
-
 const initialState = {
     updateName: [],
     isLoading: false,
@@ -10,7 +7,6 @@ const initialState = {
     error: '',
     updateNameSuccess: false
 }
-
 export const updateName = createAsyncThunk(
     'user/updateName',
     async ({ data, userToken }, { rejectWithValue }) => {

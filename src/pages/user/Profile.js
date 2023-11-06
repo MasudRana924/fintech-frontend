@@ -41,8 +41,8 @@ const Profile = () => {
             <div className="border ml-2 mr-2 mt-4 rounded-lg">
                 <div className="flex flex-1 items-center justify-center">
                     {
-                        user?.avatar?.url ? <Link to="/profile">
-                            <img src={user.avatar.url} alt="" className="h-24 w-24   " /></Link> :
+                        user?.avatarLogo ? <Link to="/profile">
+                            <img src={user.avatarLogo} alt="" className="h-24 w-24 border rounded-full mt-8 " /></Link> :
                             <Skeleton variant="circular" width={40} height={40} className=" mt-2" />
 
                     }

@@ -1,9 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { publicPost } from '../../utilities/apiCaller';
-
-
-
-
 export const createLogin = createAsyncThunk(
   "/login",
   async (data, { rejectWithValue }) => {
@@ -12,11 +8,10 @@ export const createLogin = createAsyncThunk(
       return response;
     } catch (err) {
       return rejectWithValue(err.response.data.message);
-     
+
     }
   }
 );
-
 
 export const loginSlice = createSlice({
   name: "login",
@@ -25,24 +20,23 @@ export const loginSlice = createSlice({
     success: false,
     error: '',
     errorMessage: "",
-    loggeduser:[],
+    loggeduser: [],
   },
   reducers: {
     logout: (state) => {
       state.token = null
-      state.loggeduser=[]
+      state.loggeduser = []
     }
   },
-
   extraReducers: (builder) => {
     builder.addCase(createLogin.pending, (state) => {
       state.isLoading = true;
-     state.isAuthenticated= false;
+      state.isAuthenticated = false;
     });
     builder.addCase(createLogin.fulfilled, (state, action) => {
       state.isLoading = false;
       state.token = action.payload.token;
-      state.loggeduser=action.payload;
+      state.loggeduser = action.payload;
       state.error = '';
     });
     builder.addCase(createLogin.rejected, (state, action) => {
@@ -50,7 +44,6 @@ export const loginSlice = createSlice({
       state.error = action.payload;
       // state.errorMessage = action.payload.message;
     });
-
   },
 });
 

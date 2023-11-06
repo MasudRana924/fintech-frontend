@@ -7,11 +7,17 @@ const config = {
   },
 };
 
+const fileConfig = {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+};
+
 export const publicGet = async (endpoint) => {
   const response = await axios.get(`${api}${endpoint}`, config);
   return response.data;
 };
-export const publicGetSingle = async (endpoint,id) => {
+export const publicGetSingle = async (endpoint, id) => {
   const response = await axios.get(`${api}${endpoint}`, config);
   return response.data;
 };
@@ -39,11 +45,11 @@ export const privatePut = async (endpoint, token, body) => {
   return response.data;
 };
 
+
 export const privateAvatarPut = async (endpoint, token, body) => {
-  // config.headers.Authorization = `${token}`;
-  // const config = { headers: { "Content-Type": "multipart/form-data" } };
-    config.headers.Authorization = `${token}`;
-  const response = await axios.put(`${api}${endpoint}`, body, config);
+  fileConfig.headers.Authorization = `${token}`;
+  const response = await axios.put(`${api}${endpoint}`, body, fileConfig);
+  console.log("body",body);
   return response.data;
 };
 

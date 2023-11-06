@@ -31,7 +31,7 @@ const AllTransactions = () => {
                 <p className="text-white text-md mt-4 ml-8">লেনদেন সমূহ</p>
             </div>
             {
-                isLoading  && transactions?.length < 0 ? <div className=" mt-20">
+                isLoading ? <div className=" mt-20">
                     <Loader ></Loader>
                 </div> : <div>
 

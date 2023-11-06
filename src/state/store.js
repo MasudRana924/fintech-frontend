@@ -17,6 +17,7 @@ import takeMercentNumberSlice  from "./transaction/mercentNumberSlice";
 import paymentSlice from "./transaction/paymentSlice";
 import savingsSlice from "./savings/savingsSlice";
 import mySavingsSlice from "./user/mySavingsSlice";
+import updateavatarSlice from "./user/updateavatarSlice";
 const persistConfig = {
   key: "authentication",
   storage
@@ -42,7 +43,8 @@ const rootReducer = combineReducers({
   updateName:updateProfileSlice,
   userdetails:userDetailsSlice,
   savings:savingsSlice,
-  mySavings:mySavingsSlice
+  mySavings:mySavingsSlice,
+  updatedAvatar:updateavatarSlice
   
 
 });

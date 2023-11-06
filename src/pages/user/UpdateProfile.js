@@ -1,41 +1,60 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Profile.css'
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { cleanAvatarSuccess, updateAvatar } from '../../state/user/updateavatarSlice';
+import { InputAdornment, TextField } from '@mui/material';
+import { message } from 'antd';
 
 const UpdateProfile = () => {
+    const dispatch = useDispatch();
+    const navigate=useNavigate()
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
     );
+    const { updateAvatarSuccess } = useSelector(
+        (state) => state.updatedAvatar
+    );
+    const { loggeduser } = useSelector(
+        (state) => state.userDetails
+    );
+    const userToken = loggeduser.token;
     const [avatar, setAvatar] = useState();
-    const [avatarPreview, setAvatarPreview] = useState("../../images/man.png");
-    const updateProfileSubmit = (e) => {
-        e.preventDefault();
-        const myForm = new FormData();
-        myForm.set("avatar", avatar);
-        // dispatch(updateProfile(myForm));
-    };
-
+    const [avatarPreview, setAvatarPreview] = useState();
+    // const [firstname, setFirstName] = useState('');
+    // const [lastname, setLastName] = useState('');
     const updateProfileDataChange = (e) => {
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
                 setAvatarPreview(reader.result);
-                setAvatar(reader.result);
+                setAvatar(e.target.files[0]);
             }
         };
         reader.readAsDataURL(e.target.files[0]);
     };
     useEffect(() => {
         if (user) {
-          setAvatarPreview(user?.avatar?.url);
-          
+            setAvatarPreview(user?.avatarLogo);
+            // setFirstName(user.firstname)
+            // setLastName(user.lastname)
         }
-        
-      }, [user]);
+        if(updateAvatarSuccess){
+            message.success("আপডেট সম্পুর্ণ হয়েছে");
+            navigate('/main')
+            dispatch(cleanAvatarSuccess());
+        }
+    }, [user,updateAvatarSuccess,dispatch,navigate]);
+    const updateProfileSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        // formData.append('firstname', firstname);
+        // formData.append('lastname', lastname);
+        formData.append('avatarLogo', avatar);
+        dispatch(updateAvatar({ userToken, data: formData }));
+    };
     return (
         <div className="w-fulllg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
@@ -44,30 +63,69 @@ const UpdateProfile = () => {
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
                     </Link>
                 </div>
-                <p className="text-white text-md mt-4 ml-5">ছবি পরিবর্তন</p>
+                <p className="text-white text-md mt-4 ml-5">প্রোফাইল আপডেট</p>
             </div>
 
-            <div className="image-section  flex flex-1 items-center justify-center gap-2 mt-16">
-                <img
-                    alt=""
-                    src={avatar || user?.avatar?.url}
-                    className="h-36 w-36 border-2 border-blue-500 rounded-full p-2"
-                />
-                <label>
-                    +
-                    <br />
-                    <input
-                        type="file"
-                        name="shopLogo"
-                        multiple
-                        onChange={updateProfileDataChange}
-                        accept="image/png,image/jpeg,image/webp"
+            <form action="" className="space-y-6 mt-12  " onSubmit={updateProfileSubmit}>
+                <div className="image-section  flex flex-1 items-center justify-center gap-2 mt-16">
+
+                    <img
+                        alt=""
+                        src={avatarPreview}
+                        className="h-36 w-36 border-2 border-violet-500 rounded-full  avatar-image"
                     />
-                </label>
-            </div>
-            <div className="submit-bottom-btn w-full">
-              <button className="w-full h-12 bg-violet-500 text-white text-md">আপডেট করূন</button>
-            </div>
+
+                    <label className='border border-violet-500 bg-violet-500'>
+                        +
+                        <br />
+                        <input
+                            type="file"
+                            name="avatarLogo"
+                            multiple
+                            onChange={updateProfileDataChange}
+                            accept="image/png,image/jpeg,image/webp"
+                        />
+                    </label>
+                </div>
+                {/* <TextField
+                    id="input-with-icon-textfield"
+                    // label="Phone"
+                    label="নামের প্রথম অংশ"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+
+                            </InputAdornment>
+                        ),
+                    }}
+                    variant="outlined"
+                    className="w-full m-4"
+                    value={firstname} onChange={(e) => setFirstName(e.target.value)}
+                />
+                <TextField
+                    id="input-with-icon-textfield"
+                    // label="Password"
+                    label="নামের শেষ অংশ"
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+
+                            </InputAdornment>
+                        ),
+                    }}
+                    variant="outlined"
+                    className="w-full py-3 px-6"
+                    value={lastname} onChange={(e) => setLastName(e.target.value)}
+                /> */}
+                <div className="submit-bottom-btn w-full">
+
+                    <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
+                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
+                    </button>
+
+                </div>
+            </form>
+
         </div>
     );
 };

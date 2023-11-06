@@ -16,6 +16,7 @@ import SUggestion from './SUggestion';
 import Others from './Others';
 import './Main.css'
 import Cashback from './Cashback';
+import avatar from '../../images/man.png'
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -40,9 +41,10 @@ const Main = () => {
                 <div className="flex">
                     <div className="w-16">
                         {
-                            user?.avatar?.url ? <Link to="/profile">
-                                <img src={user.avatar.url} alt="" className="h-12 w-12 ml-2 mt-2 absolute  " /></Link> :
-                                <Skeleton variant="circular" width={40} height={40} className="ml-3 mt-2" />
+                            user?.avatarLogo ? <Link to="/profile">
+                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-4 absolute border rounded-full bg-white border-violet-500" /></Link> :
+                                <Link to="/profile">
+                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-4 absolute border rounded-full " /></Link>
                         }
                     </div>
                     <div>
@@ -67,13 +69,13 @@ const Main = () => {
             <SUggestion ></SUggestion>
             <Others></Others>
             <Cashback></Cashback>
-           
+
             {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
 
 
                 <ul className="mt-16">
-                    
+
                     <Link to="/all/transactions">
                         <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
                             লেনদেন সমূহ</span></button>
@@ -109,7 +111,7 @@ const Main = () => {
                         <AiOutlineHome className="text-2xl text-gray-600"></AiOutlineHome></Link>
                     <Link to="/home">
                         <p className="text-xs text-gray-600">হোম</p>
-                        </Link>
+                    </Link>
                 </div>
                 <div className="main-qr h-12 w-12 border border-gray-300 rounded-full flex items-center justify-center">
                     <AiOutlineScan className="text-3xl text-violet-500"></AiOutlineScan>
