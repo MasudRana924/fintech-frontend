@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { BiUserCircle } from 'react-icons/bi';
 import { addPhoneToStore, addtypeToStore } from '../../state/transaction/sendSlice';
 import { useEffect } from 'react';
 import { takeMercentNumber } from '../../state/transaction/mercentNumberSlice';
@@ -41,7 +40,7 @@ const PaymentNumber = () => {
         if (success) {
             navigate('/payment/amount');
         } if (errorr) {
-            message.error("এই নাম্বারে সেন্ড মানি সম্ভব না")
+            message.error("এই নাম্বারে পে মানি সম্ভব না")
         }
     }, [success, navigate, errorr]);
 
@@ -77,6 +76,7 @@ const PaymentNumber = () => {
                 }
 
             </div>
+            <p className="text-start text-xs m-2 text-gray-400">১১ ডিজিটের মার্সেন্ট নাম্বার প্রদান করুণ</p>
         </div>
     );
 };

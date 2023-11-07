@@ -1,6 +1,7 @@
 import { InputAdornment, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { GiCheckMark } from 'react-icons/gi';
+import { CiLocationOn,CiHeadphones } from 'react-icons/ci';
 import { Link, useNavigate } from 'react-router-dom';
 import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -27,13 +28,12 @@ const Login = () => {
         } else {
             message.error("নাম্বার ও পিন প্রদান করুণ")
         }
-
     };
     useEffect(() => {
         if (user) {
             navigate('/main');
         }
-        
+
     }, [user, navigate, error]);
     return (
         <div>
@@ -105,6 +105,18 @@ const Login = () => {
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+
+            <div className="flex justify-between w-full lg:hidden h-12  success-btn ">
+                <div>
+                    <CiLocationOn className="text-violet-500 ml-6 font-bold"></CiLocationOn>
+                <button className="text-xs text-violet-500 pl-2 pr-2  ">লোকেশন</button>
+                </div>
+                
+                <div>
+                    <CiHeadphones className="text-violet-500 ml-3 font-bold"></CiHeadphones>
+                <button className="text-xs text-violet-500 pl-2 pr-2">সেবা</button>
                 </div>
             </div>
         </div>
