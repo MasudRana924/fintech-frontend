@@ -19,7 +19,7 @@ const Mybkash = () => {
                     </div>
                     <div className="">
                         <Link to="/main">
-                            <BiSolidContact className="text-3xl text-violet-500 ml-6 mb-1"></BiSolidContact>
+                            <BiSolidContact className="text-3xl text-teal-500 ml-6 mb-1"></BiSolidContact>
                             <p className="paymentCategory-text  font-medium  text-start">Priyo Number</p>
                         </Link>
                     </div>

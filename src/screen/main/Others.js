@@ -16,13 +16,13 @@ const Others = () => {
             <div className="flex justify-between mt-2 pl-4 pr-2 ">
                 <div>
                     <Link to="/main">
-                        <BsTicket className="text-3xl text-violet-500  mb-1"></BsTicket>
+                        <BsTicket className="text-3xl text-amber-500  mb-1"></BsTicket>
                         <p className="paymentCategory-text  font-medium  text-start">টিকিট </p>
                     </Link>
                 </div>
                 <div className="ml-4">
                     <Link to="/main">
-                        <BiSolidDonateHeart className="text-3xl text-violet-500  mb-1"></BiSolidDonateHeart>
+                        <BiSolidDonateHeart className="text-3xl text-lime-500  mb-1"></BiSolidDonateHeart>
                         <p className="paymentCategory-text  font-medium  text-start">ডোনেশন</p>
                     </Link>
                 </div>
@@ -34,7 +34,7 @@ const Others = () => {
                 </div>
                 <div className="ml-4">
                     <Link to="/main">
-                        <CgGames className="text-3xl text-violet-500   mb-1"></CgGames>
+                        <CgGames className="text-3xl text-blue-500   mb-1"></CgGames>
                         <p className="paymentCategory-text  font-medium  text-start">গেমস</p>
                     </Link>
                 </div>

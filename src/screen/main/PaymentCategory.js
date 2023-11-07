@@ -25,15 +25,15 @@ const PaymentCategory = () => {
             <div className="flex justify-around mt-2">
                 <div>
                     <Link to="/send">
-                        <AiOutlineIdcard className="text-3xl text-violet-500 mb-1"></AiOutlineIdcard>
+                        <AiOutlineIdcard className="text-3xl text-amber-500 mb-1"></AiOutlineIdcard>
                         <p className="paymentCategory-text font-medium">সেন্ড মানি</p>
                     </Link>
                 </div>
                 <div >
                     <Link to="/cashout">
                         <div className="flex">
-                            <BiMenuAltLeft className="text-3xl  text-violet-500  mb-1">ট</BiMenuAltLeft>
-                            <p className="text-sm font-thin text-violet-500 mb-1 mt-2">ট</p>
+                            <BiMenuAltLeft className="text-3xl  text-lime-500  mb-1">ট</BiMenuAltLeft>
+                            <p className="text-sm font-thin text-lime-500 mb-1 mt-2">ট</p>
                         </div>
                         <p className="paymentCategory-text  font-medium  text-start" >ক্যাশ আউট</p>
                     </Link>
@@ -44,7 +44,7 @@ const PaymentCategory = () => {
                 </div>
                 <div >
                     <Link to="/payment/number">
-                        <BsBagFill className="text-3xl text-violet-500 mb-1"></BsBagFill>
+                        <BsBagFill className="text-3xl text-blue-400 mb-1"></BsBagFill>
                         <p className="paymentCategory-text font-medium  text-start">পেমেন্ট</p>
                     </Link>
                 </div>
@@ -52,23 +52,23 @@ const PaymentCategory = () => {
             <div className="mt-5 flex justify-around mb-4" >
                 <div onClick={handleClick}>
                     <Link to="">
-                        <AiOutlineSend className="text-3xl text-violet-500 mb-1"></AiOutlineSend>
+                        <AiOutlineSend className="text-3xl text-teal-500 mb-1"></AiOutlineSend>
                         <p className="paymentCategory-text  text-start font-medium ">এ্যাড মানি</p>
                     </Link>
                 </div>
                 <div onClick={handleClick}>
-                    <BsLightbulb className="text-3xl  text-violet-500  mb-1"></BsLightbulb>
+                    <BsLightbulb className="text-3xl  text-red-500  mb-1"></BsLightbulb>
                     <p className="paymentCategory-text text-start  font-medium">পে-বিল</p>
                 </div>
                 <div >
                     <Link to="/savings">
-                        <GiChipsBag className="text-3xl text-violet-500  mb-1"></GiChipsBag>
+                        <GiChipsBag className="text-3xl text-teal-700  mb-1"></GiChipsBag>
                         <p className="paymentCategory-text text-start font-medium">সেভিংস</p>
                     </Link>
                 </div>
                 <div>
                     <Link to="/apply/loan">
-                        <FaHandHoldingUsd className="text-3xl text-violet-500 mb-1"></FaHandHoldingUsd>
+                        <FaHandHoldingUsd className="text-3xl text-fuchsia-500 mb-1"></FaHandHoldingUsd>
                         <p className=" text-start paymentCategory-text  font-medium">লোন</p>
                     </Link>
                 </div>
@@ -76,12 +76,12 @@ const PaymentCategory = () => {
             <div className={active ? "mt-5 flex justify-around mb-4":"hidden"} >
                 <div onClick={handleClick}>
                     <Link to="">
-                        <SiRemix className="text-3xl text-violet-500 mb-1"></SiRemix>
+                        <SiRemix className="text-3xl text-yellow-600 mb-1"></SiRemix>
                         <p className="paymentCategory-text  text-start font-medium ">রেমিট্যান্স</p>
                     </Link>
                 </div>
                 <div onClick={handleClick}>
-                    <BsBook className="text-3xl   text-violet-500  mb-1"></BsBook>
+                    <BsBook className="text-3xl   text-cyan-400  mb-1"></BsBook>
                     <p className="paymentCategory-text text-start  font-medium">এডুকেশন ফি</p>
                 </div> 
                 <div onClick={handleClick}>
@@ -91,7 +91,7 @@ const PaymentCategory = () => {
                     </Link>
                 </div>
                 <div onClick={handleClick}>
-                    <AiFillFund className="text-3xl   text-violet-500  mb-1"></AiFillFund>
+                    <AiFillFund className="text-3xl   text-emerald-500 mb-1"></AiFillFund>
                     <p className="paymentCategory-text text-start  font-medium">বিনিয়োগ</p>
                 </div> 
             </div>
