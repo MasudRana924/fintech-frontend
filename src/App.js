@@ -89,7 +89,8 @@ function App() {
             <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
             <Route path="/create/savings" element={<PrivateRoute><CreateSavings></CreateSavings></PrivateRoute>}></Route>
-            <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route>
+            {/* <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route> */}
+            <Route path="/support" element={<Support></Support>}></Route>
             <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
             <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
             <Route path="/update/profile" element={<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>}></Route>

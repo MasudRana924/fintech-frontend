@@ -21,7 +21,7 @@ const PaymentCategory = () => {
         message.error("কাজ চলিতেছে");
     }
     return (
-        <div className="mt-16 lg:mt-24 border border-white bg-white rounded-lg ml-2 mr-2 ">
+        <div className="mt-16 lg:mt-24 border border-white bg-white rounded-lg ml-2 mr-2 payment-category-section">
             <p className="text-start text-xs m-4">ট্রাস্ট পে সেবাসমূহ</p>
             <div className="flex justify-around mt-2">
                 <div>
