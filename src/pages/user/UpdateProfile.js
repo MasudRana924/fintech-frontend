@@ -56,7 +56,7 @@ const UpdateProfile = () => {
         dispatch(updateAvatar({ userToken, data: formData }));
     };
     return (
-        <div className="w-fulllg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
+        <div className="w-fulllg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg ">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -118,7 +118,7 @@ const UpdateProfile = () => {
                     className="w-full py-3 px-6"
                     value={lastname} onChange={(e) => setLastName(e.target.value)}
                 /> */}
-                <div className="submit-bottom-btn w-full">
+                <div className="success-btn w-full">
 
                     <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
                         <span className="font-semibold text-white text-lg">পরবর্তী</span>

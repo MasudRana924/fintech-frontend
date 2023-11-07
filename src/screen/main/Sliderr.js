@@ -7,7 +7,7 @@ import ban2 from '../../images/ban (4).jpg';
 import ban3 from '../../images/ban (3).jpg';
 const Sliderr = () => {
     let settings = {
-        dots: true,
+        dots: false,
         autoplay: true,
         infinite: false,
         speed: 1000,
@@ -45,19 +45,21 @@ const Sliderr = () => {
         ]
     };
     return (
-        <div className="mt-8 w-3/4 mx-auto mb-8">
-        <Slider {...settings}>
-          <div>
-          <img src={ban} alt="" className="w-full h-24 "/>
-          </div>
-          <div>
-          <img src={ban2} alt="" className="w-full h-24 "/>
-          </div>
-          <div>
-          <img src={ban3} alt="" className="w-full h-24 "/>
-          </div>
-        </Slider>
-      </div>
+        <div className="mt-2 mb-8 ml-2 mr-2 border rounded-lg border-white bg-white">
+            <div className="w-3/4 mx-auto mt-2">
+                <Slider {...settings}>
+                    <div>
+                        <img src={ban} alt="" className="w-full h-24 " />
+                    </div>
+                    <div>
+                        <img src={ban2} alt="" className="w-full h-24 " />
+                    </div>
+                    <div>
+                        <img src={ban3} alt="" className="w-full h-24 " />
+                    </div>
+                </Slider>
+            </div>
+        </div>
     );
 };
 

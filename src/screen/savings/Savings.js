@@ -6,7 +6,7 @@ import MySavings from '../../pages/user/Savings';
 
 const Savings = () => {
     return (
-        <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg ">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg min-h-screen bg-gray-50">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -15,7 +15,7 @@ const Savings = () => {
                 </div>
                 <p className="text-white text-md mt-4 ml-5">সেভিংস </p>
             </div>
-            <div className="border m-4 rounded-lg p-2 shadow-md">
+            <div className="border m-4 rounded-lg p-2 shadow-md border-white bg-white">
                 <div className="w-1/4 mx-auto mt-2">
                     <GiReceiveMoney className=" h-12 w-16 text-violet-500"></GiReceiveMoney>
                 </div>

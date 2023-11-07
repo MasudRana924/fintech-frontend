@@ -1,15 +1,14 @@
 import React from 'react';
 import { BiSolidDonateHeart } from 'react-icons/bi';
-import { BsTicket} from 'react-icons/bs';
-import { AiFillInsurance,AiFillShopping} from 'react-icons/ai';
-import { CgGames} from 'react-icons/cg';
-import { SiYourtraveldottv} from 'react-icons/si';
+import { BsTicket } from 'react-icons/bs';
+import { AiFillInsurance } from 'react-icons/ai';
+import { CgGames } from 'react-icons/cg';
+
 import { Link } from 'react-router-dom';
 
 const Others = () => {
-    return (
-        <div className="ml-2 mr-2 mt-4 shadow-lg border border-white rounded-lg">
-        <div className="mt-4 h-40">
+    return (<div className="ml-2 mr-2  shadow-lg border border-white bg-white rounded-lg ">
+        <div className="mt-4 mb-2">
             <div className="flex justify-between mt-2 pl-2 pr-2 ">
                 <p className="text-xs text-start ml-2">অন্যান্য সেবাসমূহ </p>
                 <p className="text-xs text-start ml-2 text-violet-500"></p>
@@ -40,21 +39,7 @@ const Others = () => {
                     </Link>
                 </div>
             </div>
-            <div className="flex  mt-3 pl-4 pr-2 ">
-                <div>
-                    <Link to="/main">
-                        <SiYourtraveldottv className="text-3xl text-violet-500  mb-1"></SiYourtraveldottv>
-                        <p className="paymentCategory-text  font-medium  text-start">ট্রাভেল </p>
-                    </Link>
-                </div>
-                <div className="ml-4">
-                    <Link to="/main">
-                        <AiFillShopping className="text-3xl text-violet-500  mb-1"></AiFillShopping>
-                        <p className="paymentCategory-text  font-medium  text-start">শপিং</p>
-                    </Link>
-                </div>
-                
-            </div>
+
         </div>
     </div>
     );

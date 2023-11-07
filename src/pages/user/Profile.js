@@ -28,7 +28,7 @@ const Profile = () => {
     }
 
     return (
-        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg ">
+        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg min-h-screen bg-gray-50">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -38,11 +38,11 @@ const Profile = () => {
                 <p className="text-white text-md mt-4 ml-5">প্রোফাইল</p>
             </div>
 
-            <div className=" ml-2 mr-2 mt-4  border border-white shadow-lg rounded-lg">
+            <div className=" ml-2 mr-2 mt-4  border border-white bg-white shadow-lg rounded-lg">
                 <div className="flex flex-1 items-center justify-center">
                     {
                         user?.avatarLogo ? <Link to="/profile">
-                            <img src={user.avatarLogo} alt="" className="h-24 w-24 border rounded-full mt-8 " /></Link> :
+                            <img src={user.avatarLogo} alt="" className="h-28 w-28 border rounded-full mt-8 " /></Link> :
                             <Skeleton variant="circular" width={40} height={40} className=" mt-2" />
 
                     }
@@ -55,7 +55,7 @@ const Profile = () => {
                     <img src={flag} alt="" className="w-10 h-10" />
                 </div>
             </div>
-            <div className="w-full h-10 border border-slate-100 flex justify-between mt-10 ">
+            <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between mt-10 ">
                 <Link to="/update/name">
                     <FiEdit className="text-violet-500 text-2xl mt-1 ml-2"></FiEdit>
                 </Link>
@@ -67,7 +67,7 @@ const Profile = () => {
                 </Link>
 
             </div>
-            <div className="w-full h-10 border border-slate-100 flex justify-between mt-5 ">
+            <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between mt-4  ">
                 <Link to="/update/name">
                     <BiImageAdd className="text-violet-500 text-2xl mt-2 ml-2"></BiImageAdd>
                 </Link>
@@ -76,7 +76,7 @@ const Profile = () => {
                 </Link>
                 <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
             </div>
-            <div className="w-full h-10 border border-slate-100 flex justify-between mt-5 " onClick={QRGenrator}>
+            <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between mt-4 " onClick={QRGenrator}>
                 <Link >
                     <AiOutlineQrcode className="text-violet-500 text-2xl mt-2 ml-2"></AiOutlineQrcode>
                 </Link>
@@ -85,15 +85,7 @@ const Profile = () => {
                 </Link>
                 <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
             </div>
-            <div className="hidden w-full h-10 border border-slate-100 lg:flex justify-between mt-5 ">
-                <Link to="/all/transactions">
-                    <BiImageAdd className="text-violet-500 text-2xl mt-2 ml-2"></BiImageAdd>
-                </Link>
-                <Link to="/all/transactions">
-                    <p className="text-start text-sm font-medium mt-2 ml-2">লেনদেন সমূহ</p>
-                </Link>
-                <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
-            </div>
+            
             <div className="hidden  lg:flex flex-1 justify-center items-center gap-2 mb-44 border border-slate-100 mt-5">
                 <FiLogOut className="mr-1 text-md mt-4 text-violet-500"></FiLogOut>
                 <button className="text-md  text-start mt-5 text-gray-900" onClick={() => dispatch(logout())}>

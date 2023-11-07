@@ -21,7 +21,7 @@ const AllTransactions = () => {
         content = transactions.map(transaction => <AllTransaction key={transaction._id} transaction={transaction} />)
     }
     return (
-        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg bg-gray-100">
             <div className="w-full flex bg-violet-500 h-16 rounded-b-lg main-navbar">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -34,15 +34,13 @@ const AllTransactions = () => {
                 isLoading ? <div className=" mt-20">
                     <Loader ></Loader>
                 </div> : <div>
-
-                    <div className="mt-20 ml-2 mr-2 pl-2 pr-2  flex items-center justify-between  border rounded h-12">
+                    <div className="mt-16  ml-2 mr-2 pl-2 pr-2  flex items-center justify-between  border rounded h-12 bg-white border-white ">
                         <p className="text-gray-900 text-xs">ফিল্টার করুন </p>
                         <div className="flex gap-4">
                             <button className="border rounded-lg border-green-500 h-6 w-12 text-xs text-green-500">+ ইন</button>
                             <button className="border rounded-lg border-red-500 h-6 w-12 text-xs text-red-500">- আউট</button>
                         </div>
                     </div>
-
                     <div
                         className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 " >
                         {content}

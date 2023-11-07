@@ -3,7 +3,7 @@ import { formatDate } from '../../utilities/helper';
 
 const AllSavings = ({saving}) => {
     return (
-        <div className="border rounded-lg m-4 p-2">
+        <div className="border rounded-lg m-4 p-2 bg-white border-white">
            <div className="flex justify-between ">
            <p className="text-sm ">{saving.amount} টাকা</p>
             <p className="text-sm ">সময়কাল {saving.durations} বছর </p>

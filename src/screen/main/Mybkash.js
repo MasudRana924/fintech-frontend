@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Mybkash = () => {
     return (
-        <div className="ml-2 mr-2 mt-8 ">
-            <div className="mt-4 h-24 border rounded-lg ">
+        <div className="ml-2 mr-2">
+            <div className="mt-4 h-24 border rounded-lg border-white bg-white">
                 <div className="flex justify-between mt-2 pl-2 pr-2 ">
                     <p className="text-xs text-start ml-2">আমার ট্রাস্ট-পে </p>
                     <p className="text-xs text-start ml-2 text-violet-500">সব দেখুন</p>

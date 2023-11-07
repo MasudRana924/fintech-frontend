@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AiFillTrophy, AiOutlineFileUnknown, AiOutlineHome, AiOutlineScan } from "react-icons/ai";
+import { AiFillTrophy, AiOutlineFileUnknown} from "react-icons/ai";
 import { FiLogOut, FiSettings, FiInfo } from "react-icons/fi";
-import { BiTransfer, BiMenuAltRight, BiMessageAlt } from "react-icons/bi";
+import { BiTransfer, BiMenuAltRight } from "react-icons/bi";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import { MdOutlineDiscount } from "react-icons/md";
 import Sliderr from './Sliderr';
@@ -15,7 +15,6 @@ import Mybkash from './Mybkash';
 import SUggestion from './SUggestion';
 import Others from './Others';
 import './Main.css'
-import Cashback from './Cashback';
 import avatar from '../../images/man.png'
 const Main = () => {
     const dispatch = useDispatch();
@@ -36,23 +35,23 @@ const Main = () => {
     );
 
     return (
-        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container min-h-screen">
+        <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container min-h-screen bg-gray-50">
             <div className=" w-full lg:w-1/4  bg-violet-500 h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
                         {
                             user?.avatarLogo ? <Link to="/profile">
-                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-4 absolute border rounded-full bg-white border-violet-500" /></Link> :
+                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-white border-violet-500" /></Link> :
                                 <Link to="/profile">
-                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-4 absolute border rounded-full " /></Link>
+                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full " /></Link>
                         }
                     </div>
                     <div>
                         {
-                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-sm font-thin">{user.firstname} {user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
+                            user?.firstname && user?.lastname ? <p className="mt-2 text-white text-start text-xs font-medium">{user.firstname} {user.lastname}</p> : <Skeleton variant="text" className=" mt-2" width={80} height={25} />
                         }
                         {
-                            user?.amount ? <p className="pl-2 text-start text-violet-500 text-medium  font-medium w-28 bg-white rounded-lg mt-1">ট <span className="">{user.amount}.00</span></p> : <Skeleton variant="text" className=" mt-2" width={120} height={30} />
+                            user?.amount ? <p className="pl-2 text-start text-violet-500 text-medium  font-medium w-32 bg-white rounded-lg mt-1">ট <span className="">{user.amount}.00</span></p> : <Skeleton variant="text" className=" mt-2" width={126} height={30} />
                         }
                     </div>
                 </div>
@@ -65,10 +64,10 @@ const Main = () => {
             </div>
             <PaymentCategory></PaymentCategory>
             <Mybkash></Mybkash>
-            <Sliderr></Sliderr>
-            <SUggestion ></SUggestion>
+            <Sliderr></Sliderr>    
             <Others></Others>
-            <Cashback></Cashback>
+            <SUggestion ></SUggestion>
+           
 
             {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
@@ -104,29 +103,6 @@ const Main = () => {
                         লগআউট</span></button>
                 </ul>
             </ul>
-
-            <div className="main-bottom-bar w-full h-14 flex justify-between items-center p-4 rounded-t-lg border-t-white shadow-lg">
-                <div>
-                    <Link to="/home">
-                        <AiOutlineHome className="text-2xl text-gray-600"></AiOutlineHome></Link>
-                    <Link to="/home">
-                        <p className="text-xs text-gray-600">হোম</p>
-                    </Link>
-                </div>
-                <div className="main-qr h-12 w-12 border border-gray-300 rounded-full flex items-center justify-center">
-                    <AiOutlineScan className="text-3xl text-violet-500"></AiOutlineScan>
-
-                </div>
-                <div>
-                    <Link to="/all/transactions">
-                        <BiMessageAlt className="text-2xl text-gray-600"></BiMessageAlt>
-                    </Link>
-                    <Link to="/all/transactions">
-                        <p className="text-xs text-gray-600">ইনবক্স</p>
-                    </Link>
-                </div>
-
-            </div>
         </div>
     );
 };
