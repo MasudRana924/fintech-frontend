@@ -105,7 +105,7 @@ const Main = () => {
                 </ul>
             </ul>
 
-            <div className="main-bottom-bar w-full h-14 flex justify-between items-center p-4 rounded-t-lg">
+            <div className="main-bottom-bar w-full h-14 flex justify-between items-center p-4 rounded-t-lg border-t-white shadow-lg">
                 <div>
                     <Link to="/home">
                         <AiOutlineHome className="text-2xl text-gray-600"></AiOutlineHome></Link>

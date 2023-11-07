@@ -38,7 +38,7 @@ const Profile = () => {
                 <p className="text-white text-md mt-4 ml-5">প্রোফাইল</p>
             </div>
 
-            <div className="border ml-2 mr-2 mt-4 rounded-lg">
+            <div className=" ml-2 mr-2 mt-4  border border-white shadow-lg rounded-lg">
                 <div className="flex flex-1 items-center justify-center">
                     {
                         user?.avatarLogo ? <Link to="/profile">

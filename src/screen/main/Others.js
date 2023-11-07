@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 
 const Others = () => {
     return (
-        <div className="pl-2 pr-2 mb-4">
-        <div className="mt-4 h-40 border rounded-lg mb-8">
+        <div className="ml-2 mr-2 mt-4 shadow-lg border border-white rounded-lg">
+        <div className="mt-4 h-40">
             <div className="flex justify-between mt-2 pl-2 pr-2 ">
                 <p className="text-xs text-start ml-2">অন্যান্য সেবাসমূহ </p>
                 <p className="text-xs text-start ml-2 text-violet-500"></p>

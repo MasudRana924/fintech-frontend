@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
 import { formatDate } from '../../utilities/helper';
 import { useSelector } from 'react-redux';
-import logo from '../../images/logo (2).png'
+import logo from '../../images/man.png'
 import { FiCopy } from 'react-icons/fi';
-import {message } from 'antd';
+import { message } from 'antd';
 const AllTransaction = ({ transaction }) => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails
     );
     const user = loggeduser.user;
-    const [copy,setCopy]=useState(transaction.tranId);
-    const fCopy=()=>{
-           navigator.clipboard.writeText(copy);
-           message.success("Copied")
+    const [copy, setCopy] = useState(transaction.tranId);
+    const fCopy = () => {
+        navigator.clipboard.writeText(copy);
+        message.success("Copied")
     }
     return (
         <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 border-b">
             <div className="text-start flex justify-between gap-5">
 
                 <div className="flex">
-                    
+
                     <div>
                         {
                             user._id === transaction.senduserId ? <div>
-                                <img src={transaction.receiveuserAvatar} alt="" className="h-10 w-10 mt-2 border border-violet-500 rounded-full shadow" />
-                            </div> :  <img src={logo} alt="" className="h-10 w-10 mt-2" />
+                                <img src={transaction.receiveuserAvatar || logo} alt="" className="h-10 w-10 mt-2 border border-gray-300 rounded-full shadow p-1" />
+                            </div> : <div> {
+                                user._id === transaction.receiveuserId ? <div>
+                                    <img src={transaction.senderuserAvatar || logo} alt="" className="h-10 w-10 mt-2 rounded-full shadow p-1" />
+                                </div> : null
+                            }</div>
                         }
-                        {
-                            user._id === transaction.receiveuserId ? <div>
-                                <img src={user?.avatar?.url} alt="" className="h-10 w-10 mt-2" />
-                            </div> : null
-                        }
+
                     </div>
                     <div>
                         {
@@ -51,8 +51,8 @@ const AllTransaction = ({ transaction }) => {
                         }
 
                         <div className="flex gap-4 mt-2">
-                        <p className="text-xs font-medium ml-2 text-gray-500">Trans ID : {transaction.tranId}</p>
-                        <FiCopy className="text-sm text-gray-900 font-medium" onClick={fCopy}></FiCopy>
+                            <p className="text-xs font-medium ml-2 text-gray-500">Trans ID : {transaction.tranId}</p>
+                            <FiCopy className="text-sm text-gray-900 font-medium" onClick={fCopy}></FiCopy>
                         </div>
                         <p className="text-xs font-medium ml-2 mt-1 mb-2 text-gray-500">{formatDate(transaction.createdAt)}</p>
                     </div>
@@ -64,7 +64,7 @@ const AllTransaction = ({ transaction }) => {
 
                         </div> : null
                     }
-                     {
+                    {
                         user._id === transaction.receiveuserId ? <div>
                             <p className="text-xs font-medium  mt-2 text-end text-green-500">+ {transaction.amount}.00TK</p>
 

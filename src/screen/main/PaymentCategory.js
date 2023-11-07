@@ -14,7 +14,7 @@ const PaymentCategory = () => {
         message.error("কাজ চলিতেছে");
     }
     return (
-        <div className="mt-20 lg:mt-24 border rounded ml-2 mr-2">
+        <div className="mt-20 lg:mt-24 border border-white rounded ml-2 mr-2 shadow-lg">
             <div className="flex justify-around mt-2">
                 <div>
                     <Link to="/send">

@@ -1,5 +1,6 @@
 .main-ui-container {
     height: 100vh;
+    position: relative;
 }
 
 .main-navbar {
@@ -11,8 +12,8 @@
 .main-bottom-bar {
     position: fixed;
     bottom: 0;
-    z-index: 200;
-    background-color: whitesmoke;
+    /* z-index: 200; */
+    background-color: white;
 }
 .main-qr{
     position: relative;
