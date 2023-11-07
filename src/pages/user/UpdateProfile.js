@@ -14,7 +14,7 @@ const UpdateProfile = () => {
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
     );
-    const { updateAvatarSuccess } = useSelector(
+    const { updateAvatarSuccess,isLoading } = useSelector(
         (state) => state.updatedAvatar
     );
     const { loggeduser } = useSelector(
@@ -72,7 +72,8 @@ const UpdateProfile = () => {
                     <img
                         alt=""
                         src={avatarPreview}
-                        className="h-36 w-36 border-2 border-violet-500 rounded-full  avatar-image"
+                        // className="h-36 w-36 border-2 border-violet-500 rounded-full  avatar-image"
+                        className={isLoading ? "h-36 w-36 border-2 border-violet-500 rounded-full  avatar-image":"h-36 w-36 border-2 border-violet-500 rounded-full"}
                     />
 
                     <label className='border border-violet-500 bg-violet-500'>
