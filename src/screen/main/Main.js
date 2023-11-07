@@ -21,7 +21,6 @@ const Main = () => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails
     );
-
     const userToken = loggeduser.token;
     const [active, setActive] = useState(false)
     const showMenu = () => {
