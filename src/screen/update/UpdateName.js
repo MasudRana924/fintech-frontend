@@ -34,7 +34,7 @@ const UpdateName = () => {
             navigate('/main');
             dispatch(errorClean());
         }
-    }, [updateNameSuccess, navigate,user,dispatch]);
+    }, [updateNameSuccess, navigate, user, dispatch]);
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
             <div className="bg-violet-500 h-16 flex">
@@ -59,7 +59,7 @@ const UpdateName = () => {
                         ),
                     }}
                     variant="outlined"
-                    className="w-full m-4"
+                    className="w-3/4 mx-auto"
                     value={firstname} onChange={(e) => setFirstName(e.target.value)}
                 />
                 <TextField
@@ -74,15 +74,11 @@ const UpdateName = () => {
                         ),
                     }}
                     variant="outlined"
-                    className="w-full py-3 px-6"
+                    className="w-3/4 mx-auto"
                     value={lastname} onChange={(e) => setLastName(e.target.value)}
                 />
-                <div className="submit-bottom-btn w-full">
-
-                    <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
-                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
-                    </button>
-
+                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+                    <button className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                 </div>
             </form>
         </div>

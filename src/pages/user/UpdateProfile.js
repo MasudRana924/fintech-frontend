@@ -49,7 +49,7 @@ const UpdateProfile = () => {
         dispatch(updateAvatar({ userToken, data: formData }));
     };
     return (
-        <div className="w-fulllg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg  ">
+        <div className="w-full lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg  ">
             <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -77,13 +77,9 @@ const UpdateProfile = () => {
                         />
                     </label>
                 </div>
-                <div className="submit-bottom-btn w-full">
-
-                    <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
-                        <span className="font-semibold text-white text-lg">পরবর্তী</span>
-                    </button>
-
-                </div>
+                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+                        <button  className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
+                    </div>
             </form>
         </div>
     );
