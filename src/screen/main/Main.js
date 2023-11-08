@@ -79,7 +79,7 @@ const Main = () => {
                         <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <FiInfo className="mr-1 text-xl text-violet-500"></FiInfo> <span className="ml-5">
                             তথ্য হালনাগাদ</span></button>
                     </Link>
-                    <Link to="">
+                    <Link to="/notification">
                         <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOutlineNotificationsNone className="mr-1 text-xl text-violet-500"></MdOutlineNotificationsNone> <span className="ml-5">
                         নোটিফিকেশন</span></button>
                     </Link>

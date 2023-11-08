@@ -38,6 +38,7 @@ import Info from './pages/trustpay/Info';
 import CreateSavings from './screen/savings/CreateSavings';
 import UpdateProfile from './pages/user/UpdateProfile';
 import UpdateData from './pages/user/update/UpdateData';
+import Notifications from './screen/notifications/Notifications';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -90,6 +91,7 @@ function App() {
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
             <Route path="/create/savings" element={<PrivateRoute><CreateSavings></CreateSavings></PrivateRoute>}></Route>
             {/* <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route> */}
+            <Route path="/notification" element={<PrivateRoute><Notifications></Notifications></PrivateRoute>}></Route>
             <Route path="/support" element={<Support></Support>}></Route>
             <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
             <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
