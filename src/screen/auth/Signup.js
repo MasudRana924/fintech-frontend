@@ -42,7 +42,7 @@ const Signup = () => {
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
                     {/* <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" /> */}
                     <div className="flex flex-1 items-center justify-center mx-auto ">
-                        <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie>
+                        {/* <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie> */}
                     </div>
                     <div className="mt-6 p-8">
                         {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}

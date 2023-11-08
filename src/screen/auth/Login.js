@@ -40,7 +40,8 @@ const Login = () => {
             <div className="flex flex-col items-center justify-center mt-12 lg:mt-52  ">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
                     <div className="flex flex-1 items-center justify-center mx-auto ">
-                        <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie>
+                        {/* <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie> */}
+                        
                     </div>
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার ট্রাস্ট পে একাউন্টে</h2>
