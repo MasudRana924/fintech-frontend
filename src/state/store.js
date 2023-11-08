@@ -45,8 +45,6 @@ const rootReducer = combineReducers({
   savings:savingsSlice,
   mySavings:mySavingsSlice,
   updatedAvatar:updateavatarSlice
-  
-
 });
 
 const store = configureStore({

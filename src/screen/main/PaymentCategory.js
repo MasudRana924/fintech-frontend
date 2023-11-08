@@ -96,7 +96,7 @@ const PaymentCategory = () => {
                     <p className="paymentCategory-text text-start  font-medium">বিনিয়োগ</p>
                 </div> 
             </div>
-            <div className="flex flex-1 justify-center items-center mb-1" onClick={showMenu}>
+            <div className="flex flex-1 justify-center items-center mb-1 " onClick={showMenu}>
             <button className={active ? "flex items-center justify-center border border-gray rounded-full  p-1 text-red-500 w-24 see-more-btn ":"flex items-center justify-center border border-gray rounded-full  p-1 text-violet-500 w-24 see-more-btn "}>{active ? ' বন্ধ করুন ':'আরো দেখুন'}<RiArrowDownSFill className={active ? "text-red-500 text-2xl":"text-violet-500 text-2xl"} ></RiArrowDownSFill></button>
             </div>
         </div>

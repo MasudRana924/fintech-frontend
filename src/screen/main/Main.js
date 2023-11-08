@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AiFillTrophy, AiOutlineFileUnknown} from "react-icons/ai";
+import { AiFillTrophy, AiOutlineFileUnknown } from "react-icons/ai";
 import { FiLogOut, FiSettings, FiInfo } from "react-icons/fi";
-import { BiTransfer, BiMenuAltRight } from "react-icons/bi";
+import { BiTransfer, BiMenuAltRight,BiMapPin } from "react-icons/bi";
 import { PiHeadsetDuotone } from "react-icons/pi";
-import { MdOutlineDiscount } from "react-icons/md";
+import { MdOutlineDiscount,MdOutlineNotificationsNone,MdOfflineShare } from "react-icons/md";
 import Sliderr from './Sliderr';
 import PaymentCategory from './PaymentCategory';
 import { Link } from 'react-router-dom';
@@ -56,49 +56,58 @@ const Main = () => {
                 </div>
                 <div className="flex justify-between mt-3 mr-3">
                     <Link to="/reward">
-                        <AiFillTrophy className="text-white text-2xl mt-2"></AiFillTrophy>
+                        <AiFillTrophy className="text-white text-3xl "></AiFillTrophy>
                     </Link>
-                    <BiMenuAltRight className="text-white text-2xl ml-5 lg:hidden block mt-2" onClick={showMenu}></BiMenuAltRight>
+                    <BiMenuAltRight className="text-white text-3xl ml-5 lg:hidden block " onClick={showMenu}></BiMenuAltRight>
                 </div>
             </div>
             <PaymentCategory></PaymentCategory>
             <Mybkash></Mybkash>
-            <Sliderr></Sliderr>    
+            <Sliderr></Sliderr>
             <Others></Others>
             <SUggestion ></SUggestion>
-           
+
 
             {/* navbar for small device */}
             <ul className={active ? 'bg-white border border-white  flex-col flex fixed inset-0 left-1/4 lg:left-3/4  uppercase   gap-6   lg:block  text-black text-start ml-16 ' : 'hidden'}>
-
-
                 <ul className="mt-16">
-
                     <Link to="/all/transactions">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-3/4 text-start ml-5 mt-5 " onClick={showMenu}> <BiTransfer className="mr-1 text-xl text-violet-500"></BiTransfer> <span className="ml-5">
                             লেনদেন সমূহ</span></button>
                     </Link>
                     <Link to="/user/update/info">
-                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <FiInfo className="mr-1 text-xl text-violet-500"></FiInfo> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <FiInfo className="mr-1 text-xl text-violet-500"></FiInfo> <span className="ml-5">
                             তথ্য হালনাগাদ</span></button>
                     </Link>
+                    <Link to="">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOutlineNotificationsNone className="mr-1 text-xl text-violet-500"></MdOutlineNotificationsNone> <span className="ml-5">
+                        নোটিফিকেশন</span></button>
+                    </Link>
+                    <Link to="">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOfflineShare className="mr-1 text-xl text-violet-500"></MdOfflineShare> <span className="ml-5">
+                       রেফার</span></button>
+                    </Link>
+                    <Link to="">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <BiMapPin className="mr-1 text-xl text-violet-500"></BiMapPin> <span className="ml-5">
+                        ম্যাপ </span></button>
+                    </Link>
                     <Link to="/cuppon">
-                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOutlineDiscount className="mr-1 text-xl text-violet-500"></MdOutlineDiscount> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <MdOutlineDiscount className="mr-1 text-xl text-violet-500"></MdOutlineDiscount> <span className="ml-5">
                             কুপন</span></button>
                     </Link>
                     <Link to="/info">
-                        <button className="flex text-md w-full text-start ml-5 mt-5" onClick={showMenu}> <AiOutlineFileUnknown className="mr-1 text-xl text-violet-500"></AiOutlineFileUnknown> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <AiOutlineFileUnknown className="mr-1 text-xl text-violet-500"></AiOutlineFileUnknown> <span className="ml-5">
                             ট্রাস্ট-পে নিয়ে জানুন </span></button>
                     </Link>
                     <Link to="/support">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <PiHeadsetDuotone className="mr-1 text-xl text-violet-500"></PiHeadsetDuotone> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <PiHeadsetDuotone className="mr-1 text-xl text-violet-500"></PiHeadsetDuotone> <span className="ml-5">
                             সাপোর্ট </span></button>
                     </Link>
                     <Link to="/settings">
-                        <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-violet-500"></FiSettings> <span className="ml-5">
+                        <button className="flex text-sm text-lime-950  w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <FiSettings className="mr-1 text-xl text-violet-500"></FiSettings> <span className="ml-5">
                             সেটিংস </span></button>
                     </Link>
-                    <button className="flex text-md w-3/4 text-start ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-red-500"></FiLogOut> <span className="ml-5">
+                    <button className="flex text-sm   w-3/4 text-start text-red-500 ml-5 mt-5" onClick={() => dispatch(logout())}> <FiLogOut className="mr-1 text-md mt-1 text-red-500"></FiLogOut> <span className="ml-5">
                         লগআউট</span></button>
                 </ul>
             </ul>
