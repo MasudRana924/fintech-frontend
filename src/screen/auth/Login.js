@@ -108,20 +108,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
-            <div className="flex justify-between w-full lg:hidden h-12  success-btn ">
-                <div>
-                    <CiLocationOn className="text-violet-500 ml-6 font-bold"></CiLocationOn>
-                    <button className="text-xs text-violet-500 pl-2 pr-2  ">লোকেশন</button>
-                </div>
-
-                <Link to="/support">
-                    <div>
-                        <CiHeadphones className="text-violet-500 ml-3 font-bold"></CiHeadphones>
-                        <button className="text-xs text-violet-500 pl-2 pr-2">সেবা</button>
-                    </div>
-                </Link>
-            </div>
         </div>
     );
 };
