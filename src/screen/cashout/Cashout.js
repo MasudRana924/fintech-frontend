@@ -57,7 +57,7 @@ const Cashout = () => {
             <div className="w-full flex mt-16 pl-2 pr-2">
                 <TextField
                     id="input-with-icon-textfield"
-                    label="ট্রাস্ট পে একাউন্ট"
+                    label="পি-ক্যাশ একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">

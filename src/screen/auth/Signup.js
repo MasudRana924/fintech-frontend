@@ -69,7 +69,7 @@ const Signup = () => {
                             />
                             <TextField
                                 id="standard-basic"
-                                label="ট্রাস্ট-পে পিন"
+                                label="পি-ক্যাশপিন"
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">

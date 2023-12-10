@@ -12,7 +12,7 @@ const Info = () => {
                     </Link>
                 </div>
                 {/* <p className="text-white text-xl mt-1 ml-16">Inbox</p> */}
-                <p className="text-white text-md mt-4 ml-8">  ট্রাস্ট-পে নিয়ে জানুন</p>
+                <p className="text-white text-md mt-4 ml-8">  পি-ক্যাশ নিয়ে জানুন</p>
             </div>
             <div className=" mt-24 ">
                 <div className="m-4">

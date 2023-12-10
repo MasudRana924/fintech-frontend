@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { logout } from '../../state/user/loginSlice';
 import { fetchtuserDetails } from '../../state/user/userDetailsSlice';
 import Skeleton from '@mui/material/Skeleton';
-import Mybkash from './Mybkash';
+import MyPkash from './MyPkash';
 import SUggestion from './SUggestion';
 import Others from './Others';
 import './Main.css'
@@ -62,7 +62,7 @@ const Main = () => {
                 </div>
             </div>
             <PaymentCategory></PaymentCategory>
-            <Mybkash></Mybkash>
+            <MyPkash></MyPkash>
             <Sliderr></Sliderr>
             <Others></Others>
             <SUggestion ></SUggestion>
@@ -97,7 +97,7 @@ const Main = () => {
                     </Link>
                     <Link to="/info">
                         <button className="flex text-sm text-lime-950  w-full text-start ml-5 mt-5" onClick={showMenu}> <AiOutlineFileUnknown className="mr-1 text-xl text-violet-500"></AiOutlineFileUnknown> <span className="ml-5">
-                            ট্রাস্ট-পে নিয়ে জানুন </span></button>
+                        পি-ক্যাশ নিয়ে জানুন </span></button>
                     </Link>
                     <Link to="/support">
                         <button className="flex text-sm text-lime-950  w-3/4 text-start ml-5 mt-5" onClick={showMenu}> <PiHeadsetDuotone className="mr-1 text-xl text-violet-500"></PiHeadsetDuotone> <span className="ml-5">

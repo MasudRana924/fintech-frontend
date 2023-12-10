@@ -39,6 +39,11 @@ import CreateSavings from './screen/savings/CreateSavings';
 import UpdateProfile from './pages/user/UpdateProfile';
 import UpdateData from './pages/user/update/UpdateData';
 import Notifications from './screen/notifications/Notifications';
+import Recharge from './screen/recharge/Recharge';
+import AddMoney from './screen/addmoney/AddMoney';
+import PayBill from './screen/paybill/PayBill';
+import Education from './screen/education/Education';
+import TakeData from './pages/user/update/TakeData';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -72,6 +77,15 @@ function App() {
             <Route path="/cash/out/confirm" element={<PrivateRoute><CashoutPinPage></CashoutPinPage></PrivateRoute>}></Route>
             <Route path="/confirm/cashout" element={<PrivateRoute><Confirm></Confirm></PrivateRoute>}></Route>
             <Route path="/cashout/success" element={<PrivateRoute><CashOutSuccess></CashOutSuccess></PrivateRoute>}></Route>
+             
+             {/* recharge */}
+             <Route path="/recharge" element={<PrivateRoute> <Recharge></Recharge> </PrivateRoute>}></Route>
+             {/* add money */}
+             <Route path="/add/money" element={<PrivateRoute> <AddMoney></AddMoney> </PrivateRoute>}></Route>
+             {/* pay bill */}
+             <Route path="/pay/bill" element={<PrivateRoute> <PayBill></PayBill> </PrivateRoute>}></Route>
+             {/* education */}
+             <Route path="/education/bill" element={<PrivateRoute> <Education></Education> </PrivateRoute>}></Route>
             {/* payment */}
             <Route path="/payment/number" element={<PrivateRoute><PaymentNumber></PaymentNumber></PrivateRoute>}></Route>
             <Route path="/payment/amount" element={<PrivateRoute><Paymentamount></Paymentamount></PrivateRoute>}></Route>
@@ -96,7 +110,9 @@ function App() {
             <Route path="/cuppon" element={<PrivateRoute><Cuppon></Cuppon></PrivateRoute>}></Route>
             <Route path="/info" element={<PrivateRoute><Info></Info></PrivateRoute>}></Route>
             <Route path="/update/profile" element={<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>}></Route>
+            {/* update Data  */}
             <Route path="user/update/info" element={<PrivateRoute><UpdateData></UpdateData></PrivateRoute>}></Route>
+            <Route path="/set/user/info" element={<PrivateRoute><TakeData></TakeData></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
       </div>}

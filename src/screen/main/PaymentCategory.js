@@ -1,11 +1,12 @@
 import React from 'react';
-import { BsLightbulb, BsBagFill,BsBook } from "react-icons/bs";
+import { BsLightbulb, BsBagFill, BsBook, BsLightningCharge } from "react-icons/bs";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { GiChipsBag,GiGrowth } from "react-icons/gi";
+import { GiChipsBag, GiGrowth } from "react-icons/gi";
 import { FaRegMoneyBillAlt, FaHandHoldingUsd } from "react-icons/fa";
-import {AiOutlineSend, AiOutlineIdcard,AiFillFund } from "react-icons/ai";
+import { AiOutlineSend, AiFillFund } from "react-icons/ai";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { SiRemix } from "react-icons/si";
+import { MdOutlineSendToMobile } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { message } from 'antd';
 import './Main.css'
@@ -22,11 +23,15 @@ const PaymentCategory = () => {
     }
     return (
         <div className="mt-16 lg:mt-24 border border-white bg-white rounded-lg ml-2 mr-2 payment-category-section">
-            <p className="text-start text-xs m-4">ট্রাস্ট পে সেবাসমূহ</p>
+            <p className="text-start text-xs m-4">পি-ক্যাশ সেবাসমূহ</p>
             <div className="flex justify-around mt-2">
                 <div>
                     <Link to="/send">
-                        <AiOutlineIdcard className="text-3xl text-amber-500 mb-1"></AiOutlineIdcard>
+
+                        <div className="flex">
+                            <MdOutlineSendToMobile className="text-3xl  text-amber-500  mb-1">ট</MdOutlineSendToMobile>
+                            <p className="text-sm font-thin text-amber-500 mb-1 mt-2">ট</p>
+                        </div>
                         <p className="paymentCategory-text font-medium">সেন্ড মানি</p>
                     </Link>
                 </div>
@@ -39,9 +44,10 @@ const PaymentCategory = () => {
                         <p className="paymentCategory-text  font-medium  text-start" >ক্যাশ আউট</p>
                     </Link>
                 </div>
-                <div onClick={handleClick}>
-                    <FaRegMoneyBillAlt className="text-3xl text-violet-500  mb-1"></FaRegMoneyBillAlt>
-                    <p className="paymentCategory-text font-medium  text-start">রিচার্জ</p>
+                <div >
+                    <Link to="/recharge">
+                        <BsLightningCharge className="text-3xl text-violet-500  mb-1"></BsLightningCharge>
+                        <p className="paymentCategory-text font-medium  text-start">রিচার্জ</p></Link>
                 </div>
                 <div >
                     <Link to="/payment/number">
@@ -51,15 +57,16 @@ const PaymentCategory = () => {
                 </div>
             </div>
             <div className="mt-5 flex justify-around mb-4" >
-                <div onClick={handleClick}>
-                    <Link to="">
+                <div >
+                    <Link to="/add/money">
                         <AiOutlineSend className="text-3xl text-teal-500 mb-1"></AiOutlineSend>
                         <p className="paymentCategory-text  text-start font-medium ">এ্যাড মানি</p>
                     </Link>
                 </div>
-                <div onClick={handleClick}>
-                    <BsLightbulb className="text-3xl  text-red-500  mb-1"></BsLightbulb>
-                    <p className="paymentCategory-text text-start  font-medium">পে-বিল</p>
+                <div >
+                    <Link to="/pay/bill">
+                        <BsLightbulb className="text-3xl  text-red-500  mb-1"></BsLightbulb>
+                        <p className="paymentCategory-text text-start  font-medium">পে-বিল</p></Link>
                 </div>
                 <div >
                     <Link to="/savings">
@@ -74,30 +81,31 @@ const PaymentCategory = () => {
                     </Link>
                 </div>
             </div>
-            <div className={active ? "mt-5 flex justify-around mb-4":"hidden"} >
-                <div onClick={handleClick}>
+            <div className={active ? "mt-5 ml-6 mb-4" : "hidden"} >
+                {/* <div onClick={handleClick}>
                     <Link to="">
                         <SiRemix className="text-3xl text-yellow-600 mb-1"></SiRemix>
                         <p className="paymentCategory-text  text-start font-medium ">রেমিট্যান্স</p>
                     </Link>
+                </div> */}
+                <div >
+                  <Link to="/education/bill">
+                  <BsBook className="text-3xl   text-cyan-400  mb-1"></BsBook>
+                    <p className="paymentCategory-text text-start  font-medium">এডুকেশন ফি</p></Link>
                 </div>
-                <div onClick={handleClick}>
-                    <BsBook className="text-3xl   text-cyan-400  mb-1"></BsBook>
-                    <p className="paymentCategory-text text-start  font-medium">এডুকেশন ফি</p>
-                </div> 
-                <div onClick={handleClick}>
+                {/* <div onClick={handleClick}>
                     <Link to="">
                         <GiGrowth className="text-3xl text-violet-500 mb-1"></GiGrowth>
                         <p className="paymentCategory-text  text-start font-medium ">বিনিময় </p>
                     </Link>
-                </div>
-                <div onClick={handleClick}>
+                </div> */}
+                {/* <div onClick={handleClick}>
                     <AiFillFund className="text-3xl   text-emerald-500 mb-1"></AiFillFund>
                     <p className="paymentCategory-text text-start  font-medium">বিনিয়োগ</p>
-                </div> 
+                </div> */}
             </div>
             <div className="flex flex-1 justify-center items-center mb-1 " onClick={showMenu}>
-            <button className={active ? "flex items-center justify-center border border-gray rounded-full  p-1 text-red-500 w-24 see-more-btn ":"flex items-center justify-center border border-gray rounded-full  p-1 text-violet-500 w-24 see-more-btn "}>{active ? ' বন্ধ করুন ':'আরো দেখুন'}<RiArrowDownSFill className={active ? "text-red-500 text-2xl":"text-violet-500 text-2xl"} ></RiArrowDownSFill></button>
+                <button className={active ? "flex items-center justify-center border border-gray rounded-full  p-1 text-red-500 w-24 see-more-btn " : "flex items-center justify-center border border-gray rounded-full  p-1 text-violet-500 w-24 see-more-btn "}>{active ? ' বন্ধ করুন ' : 'আরো দেখুন'}<RiArrowDownSFill className={active ? "text-red-500 text-2xl" : "text-violet-500 text-2xl"} ></RiArrowDownSFill></button>
             </div>
         </div>
     );

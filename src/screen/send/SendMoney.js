@@ -65,7 +65,7 @@ const SendMoney = () => {
 
                 <TextField
                     id="input-with-icon-textfield"
-                    label="ট্রাস্ট পে একাউন্ট"
+                    label="পি-ক্যাশ একাউন্ট"
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
