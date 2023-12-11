@@ -20,10 +20,11 @@
     margin-top: -60px;
     background-color: white;
 }
-
+.see-more-btn{
+    z-index: 100;
+    margin-top: -30px;
+}
 .paymentCategory-text {
     font-size: 10px;
 }
-.see-more-btn{
-    font-size: 10px;
-}
+

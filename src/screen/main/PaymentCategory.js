@@ -1,14 +1,12 @@
 import React from 'react';
 import { BsLightbulb, BsBagFill, BsBook, BsLightningCharge } from "react-icons/bs";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { GiChipsBag, GiGrowth } from "react-icons/gi";
-import { FaRegMoneyBillAlt, FaHandHoldingUsd } from "react-icons/fa";
-import { AiOutlineSend, AiFillFund } from "react-icons/ai";
+import { GiChipsBag, } from "react-icons/gi";
+import { FaHandHoldingUsd } from "react-icons/fa";
+import { AiOutlineSend, } from "react-icons/ai";
 import { RiArrowDownSFill } from "react-icons/ri";
-import { SiRemix } from "react-icons/si";
 import { MdOutlineSendToMobile } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import { message } from 'antd';
 import './Main.css'
 import { useState } from 'react';
 
@@ -16,10 +14,6 @@ const PaymentCategory = () => {
     const [active, setActive] = useState(false)
     const showMenu = () => {
         setActive(!active);
-    }
-    const handleClick = (e) => {
-        e.preventDefault();
-        message.error("কাজ চলিতেছে");
     }
     return (
         <div className="mt-16 lg:mt-24 border border-white bg-white rounded-lg ml-2 mr-2 payment-category-section">
@@ -81,7 +75,7 @@ const PaymentCategory = () => {
                     </Link>
                 </div>
             </div>
-            <div className={active ? "mt-5 ml-6 mb-4" : "hidden"} >
+            <div className={active ? "mt-5 ml-6" : "hidden"} >
                 {/* <div onClick={handleClick}>
                     <Link to="">
                         <SiRemix className="text-3xl text-yellow-600 mb-1"></SiRemix>
@@ -89,9 +83,10 @@ const PaymentCategory = () => {
                     </Link>
                 </div> */}
                 <div >
-                  <Link to="/education/bill">
-                  <BsBook className="text-3xl   text-cyan-400  mb-1"></BsBook>
-                    <p className="paymentCategory-text text-start  font-medium">এডুকেশন ফি</p></Link>
+                    <Link to="/education/bill">
+                        <BsBook className="text-3xl   text-cyan-400  mb-1"></BsBook>
+                        <p className="paymentCategory-text text-start  font-medium">এডুকেশন ফি</p>
+                    </Link>
                 </div>
                 {/* <div onClick={handleClick}>
                     <Link to="">
@@ -104,8 +99,8 @@ const PaymentCategory = () => {
                     <p className="paymentCategory-text text-start  font-medium">বিনিয়োগ</p>
                 </div> */}
             </div>
-            <div className="flex flex-1 justify-center items-center mb-1 " onClick={showMenu}>
-                <button className={active ? "flex items-center justify-center border border-gray rounded-full  p-1 text-red-500 w-24 see-more-btn " : "flex items-center justify-center border border-gray rounded-full  p-1 text-violet-500 w-24 see-more-btn "}>{active ? ' বন্ধ করুন ' : 'আরো দেখুন'}<RiArrowDownSFill className={active ? "text-red-500 text-2xl" : "text-violet-500 text-2xl"} ></RiArrowDownSFill></button>
+            <div className="flex flex-1 justify-center items-center mb-1 " >
+                <button onClick={showMenu} className={active ? "flex items-center justify-center border border-gray-300 rounded-full  text-red-500 w-10 h-10 see-more-btn " : "flex items-center justify-center border border-gray-300 rounded-full   text-violet-500 w-10 h-10 see-more-btn "}> <RiArrowDownSFill className={active ? "text-red-500 text-3xl" : "text-violet-500 text-3xl"} ></RiArrowDownSFill></button>
             </div>
         </div>
     );

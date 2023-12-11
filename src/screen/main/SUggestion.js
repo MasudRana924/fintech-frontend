@@ -29,7 +29,7 @@ const SUggestion = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     return (
-        <div className="ml-2 mr-2 mb-12 ">
+        <div className="ml-2 mr-2 mb-8 ">
             <div className="mt-4 h-24 border rounded-lg bg-white  border-white">
                 <div className="flex justify-between mt-2 pl-2 pr-2 ">
                     <p className="text-xs text-start ml-2">সাজেশন </p>
@@ -37,25 +37,25 @@ const SUggestion = () => {
                 </div>
                 <div className="flex  mt-2 pl-4 pr-2 mb-2">
                     <div>
-                        <Link to="/main">
+                        <Link to="/bikroy">
                             <img src={bikroy} alt="" className="h-10 " />
                             <p className="paymentCategory-text  font-medium  text-start">বিক্রয় ডট.কম</p>
                         </Link>
                     </div>
                     <div className="ml-4">
-                        <Link to="/main">
+                        <Link to="/ten/schools">
                             <img src={ten} alt="" className="h-10 " />
                             <p className="paymentCategory-text  font-medium  text-start">টেন মিনিট স্কুল</p>
                         </Link>
                     </div>
                     <div className="ml-4">
-                        <Link to="/main">
+                        <Link to="/daraz">
                             <img src={daraz} alt="" className="h-10" />
                             <p className="paymentCategory-text  font-medium  text-start">দারাজ</p>
                         </Link>
                     </div>
                     <div className="ml-4">
-                        <Link to="/main">
+                        <Link to="/railway">
                             <img src={railway} alt="" className="h-10" />
                             <p className="paymentCategory-text  font-medium  text-start">বাংলাদেশ রেলওয়ে</p>
                         </Link>

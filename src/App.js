@@ -44,6 +44,10 @@ import AddMoney from './screen/addmoney/AddMoney';
 import PayBill from './screen/paybill/PayBill';
 import Education from './screen/education/Education';
 import TakeData from './pages/user/update/TakeData';
+import Railway from './screen/suggestions/Railway';
+import Daraz from './screen/suggestions/Daraz';
+import Bikroy from './screen/suggestions/Bikroy';
+import TenSchools from './screen/suggestions/TenSchools';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -113,6 +117,13 @@ function App() {
             {/* update Data  */}
             <Route path="user/update/info" element={<PrivateRoute><UpdateData></UpdateData></PrivateRoute>}></Route>
             <Route path="/set/user/info" element={<PrivateRoute><TakeData></TakeData></PrivateRoute>}></Route>
+
+
+            {/* suggestions */}
+            <Route path="/railway" element={<PrivateRoute><Railway></Railway></PrivateRoute>}></Route>
+            <Route path="/daraz" element={<PrivateRoute><Daraz></Daraz></PrivateRoute>}></Route>
+            <Route path="/bikroy" element={<PrivateRoute><Bikroy></Bikroy></PrivateRoute>}></Route>
+            <Route path="/ten/schools" element={<PrivateRoute><TenSchools></TenSchools></PrivateRoute>}></Route>
           </Routes>
         </BrowserRouter>
       </div>}

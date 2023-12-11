@@ -6,10 +6,9 @@ import { createLogin } from '../../state/user/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
 import { Alert } from 'antd';
-import { FaFingerprint } from "react-icons/fa";
+import { IoFingerPrintOutline } from "react-icons/io5";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-
 const style = {
     position: 'absolute',
     top: '90%',
@@ -64,10 +63,10 @@ const Login = () => {
                     </div>
                     <div className="mt-6 p-8">
                         <h2 className="text-start text-md font-medium leading-6 text-gray-800">আপনার পি-ক্যাশ একাউন্টে</h2>
-                       <div className="flex items-center justify-between">
-                       <h2 className="text-start mt-2 text-md font-medium leading-6 text-violet-500">লগ ইন করুন</h2>
-                       <FaFingerprint className="text-3xl text-violet-500 mt-4" onClick={handleOpen}/>
-                       </div>
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-start mt-2 text-md font-medium leading-6 text-violet-500">লগ ইন করুন</h2>
+                            <IoFingerPrintOutline className="text-3xl text-violet-500 mt-4" onClick={handleOpen} />
+                        </div>
 
                         {
                             error ? <Alert message={error} type="error" className="mt-4" /> : null
@@ -104,7 +103,7 @@ const Login = () => {
                                 className="w-full py-3 px-6"
                                 value={password} onChange={(e) => setPassword(e.target.value)}
                             />
-                           
+
 
                             <div className="flex items-center justify-between">
                                 <div className="text-start">
@@ -144,10 +143,10 @@ const Login = () => {
                 <Box sx={style}>
                     <p className="text-xl text-start ml-2">Verify it's you </p>
                     <p className="text-xs text-start ml-2 mt-4 text-gray-500">pCash requires your confirmation</p>
-                     <div className="flex justify-center items-center mt-8">
-                     <FaFingerprint className="border p-2 text-7xl rounded-full bg-violet-500 text-white"></FaFingerprint>
-                     </div>
-                     <p className="text-md text-gray-600 text-start ml-2" onClick={handleClose}>CANCEL</p>
+                    <div className="flex justify-center items-center mt-8">
+                        <IoFingerPrintOutline className="border p-2 text-7xl rounded-full bg-violet-500 text-white"></IoFingerPrintOutline>
+                    </div>
+                    <p className="text-md text-gray-600 text-start ml-2 mt-4" onClick={handleClose}>CANCEL</p>
                 </Box>
             </Modal>
         </div>

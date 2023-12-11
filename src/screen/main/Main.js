@@ -63,9 +63,10 @@ const Main = () => {
             </div>
             <PaymentCategory></PaymentCategory>
             <MyPkash></MyPkash>
+            <SUggestion ></SUggestion>
             <Sliderr></Sliderr>
             <Others></Others>
-            <SUggestion ></SUggestion>
+        
 
 
             {/* navbar for small device */}
