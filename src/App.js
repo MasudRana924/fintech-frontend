@@ -48,6 +48,7 @@ import Railway from './screen/suggestions/Railway';
 import Daraz from './screen/suggestions/Daraz';
 import Bikroy from './screen/suggestions/Bikroy';
 import TenSchools from './screen/suggestions/TenSchools';
+import ALlSettingsList from './screen/settings/ALlSettingsList';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -97,6 +98,8 @@ function App() {
             <Route path="/confirm/payment" element={<PrivateRoute><ConfirmPayment></ConfirmPayment></PrivateRoute>}></Route>
             <Route path="/payment/success" element={<PrivateRoute><PaymentSuccess></PaymentSuccess></PrivateRoute>}></Route>
             {/* settings */}
+
+            <Route path="/settings/list" element={<PrivateRoute><ALlSettingsList></ALlSettingsList></PrivateRoute>}></Route>
             <Route path="/settings" element={<PrivateRoute><Settings></Settings></PrivateRoute>}></Route>
             <Route path="/update/name" element={<PrivateRoute><UpdateName></UpdateName></PrivateRoute>}></Route>
             <Route path="/update" element={<PrivateRoute><UpdateInfo></UpdateInfo></PrivateRoute>}></Route>

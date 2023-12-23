@@ -17,14 +17,14 @@ const TakeData = () => {
             <div className="m-2 bg-white border-white ">
                 <p className="text-sm text-start text-gray-500 p-2">আপনার NID এর সামনের ছবি তুলুন </p>
             </div>
-            <form action="" className="space-y-6 mt-4  " >
+            <form action="" >
                 <div className="data-image-section  flex flex-1 items-center justify-center gap-2 mt-2 ">
                     <img
                         alt=""
                         className="w-3/4 mx-auto  h-36  border-white bg-white "
 
                     />
-                    <label className='border border-violet-500 bg-violet-500'>
+                    <label className=' border border-violet-500 bg-violet-500'>
                         +
                         <br />
                         <input

@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { FaInternetExplorer } from "react-icons/fa";
 import { MdOutlineLocalGasStation } from "react-icons/md";
 import { IoIosWater } from "react-icons/io"
-import {BsFillTelephoneFill , BsLightningCharge } from 'react-icons/bs';
-import { PiTelevisionSimple,PiNotebookBold  } from "react-icons/pi";
+import { BsFillTelephoneFill, BsLightningCharge } from 'react-icons/bs';
+import { PiTelevisionSimple, PiNotebookBold } from "react-icons/pi";
+import { InputAdornment, TextField } from '@mui/material';
 const PayBill = () => {
     const { user } = useSelector(
         (state) => state.userdetails.userdetails
@@ -24,14 +25,32 @@ const PayBill = () => {
             <div className="border rounded ml-2 mr-2 mt-8 p-2 bg-white border-white">
                 <p className="text-gray-500 text-start  text-xs mb-4 ">প্রতিষ্ঠান খুঁজুন</p>
                 <div className="flex ">
-                    <input type="text" placeholder='প্রতিষ্ঠানের নাম দিন' className="w-full text-sm p-2 border border-gray-200 rounded " />
-                    <button className="bg-white w-12 absolute ml-72 mt-2 " > <FiArrowRight className="text-gray-500 text-2xl ml-2"></FiArrowRight></button>
+                    <div className="w-full flex mt-6 pl-2 pr-2">
+
+                        <TextField
+                            id="input-with-icon-textfield"
+                            label="প্রতিষ্ঠানের নাম দিন"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        {/* <LocalPhoneIcon /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            variant="standard"
+                            className="w-full"
+                            // value={receiverphone} onChange={(e) => setPhone(e.target.value)}
+                            required
+                        />
+                        <button className="w-12 bg-violet-500"> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+
+                    </div>
                 </div>
 
             </div>
             <div className="m-2 bg-white border-white ">
-            <p className="text-sm text-start text-gray-500 pl-2">সব প্রতিষ্ঠান</p>
-         </div>
+                <p className="text-sm text-start text-gray-500 pl-2">সব প্রতিষ্ঠান</p>
+            </div>
             <div className="m-2 bg-white border-white ">
                 <div className="flex justify-around pt-4">
                     <div>
@@ -79,7 +98,7 @@ const PayBill = () => {
                     <div >
                         <Link to="/cashout">
                             <div className="flex">
-                                <BsFillTelephoneFill  className="text-4xl border rounded-full p-1  text-violet-500   mb-1"></BsFillTelephoneFill>
+                                <BsFillTelephoneFill className="text-4xl border rounded-full p-1  text-violet-500   mb-1"></BsFillTelephoneFill>
 
                             </div>
                             <p className="paymentCategory-text  font-medium  text-start" >টেলিফোন </p>
@@ -87,11 +106,11 @@ const PayBill = () => {
                     </div>
                     <div >
                         <Link to="/recharge">
-                            <PiNotebookBold  className="text-4xl border rounded-full p-1 text-violet-500  mb-1"></PiNotebookBold>
+                            <PiNotebookBold className="text-4xl border rounded-full p-1 text-violet-500  mb-1"></PiNotebookBold>
                             <p className="paymentCategory-text font-medium  text-start">অন্যান্য</p></Link>
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
 

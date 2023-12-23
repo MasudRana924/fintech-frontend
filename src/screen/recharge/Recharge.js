@@ -3,6 +3,7 @@ import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Skeleton from '@mui/material/Skeleton';
+import { InputAdornment, TextField } from '@mui/material';
 
 const Recharge = () => {
     const { user } = useSelector(
@@ -21,8 +22,28 @@ const Recharge = () => {
             <div className="border rounded ml-2 mr-2 mt-8 p-2 bg-white border-white">
                 <p className="text-gray-500 text-start  text-xs mb-4 ">যার জন্য</p>
                 <div className="flex ">
-                    <input type="text" placeholder='নাম্বার দিন' className="w-full text-sm p-2 border border-gray-200 rounded " />
-                    <button className="bg-white w-12 absolute ml-72 mt-2 " > <FiArrowRight className="text-gray-500 text-2xl ml-2"></FiArrowRight></button>
+                    {/* <input type="text" placeholder='নাম্বার দিন' className="w-full text-sm p-2 border border-gray-200 rounded " />
+                    <button className="bg-white w-12 absolute ml-72 mt-2 " > <FiArrowRight className="text-gray-500 text-2xl ml-2"></FiArrowRight></button> */}
+                    <div className="w-full flex mt-6 pl-2 pr-2">
+
+                        <TextField
+                            id="input-with-icon-textfield"
+                            label="নাম্বার দিন"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        {/* <LocalPhoneIcon /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            variant="standard"
+                            className="w-full"
+                            // value={receiverphone} onChange={(e) => setPhone(e.target.value)}
+                            required
+                        />
+                        <button className="w-12 bg-violet-500"> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+
+                    </div>
                 </div>
 
             </div>

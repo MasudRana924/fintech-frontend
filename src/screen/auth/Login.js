@@ -9,6 +9,8 @@ import { Alert } from 'antd';
 import { IoFingerPrintOutline } from "react-icons/io5";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import Lottie from "lottie-react";
+import loadeer from '../../jsons/loadeer.json'
 const style = {
     position: 'absolute',
     top: '90%',
@@ -113,6 +115,7 @@ const Login = () => {
                                 {
                                     isLoading ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full '>
                                         <span className="font-semibold text-white text-xs">লোডিং</span>
+                                        
                                     </button> : <div>
                                         {
                                             phone.length === 11 && password.length === 5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
