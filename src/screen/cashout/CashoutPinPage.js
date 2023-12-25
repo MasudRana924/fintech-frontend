@@ -96,7 +96,7 @@ const CashoutPinPage = () => {
                      value={password} onChange={(e) => setPass(e.target.value)}
                 />
                 {
-                password ?  <button className='w-12 bg-violet-500' onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>: <button className='w-12 bg-gray-500' onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                password ?  <button className='w-12 bg-blue-500' onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>: <button className='w-12 bg-gray-500' onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
               }
 
             </div>

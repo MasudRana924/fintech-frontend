@@ -58,7 +58,7 @@ const Paymentamount = () => {
                     value={amount} onChange={(e) => setAmount(e.target.value)}
                 />
                 {
-                    amount ? <button className="w-12 bg-violet-500 " onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500 " onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                    amount ? <button className="w-12 bg-blue-500 " onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500 " onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                 }
             </div>
             <p className="text-sm mb-4">বর্তমান ব্যালেন্স  {user?.amount}.00 ট </p>

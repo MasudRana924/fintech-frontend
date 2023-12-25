@@ -64,10 +64,10 @@ const ConfirmPayment = () => {
             </div>
         </div>
 
-        <div className="w-full lg:hidden mx-auto h-24 bg-violet-500 confirm-btn" onClick={handleTransfer}>
+        <div className="w-full lg:hidden mx-auto h-24 bg-blue-500 confirm-btn" onClick={handleTransfer}>
             <button  className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
         </div>
-        <div className="hidden lg:block lg:w-full mx-auto h-24 bg-violet-500 mt-44" onClick={handleTransfer}>
+        <div className="hidden lg:block lg:w-full mx-auto h-24 bg-blue-500 mt-44" onClick={handleTransfer}>
             <button  className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
         </div>
     </div>

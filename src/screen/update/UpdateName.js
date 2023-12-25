@@ -77,7 +77,7 @@ const UpdateName = () => {
                     className="w-3/4 mx-auto"
                     value={lastname} onChange={(e) => setLastName(e.target.value)}
                 />
-                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+                <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
                     <button className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                 </div>
             </form>

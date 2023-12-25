@@ -70,7 +70,7 @@ const Cashout = () => {
                     value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                 />
                 {
-                    receiverphone.length === 11 ? <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                    receiverphone.length === 11 ? <button className="w-12 bg-blue-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                 }
             </div>
             <p className="text-start text-xs m-2 text-gray-400">১১ ডিজিটের এজেন্ট নাম্বার প্রদান করুণ</p>

@@ -65,7 +65,7 @@ const UpdateInfo = () => {
                 />
                 <div>
                 
-                    <button className="h-12 w-full  bg-violet-500 border-violet-500 hover:bg-violet-500 hover:border-violet-500 mb-5">
+                    <button className="h-12 w-full  bg-blue-500 border-blue-500 hover:bg-blue-500 hover:border-blue-500 mb-5">
                         <span className="font-semibold text-white text-lg ">পরবর্তী</span>
                     </button>
 

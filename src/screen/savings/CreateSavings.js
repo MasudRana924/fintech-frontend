@@ -69,7 +69,7 @@ const CreateSavings = () => {
                     </select>
                 </div>
             </div>
-            <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+            <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
                 <Link to="/create/savings">
                     <button className="text-white pl-2 pr-2 pt-2 text-sm " onClick={handleSubmit}>আপনার সেভিংস স্কিম খুলুন  সহজেই</button>
                 </Link>
