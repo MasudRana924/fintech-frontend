@@ -11,7 +11,7 @@ import './Main.css'
 
 const PaymentCategory = () => {
     return (
-        <div className="mt-16 lg:mt-24 border border-white bg-white rounded-lg ml-2 mr-2 payment-category-section">
+        <div className="mt-16 lg:mt-24 border border-gray-100 bg-gray-100 rounded-lg ml-2 mr-2 payment-category-section">
             {/* <p className="text-start text-xs m-4">পি-ক্যাশ সেবাসমূহ</p> */}
             <div className="flex justify-around mt-4 mb-4">
                 <div className=" bg-teal-300 border rounded-lg p-2 w-20 h-16">

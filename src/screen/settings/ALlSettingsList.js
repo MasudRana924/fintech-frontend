@@ -53,7 +53,7 @@ const ALlSettingsList = () => {
                     </div></Link>
             </div>
             <div className="mt-2">
-                <Link to="/user/update/info">
+                <Link to="/notifications">
                     <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between">
                         <MdOutlineNotificationsNone className="text-violet-500 text-2xl mt-1 ml-2"></MdOutlineNotificationsNone>
                         <p className="text-sm font-medium mt-2 ml-2">নোটিফিকেশন</p>

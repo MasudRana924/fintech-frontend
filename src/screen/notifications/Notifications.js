@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Notifications = () => {
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
-            <div className="w-full flex bg-violet-500 h-16 rounded-b-lg main-navbar">
+            <div className="w-full flex bg-blue-500 h-16 rounded-b-lg main-navbar">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>

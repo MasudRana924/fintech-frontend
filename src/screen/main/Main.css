@@ -6,7 +6,8 @@
 .main-navbar {
     position: fixed;
     top: 0;
-    z-index: 200;
+    /* z-index: 200; */
+
 }
 
 .main-bottom-bar {
@@ -15,16 +16,29 @@
     /* z-index: 200; */
     background-color: white;
 }
-.main-qr{
+
+.main-qr {
     position: relative;
     margin-top: -60px;
     background-color: white;
 }
-.see-more-btn{
+
+.see-more-btn {
     z-index: 100;
     margin-top: -30px;
 }
+
+.payment-category-section {
+    /* position: relative;
+     z-index: 200; */
+}
+
 .paymentCategory-text {
     font-size: 10px;
 }
 
+.bottom-navigation {
+    position: fixed;
+    bottom: 0%;
+    z-index: 100;
+}
