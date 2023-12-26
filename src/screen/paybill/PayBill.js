@@ -42,7 +42,7 @@ const PayBill = () => {
                             // value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                             required
                         />
-                        <button className="w-12 bg-violet-500"> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                        <button className="w-12 bg-blue-500"> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
 
                     </div>
                 </div>

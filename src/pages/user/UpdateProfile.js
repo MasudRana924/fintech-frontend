@@ -63,9 +63,9 @@ const UpdateProfile = () => {
                     <img
                         alt=""
                         src={avatarPreview}
-                        className={isLoading ? "h-36 w-36 border-2 border-violet-500 rounded-full  avatar-image" : "h-36 w-36 border-2 border-violet-500 rounded-full"}
+                        className={isLoading ? "h-36 w-36 border-2 border-blue-500 rounded-full  avatar-image" : "h-36 w-36 border-2 border-blue-500 rounded-full"}
                     />
-                    <label className='border border-violet-500 bg-violet-500'>
+                    <label className='border border-blue-500 bg-blue-500'>
                         +
                         <br />
                         <input
@@ -77,7 +77,7 @@ const UpdateProfile = () => {
                         />
                     </label>
                 </div>
-                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
+                <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
                         <button  className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                     </div>
             </form>
