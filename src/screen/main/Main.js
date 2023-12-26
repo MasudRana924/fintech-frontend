@@ -28,14 +28,14 @@ const Main = () => {
 
     return (
         <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container ">
-            <div className=" w-full lg:w-1/4  bg-blue-500 h-16 rounded-b-lg flex justify-between main-navbar">
+            <div className=" w-full lg:w-1/4   h-16 rounded-b-lg flex justify-between main-navbar">
                 <div className="flex">
                     <div className="w-16">
                         {
                             user?.avatarLogo ? <Link to="/profile">
-                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-white border-violet-500" /></Link> :
+                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-blue-500 border-blue-500" /></Link> :
                                 <Link to="/profile">
-                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full " /></Link>
+                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-blue-500 border-blue-500 " /></Link>
                         }
                     </div>
                     <div>
@@ -51,7 +51,7 @@ const Main = () => {
                     <Link to="/reward">
                         <AiFillTrophy className="text-white text-2xl "></AiFillTrophy>
                     </Link>
-                    <Link to="/settings/list">
+                    <Link to="/notifications">
                         <BsBell className="text-white text-xl ml-5 lg:hidden block " ></BsBell>
                     </Link>
                 </div>

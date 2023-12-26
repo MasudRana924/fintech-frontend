@@ -21,7 +21,7 @@ const AllTransactions = () => {
         content = transactions.map(transaction => <AllTransaction key={transaction._id} transaction={transaction} />)
     }
     return (
-        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg bg-gray-100">
+        <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
             <div className="w-full flex bg-blue-500 h-16 rounded-b-lg main-navbar">
                 <div className="w-1/4">
                     <Link to="/main">
@@ -35,7 +35,7 @@ const AllTransactions = () => {
                     <Loader ></Loader>
                 </div> :
                     <div
-                        className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 mt-16" >
+                        className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 mt-20" >
                         {content}
                     </div>
 

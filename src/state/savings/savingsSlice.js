@@ -18,7 +18,7 @@ export const createSavings=createAsyncThunk(
             const savings = await privatePost('/create/savings',userToken, data);
             return savings;
         } catch (err) {
-            return rejectWithValue(err);
+            return rejectWithValue(err.response.data.message);
         }
    
  
@@ -41,7 +41,7 @@ const savingsSlice=createSlice({
             .addCase(createSavings.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
-                state.errorr = action.error?.message
+                state.errorr = action.payload
             })
            
     }

@@ -18,11 +18,11 @@ const Support = () => {
                     <p className="text-xs text-start text-gray-900">যে কোন তথ্য বা সহায়তার জন্য আমাদের সাথে যোগাযোগ করূণ</p>
                     <div className="flex items-center justify-center  mt-4 gap-4">
                         <p className="text-violet-500 text-xs">ফোন </p>
-                        <p>+8801952254063</p>
+                        <p>+8801122334455</p>
                     </div>
                     <div className="flex items-center justify-center  mt-4 gap-4">
                         <p className="text-violet-500 text-xs"> ইমেইল</p>
-                        <p>support.trustpay@gmail.com</p>
+                        <p>support.pCash@gmail.com</p>
                     </div>
                 </div>
             </div>

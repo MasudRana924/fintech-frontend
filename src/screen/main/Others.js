@@ -26,7 +26,7 @@ const Others = () => {
     const handleClose = () => setOpen(false);
     return (
         <div className="mt-4">
-            <div className="ml-2 mr-2  shadow-lg border border-gray-100 bg-gray-100 rounded-lg">
+            <div className="ml-2 mr-2  shadow-lg border border-stone-100 bg-stone-100 rounded-lg">
                 <div className="mb-2">
                     <div className="flex justify-between mt-2 pl-2 pr-2 ">
                         <p className="text-xs text-start ml-2">অন্যান্য সেবাসমূহ </p>

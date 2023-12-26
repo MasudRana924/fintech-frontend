@@ -59,7 +59,7 @@ const SendMoney = () => {
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2" ></FiArrowLeft>
                     </Link>
                 </div>
-                <p className="text-white text-md mt-4 ml-5">সেন্ড মানি</p>
+                <p className="text-white text-md mt-4">সেন্ড মানি</p>
             </div>
             <div className="w-full flex mt-16 pl-2 pr-2">
 

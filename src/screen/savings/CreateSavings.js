@@ -32,7 +32,7 @@ const CreateSavings = () => {
         if (successs) {
             message.success("সেভিংস ক্রিয়েটেড")
         }if(errorr){
-            message.error("এই নাম্বারে ক্যাশ আউট সম্ভব না")
+            message.error(errorr)
         }
     }, [successs,errorr]);
     return (

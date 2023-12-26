@@ -15,14 +15,14 @@ const ALlSettingsList = () => {
     );
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg bg-gray-50 min-h-screen">
-              <div className=" w-full lg:w-1/4 bg-gray-50   h-16 rounded-b-lg flex justify-between main-navbar">
+              <div className=" w-full lg:w-1/4 bg-gray-50   h-16 rounded-b-lg flex justify-between ">
                 <div className="flex">
                     <div className="w-16">
                         {
                             user?.avatarLogo ? <Link to="/profile">
-                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-white border-violet-500" /></Link> :
+                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-white border-white" /></Link> :
                                 <Link to="/profile">
-                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full " /></Link>
+                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-white border-white" /></Link>
                         }
                     </div>
                     
@@ -36,7 +36,7 @@ const ALlSettingsList = () => {
                 </div>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-12">
                 <Link to="/all/transactions">
                     <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between mt-10 ">
                         <BiTransfer className="text-violet-500 text-2xl mt-1 ml-2"></BiTransfer>
@@ -100,12 +100,12 @@ const ALlSettingsList = () => {
                         <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
                     </div></Link>
             </div>
-            <div className="mt-2">
+            <div className="mt-8">
 
-                <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between">
+                <div className="m-2 h-12 border  bg-red-500 border-red-500 rounded-lg flex justify-between">
                     <button className="flex justify-center items-center text-sm   w-3/4 text-start text-red-500 ml-5 " onClick={() => dispatch(logout())}>
-                        <FiLogOut className="mr-1 text-md mt-1 text-red-500"></FiLogOut>
-                        <span className="ml-5">
+                        <FiLogOut className="mr-1 text-md mt-1 text-white"></FiLogOut>
+                        <span className="ml-5 text-white">
                             লগআউট</span>
                     </button>
                 </div>

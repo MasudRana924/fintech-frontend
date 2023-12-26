@@ -16,7 +16,7 @@ const AllTransaction = ({ transaction }) => {
     }
     return (
         <div className="card col-span-12  md:col-span-3  gap-4 lg:col-span-4  2xl:col-span-3 ">
-            <div className="text-start flex justify-between gap-5 bg-white border-white p-2">
+            <div className="text-start flex justify-between gap-5 bg-stone-100 border border-stone-100 rounded-lg p-2">
                 <div className="flex">
                     <div>
                         {
@@ -49,7 +49,7 @@ const AllTransaction = ({ transaction }) => {
 
                         <div className="flex gap-4 mt-2">
                             <p className="text-xs font-medium ml-2 text-gray-500">Trans ID : {transaction.tranId}</p>
-                            <FiCopy className="text-sm text-gray-900 font-medium" onClick={fCopy}></FiCopy>
+                            <FiCopy className="text-sm text-blue-500 font-medium" onClick={fCopy}></FiCopy>
                         </div>
                         <p className="text-xs font-medium ml-2 mt-1 mb-2 text-gray-500">{formatDate(transaction.createdAt)}</p>
                     </div>

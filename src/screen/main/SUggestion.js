@@ -30,7 +30,7 @@ const SUggestion = () => {
     const handleClose = () => setOpen(false);
     return (
         <div className="ml-2 mr-2  ">
-            <div className="mt-4 h-24 border rounded-lg border-gray-100 bg-gray-100">
+            <div className="mt-4 h-24 border rounded-lg border-stone-100 bg-stone-100">
                 <div className="flex justify-between mt-2 pl-2 pr-2 ">
                     <p className="text-xs text-start ml-2">সাজেশন </p>
                     <p className="text-xs text-start ml-2 text-blue-500" onClick={handleOpen}>সব দেখুন</p>
