@@ -56,7 +56,7 @@ const Login = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     return (
-        <div>
+        <div className="flex flex-col items-center justify-center mt-12 lg:mt-52">
             <div className="flex flex-col items-center justify-center mt-12 lg:mt-52  ">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border rounded-lg lg:shadow-lg">
                     <div className="flex flex-1 items-center justify-center mx-auto ">

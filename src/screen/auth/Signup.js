@@ -37,8 +37,8 @@ const Signup = () => {
         }
     }, [success, navigate]);
     return (
-        <div>
-            <div className=" flex flex-col items-center justify-center mt-12 lg:mt-52">
+        <div className="flex  items-center justify-center mt-12 lg:mt-52">
+            <div className=" flex  items-center justify-center mt-12 lg:mt-52">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
                     {/* <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" /> */}
                     <div className="flex flex-1 items-center justify-center mx-auto ">
