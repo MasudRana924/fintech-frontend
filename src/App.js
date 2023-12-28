@@ -49,6 +49,8 @@ import Daraz from './screen/suggestions/Daraz';
 import Bikroy from './screen/suggestions/Bikroy';
 import TenSchools from './screen/suggestions/TenSchools';
 import ALlSettingsList from './screen/settings/ALlSettingsList';
+import OutTransactions from './pages/user/OutTransactions';
+import InTransactions from './pages/user/InTransactions';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -70,8 +72,7 @@ function App() {
             <Route path="/account/signup" element={<Signup></Signup>}></Route>
             <Route path="/main" element={<PrivateRoute><Main></Main></PrivateRoute>}></Route>
             {/* sendmoney */}
-            <Route path="/send" element={<PrivateRoute><SendMoney></SendMoney></PrivateRoute>}></Route>
-            <Route path="/all/transactions" element={<PrivateRoute><AllTransactions></AllTransactions></PrivateRoute>}></Route>
+            <Route path="/send" element={<PrivateRoute><SendMoney></SendMoney></PrivateRoute>}></Route>           
             <Route path="/sendmoney" element={<PrivateRoute><TransferMoney></TransferMoney></PrivateRoute>}></Route>
             <Route path="/confirm/password" element={<PrivateRoute><TakePassword></TakePassword></PrivateRoute>}></Route>
             <Route path="/confirm/sendmoney" element={<PrivateRoute><ConfirmSendMoney></ConfirmSendMoney></PrivateRoute>}></Route>
@@ -97,6 +98,11 @@ function App() {
             <Route path="/payment/password" element={<PrivateRoute><PaymentPassword></PaymentPassword></PrivateRoute>}></Route>
             <Route path="/confirm/payment" element={<PrivateRoute><ConfirmPayment></ConfirmPayment></PrivateRoute>}></Route>
             <Route path="/payment/success" element={<PrivateRoute><PaymentSuccess></PaymentSuccess></PrivateRoute>}></Route>
+            {/* transactions */}
+            <Route path="/all/transactions" element={<PrivateRoute><AllTransactions></AllTransactions></PrivateRoute>}></Route>
+            <Route path="/all/out/transactions" element={<PrivateRoute><OutTransactions></OutTransactions></PrivateRoute>}></Route>
+            <Route path="/all/in/transactions" element={<PrivateRoute><InTransactions></InTransactions></PrivateRoute>}></Route>
+            
             {/* settings */}
 
             <Route path="/settings/list" element={<PrivateRoute><ALlSettingsList></ALlSettingsList></PrivateRoute>}></Route>

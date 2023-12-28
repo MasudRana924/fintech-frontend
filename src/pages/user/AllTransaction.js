@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import logo from '../../images/man.png'
 import { FiCopy } from 'react-icons/fi';
 import { message } from 'antd';
+import Alert from 'antd/es/alert/Alert';
 const AllTransaction = ({ transaction }) => {
     const { loggeduser, } = useSelector(
         (state) => state.userDetails

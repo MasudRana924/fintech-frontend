@@ -1,22 +1,29 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchtransactions } from '../../state/user/mytransactionSlice';
+import { fetchInTransactions } from '../../state/user/mytransactionSlice';
 import AllTransaction from './AllTransaction';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import Loader from '../loader/Loader';
-const AllTransactions = () => {
+import { Alert} from 'antd';
+
+const InTransactions = () => {
     const { loggeduser } = useSelector(
         (state) => state.userDetails
     );
     const userToken = loggeduser.token;
     const dispatch = useDispatch();
-    const { transactions } = useSelector(state => state.transactions.mytransactions);
+    const { transactions } = useSelector(state => state.transactions.myInTransactions);
     const { isLoading } = useSelector(state => state.transactions);
     useEffect(() => {
-        dispatch(fetchtransactions({ userToken }));
+        dispatch(fetchInTransactions({ userToken }));
     }, [dispatch, userToken]);
     let content;
+    if(transactions?.length <= 0){
+        content=<div className="w-full ">
+            <Alert message="দুঃখিত আপনি  এখনও কোন লেনদেন করেন নি" type="error"className="w-full" />
+        </div>
+    }
     if (!isLoading && transactions?.length > 0) {
         content = transactions.map(transaction => <AllTransaction key={transaction._id} transaction={transaction} />)
     }
@@ -42,7 +49,7 @@ const AllTransactions = () => {
 
                     <Link to="/all/out/transactions">
                         <button className="text-xs h-8 w-20 text-gray-900 leading-6 font-semibold border bg-red-200 border-red-200 rounded-lg">
-                        ক্যাশ আউট </button>
+                        ক্যাশ আউট</button>
                     </Link>
                 </div>
 
@@ -52,7 +59,7 @@ const AllTransactions = () => {
                     <Loader ></Loader>
                 </div> :
                     <div
-                        className="grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 mt-4" >
+                        className={transactions?.length>0 ?"grid grid-cols-12 gap-4 m-3 md:m-0 lg:m-0  lg:w-3/4 lg:mx-auto  lg:px-0 mt-4":"w-3/4 mx-auto mt-8"} >
                         {content}
                     </div>
 
@@ -61,4 +68,4 @@ const AllTransactions = () => {
     );
 };
 
-export default AllTransactions;
+export default InTransactions;

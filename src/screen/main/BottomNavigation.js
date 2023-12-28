@@ -6,23 +6,23 @@ import { Link } from 'react-router-dom';
 const BottomNavigations = () => {
     const [value, setValue] = React.useState(0);
     return (
-        <div className=" border h-12 rounded-lg bottom-navigation bg-blue-50 border-blue-50">
+        <div className=" border h-12 rounded-lg bottom-navigation bg-blue-300 border-blue-300">
             <div className="flex justify-between items-center ml-4 mr-4 mt-2">
                 <div className="">
                     <Link to="/">
-                    <RiHome2Line className='text-blue-500 text-2xl flex justify-center'/>
+                    <RiHome2Line className='text-white text-2xl flex justify-center'/>
                     </Link>
                     {/* <p className="text-xs">হোম</p> */}
                 </div>
                 <div>
                     <Link to="/all/transactions">
-                    <FaMoneyBillTransfer className='text-blue-500 text-2xl flex justify-center'/>
+                    <FaMoneyBillTransfer className='text-white text-2xl flex justify-center'/>
                     </Link>
                     {/* <p className="text-xs">লেনদেন</p> */}
                 </div>
                 <div>
                     <Link to="/settings/list">
-                    <FiSettings className='text-blue-500 text-2xl flex justify-center'/>
+                    <FiSettings className='text-white text-2xl flex justify-center'/>
                     </Link>
                     {/* <p className="text-xs">সেটিংস</p> */}
                 </div>
