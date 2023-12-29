@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPhoneToStore, addtypeToStore, clearStore } from '../../state/transaction/sendSlice';
-import { BiUserCircle } from 'react-icons/bi';
+import { AiOutlineScan } from "react-icons/ai"; 
 import { message } from 'antd';
 import { useEffect } from 'react';
 import { createTakeNumber } from '../../state/transaction/takeNumberSlice';
@@ -33,7 +33,6 @@ const SendMoney = () => {
             }));
             dispatch(addPhoneToStore({ receiverphone, senderphone }));
             dispatch(addtypeToStore({ type, receiverType }));
-
         }
         else {
             message.error("নাম্বার প্রদান করুণ")
@@ -51,6 +50,9 @@ const SendMoney = () => {
     const handleBack = (e) => {
         dispatch(clearStore());
     }
+    
+
+       
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg ">
             <div className="flex bg-blue-500 h-16 rounded-b-lg ">
@@ -82,7 +84,11 @@ const SendMoney = () => {
                     receiverphone.length === 11 && receiverphone!==user?.phone ? <button className="bg-blue-500 w-12" onClick={handleStore}> <FiArrowRight className="text-white text-2xl ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl ml-2"></FiArrowRight></button>
                 }
             </div>
+           
             <p className="text-start text-xs m-2 text-gray-400">১১ ডিজিটের পার্সোনাল  নাম্বার প্রদান করুণ</p>
+
+            <button className="flex  items-center justify-center gap-4 h-8 w-3/4 mx-auto border border-blue-500 mt-8 rounded-lg text-xs p-1">
+               <AiOutlineScan className="text-violet-600 text-xl"></AiOutlineScan> QR  কোড স্ক্যান করতে ট্যাপ করুন</button>
 
         </div>
     );

@@ -13,6 +13,7 @@ import Others from './Others';
 import './Main.css'
 import avatar from '../../images/man.png'
 import BottomNavigations from './BottomNavigation';
+import { ScrollShadow } from '@nextui-org/react';
 const Main = () => {
     const dispatch = useDispatch();
     const { loggeduser, } = useSelector(
@@ -49,18 +50,26 @@ const Main = () => {
                 </div>
                 <div className="flex justify-between items-center mr-3">
                     <Link to="/reward">
-                        <AiFillTrophy className="text-white text-2xl "></AiFillTrophy>
+                        <AiFillTrophy className="text-white text-xl "></AiFillTrophy>
                     </Link>
                     <Link to="/notifications">
-                        <BsBell className="text-white text-xl ml-5 lg:hidden block " ></BsBell>
+                        <BsBell className="text-white text-md ml-5 lg:hidden block " ></BsBell>
                     </Link>
                 </div>
             </div>
-            <PaymentCategory></PaymentCategory>
+            {/* <PaymentCategory></PaymentCategory>
             <MyPkash></MyPkash>
             <SUggestion ></SUggestion>
             <Others></Others> 
-           <Sliderr></Sliderr>
+           <Sliderr></Sliderr> */}
+           <ScrollShadow hideScrollBar className=" mt-20 w-full h-full">
+                <PaymentCategory></PaymentCategory>
+                <MyPkash></MyPkash>
+                <SUggestion ></SUggestion>
+                <Others></Others>
+                <Sliderr></Sliderr>
+            </ScrollShadow>
+            <BottomNavigations></BottomNavigations>
             <BottomNavigations></BottomNavigations>
         </div>
     );

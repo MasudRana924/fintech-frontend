@@ -11,7 +11,7 @@ import './Main.css'
 
 const PaymentCategory = () => {
     return (
-        <div className="mt-20 lg:mt-24 border border-stone-100 bg-stone-100 rounded-lg ml-2 mr-2 payment-category-section">
+        <div className=" lg:mt-24 border border-stone-100 bg-stone-100 rounded-lg ml-2 mr-2 payment-category-section">
             <div className="flex justify-around mt-4 mb-4">
                 <div className="bg-teal-300   border-teal-300 rounded-lg p-2 w-20 h-16">
                     <Link to="/send">
