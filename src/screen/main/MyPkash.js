@@ -8,7 +8,7 @@ const MyPkash = () => {
             <div className="mt-4 h-24 border rounded-lg border-stone-100 bg-stone-100">
                 <div className="flex justify-between mt-2 pl-2 pr-2 ">
                     <p className="text-xs text-start ml-2">আমার পি-ক্যাশ </p>
-                    <p className="text-xs text-start ml-2 text-blue-500">সব দেখুন</p>
+                    <p className="text-xs text-start ml-2 text-violet-500">সব দেখুন</p>
                 </div>
                 <div className="flex gap-4 mt-2 pl-4 pr-2 mb-4">
                     <div>

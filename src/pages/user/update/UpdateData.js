@@ -10,7 +10,7 @@ import { MdControlCamera } from "react-icons/md";
 const UpdateData = () => {
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg bg-gray-100 min-h-screen">
-            <div className="bg-blue-500 h-16 flex">
+            <div className="bg-violet-500 h-16 flex">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -60,7 +60,7 @@ const UpdateData = () => {
                 </div>
 
             </div>
-            <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
+            <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
               <Link to="/set/user/info">
               <button className="text-white pl-2 pr-2 pt-2 text-sm ">শুরু করুন</button>
               </Link>

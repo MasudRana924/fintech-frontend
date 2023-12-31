@@ -30,7 +30,7 @@ const Others = () => {
                 <div className="mb-2">
                     <div className="flex justify-between mt-2 pl-2 pr-2 ">
                         <p className="text-xs text-start ml-2">অন্যান্য সেবাসমূহ </p>
-                        <p className="text-xs text-start ml-2 text-blue-500" onClick={handleOpen}>সব দেখুন</p>
+                        <p className="text-xs text-start ml-2 text-violet-500" onClick={handleOpen}>সব দেখুন</p>
                     </div>
                     <div className="flex justify-between mt-2 pl-4 pr-2 ">
                         <div>
@@ -53,7 +53,7 @@ const Others = () => {
                         </div>
                         <div className="ml-4">
                             <Link to="/main">
-                                <CgGames className="text-3xl text-blue-500   mb-1"></CgGames>
+                                <CgGames className="text-3xl text-violet-500   mb-1"></CgGames>
                                 <p className="paymentCategory-text  font-medium  text-start">গেমস</p>
                             </Link>
                         </div>
@@ -116,13 +116,13 @@ const Others = () => {
                     <div className="flex gap-8 mt-4 pl-4 pr-2 ">
                         <div className="">
                             <Link to="/main">
-                                <TbGridDots className="text-3xl text-blue-500  mb-1"></TbGridDots>
+                                <TbGridDots className="text-3xl text-violet-500  mb-1"></TbGridDots>
                                 <p className="paymentCategory-text  text-lime-950  text-start"> জিপি  ফ্লেক্সি প্ল্যান </p>
                             </Link>
                         </div>
                         <div className="ml-4">
                             <Link to="/main">
-                                <CgGames className="text-3xl text-blue-500   mb-1"></CgGames>
+                                <CgGames className="text-3xl text-violet-500   mb-1"></CgGames>
                                 <p className="paymentCategory-text  text-lime-950  text-start">গেমস</p>
                             </Link>
                         </div>

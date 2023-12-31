@@ -37,7 +37,7 @@ const UpdateName = () => {
     }, [updateNameSuccess, navigate, user, dispatch]);
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg min-h-screen">
-            <div className="bg-blue-500 h-16 flex">
+            <div className="bg-violet-500 h-16 flex">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -77,7 +77,7 @@ const UpdateName = () => {
                     className="w-3/4 mx-auto"
                     value={lastname} onChange={(e) => setLastName(e.target.value)}
                 />
-                <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
+                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
                     <button className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                 </div>
             </form>

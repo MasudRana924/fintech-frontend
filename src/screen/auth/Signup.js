@@ -5,7 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { createSignUp } from '../../state/user/signupSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { message } from 'antd';
-
+import { FaDollarSign } from "react-icons/fa";
+import logo from '../../images/pCash.png'
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -48,13 +49,14 @@ const Signup = () => {
     }, [success, navigate]);
     return (
         <div className="flex  items-center justify-center mt-12 lg:mt-52">
-            <div className=" flex  items-center justify-center mt-12 lg:mt-52">
+            <div className=" flex  items-center justify-center  lg:mt-52">
                 <div className="lg:w-5/12 2xl:w-3/12 lg:border lg:rounded-lg lg:shadow-lg">
-                    {/* <img src={logo} alt="" className="w-2/4 mx-auto h-24 lg:mt-8" /> */}
+                    <img src={logo} alt="" className="w-2/4 mx-auto h-32 lg:mt-8" />
                     <div className="flex flex-1 items-center justify-center mx-auto ">
                         {/* <Lottie animationData={logoAnimation} className="h-28 w-28"></Lottie> */}
+                       
                     </div>
-                    <div className="mt-6 p-8">
+                    <div className=" p-8">
                         {/* <h2 className="text-start text-2xl font-semibold leading-6 text-gray-900">Create a M-pay account</h2> */}
                         <h2 className="text-start text-md font-medium leading-6 text-gray-900">একাউন্ট নেই ?  নতুন তৈরি করুন</h2>
                         {
@@ -95,11 +97,11 @@ const Signup = () => {
                             <div className="flex  items-center justify-between">
 
                                 <div>
-                                    <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/account/login"> <span className="text-sm font-semibold leading-6 text-blue-500">লগইন করুন</span>
+                                    <span className="text-sm tracking-wide text-gray-400 mt-5">একাউন্ট রয়েছে ?</span> <Link to="/account/login"> <span className="text-sm font-semibold leading-6 text-violet-500">লগইন করুন</span>
                                     </Link>
                                 </div>
                                 {
-                                    phone.length > 10 && password.length === 5 ? <button className='h-12 w-12  bg-blue-500 border-blue-500 hover:bg-blue-500  hover:border-blue-500 border rounded-full'>
+                                    phone.length > 10 && password.length === 5 ? <button className='h-12 w-12  bg-violet-500 border-violet-500 hover:bg-violet-500  hover:border-violet-500 border rounded-full'>
                                         <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>
                                     </button> : <button disabled className='h-12 w-12  bg-gray-500 border-gray-500 hover:bg-gray-500  hover:border-gray-500 border rounded-full disabled'>
                                         <GiCheckMark className="text-white text-xl ml-3"></GiCheckMark>

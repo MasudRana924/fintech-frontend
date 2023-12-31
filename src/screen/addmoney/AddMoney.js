@@ -10,7 +10,7 @@ const AddMoney = () => {
     );
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg bg-gray-50 min-h-screen">
-            <div className="flex bg-blue-500 h-16 rounded-b-lg ">
+            <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main" >
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2" ></FiArrowLeft>

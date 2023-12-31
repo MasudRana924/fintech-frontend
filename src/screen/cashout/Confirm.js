@@ -29,7 +29,7 @@ const Confirm = () => {
     }
     return (
         <div className=" lg:w-1/4 lg:mx-auto lg:mt-0 lg:border lg:rounded-lg lg:shadow-lg">
-            <div className="flex bg-blue-500 h-16 rounded-b-lg">
+            <div className="flex bg-violet-500 h-16 rounded-b-lg">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -65,10 +65,10 @@ const Confirm = () => {
                 </div>
             </div>
 
-            <div className="w-full lg:hidden mx-auto h-24 bg-blue-500 confirm-btn" onClick={handleTransfer}>
+            <div className="w-full lg:hidden mx-auto h-24 bg-violet-500 confirm-btn" onClick={handleTransfer}>
                 <button  className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
             </div>
-            <div className="hidden lg:block lg:w-full mx-auto h-24 bg-blue-500 mt-44" onClick={handleTransfer}>
+            <div className="hidden lg:block lg:w-full mx-auto h-24 bg-violet-500 mt-44" onClick={handleTransfer}>
                 <button  className="text-white pl-2 pr-2 pt-8 ">পরবর্তী</button>
             </div>
         </div>

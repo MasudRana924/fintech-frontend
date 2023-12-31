@@ -34,9 +34,9 @@ const Main = () => {
                     <div className="w-16">
                         {
                             user?.avatarLogo ? <Link to="/profile">
-                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-blue-500 border-blue-500" /></Link> :
+                                <img src={user.avatarLogo} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-violet-500 border-violet-500" /></Link> :
                                 <Link to="/profile">
-                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-blue-500 border-blue-500 " /></Link>
+                                    <img src={avatar} alt="" className="h-10 w-10 ml-2 mt-2 absolute border rounded-full bg-violet-500 border-violet-500 " /></Link>
                         }
                     </div>
                     <div>

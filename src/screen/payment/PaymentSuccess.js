@@ -62,10 +62,10 @@ const PaymentSuccess = () => {
                             <p className="text-xs text-center mt-2 mb-4 text-violet-500">রিওয়ার্ড দেখুন</p>
                         </Link>
                     </div>
-                    <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
+                    <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
                         <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                     </div>
-                    <div className="hidden w-full  lg:block h-12 bg-blue-500 mt-44">
+                    <div className="hidden w-full  lg:block h-12 bg-violet-500 mt-44">
                         <button onClick={handleClick} className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                     </div>
                 </div> : null

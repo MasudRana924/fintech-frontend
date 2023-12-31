@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const TakeData = () => {
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg bg-gray-100 min-h-screen">
-            <div className="bg-blue-500 h-16 flex">
+            <div className="bg-violet-500 h-16 flex">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -24,7 +24,7 @@ const TakeData = () => {
                         className="w-3/4 mx-auto  h-36  border-white bg-white "
 
                     />
-                    <label className=' border border-blue-500 bg-blue-500'>
+                    <label className=' border border-violet-500 bg-violet-500'>
                         +
                         <br />
                         <input
@@ -35,7 +35,7 @@ const TakeData = () => {
                         />
                     </label>
                 </div>
-                <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
+                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
                     <button className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                 </div>
             </form>
@@ -50,7 +50,7 @@ const TakeData = () => {
                         className="w-3/4 mx-auto  h-36  border-white bg-white "
 
                     />
-                    <label className='border border-blue-500 bg-blue-500'>
+                    <label className='border border-violet-500 bg-violet-500'>
                         +
                         <br />
                         <input
@@ -61,7 +61,7 @@ const TakeData = () => {
                         />
                     </label>
                 </div>
-                <div className="w-full lg:hidden h-12 bg-blue-500 success-btn">
+                <div className="w-full lg:hidden h-12 bg-violet-500 success-btn">
                     <button className="text-white pl-2 pr-2 pt-2 ">পরবর্তী</button>
                 </div>
             </form>

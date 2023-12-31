@@ -50,7 +50,7 @@ const AllTransaction = ({ transaction }) => {
 
                         <div className="flex gap-4 mt-2">
                             <p className="text-xs font-medium ml-2 text-gray-500">Trans ID : {transaction.tranId}</p>
-                            <FiCopy className="text-sm text-blue-500 font-medium" onClick={fCopy}></FiCopy>
+                            <FiCopy className="text-sm text-violet-500 font-medium" onClick={fCopy}></FiCopy>
                         </div>
                         <p className="text-xs font-medium ml-2 mt-1 mb-2 text-gray-500">{formatDate(transaction.createdAt)}</p>
                     </div>

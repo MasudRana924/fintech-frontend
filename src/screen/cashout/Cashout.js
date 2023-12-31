@@ -46,7 +46,7 @@ const Cashout = () => {
 
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
-            <div className="flex bg-blue-500 h-16 rounded-b-lg ">
+            <div className="flex bg-violet-500 h-16 rounded-b-lg ">
                 <div className="w-1/4">
                     <Link to="/main">
                         <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -70,7 +70,7 @@ const Cashout = () => {
                     value={receiverphone} onChange={(e) => setPhone(e.target.value)}
                 />
                 {
-                    receiverphone.length === 11 ? <button className="w-12 bg-blue-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                    receiverphone.length === 11 ? <button className="w-12 bg-violet-500" onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500" disabled onClick={handleStore}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                 }
             </div>
             <p className="text-start text-xs m-2 text-gray-400">১১ ডিজিটের এজেন্ট নাম্বার প্রদান করুণ</p>

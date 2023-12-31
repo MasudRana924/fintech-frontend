@@ -24,7 +24,7 @@ const Paymentamount = () => {
     }
     return (
         <div className="lg:w-1/4 lg:mx-auto lg:mt-24 lg:border lg:rounded-lg lg:shadow-lg ">
-        <div className="flex bg-blue-500 h-16 rounded-b-lg  ">
+        <div className="flex bg-violet-500 h-16 rounded-b-lg  ">
             <div className="w-1/4">
                 <Link to="/main">
                     <FiArrowLeft className="text-white text-2xl mt-4 ml-2"></FiArrowLeft>
@@ -58,7 +58,7 @@ const Paymentamount = () => {
                     value={amount} onChange={(e) => setAmount(e.target.value)}
                 />
                 {
-                    amount ? <button className="w-12 bg-blue-500 " onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500 " onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
+                    amount ? <button className="w-12 bg-violet-500 " onClick={handleTransfer}> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button> : <button className="w-12 bg-gray-500 " onClick={handleTransfer} disabled> <FiArrowRight className="text-white text-2xl  ml-2"></FiArrowRight></button>
                 }
             </div>
             <p className="text-sm mb-4">বর্তমান ব্যালেন্স  {user?.amount}.00 ট </p>
