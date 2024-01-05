@@ -57,11 +57,6 @@ const Main = () => {
                     </Link>
                 </div>
             </div>
-            {/* <PaymentCategory></PaymentCategory>
-            <MyPkash></MyPkash>
-            <SUggestion ></SUggestion>
-            <Others></Others> 
-           <Sliderr></Sliderr> */}
            <ScrollShadow hideScrollBar className=" mt-20 w-full h-full">
                 <PaymentCategory></PaymentCategory>
                 <MyPkash></MyPkash>
