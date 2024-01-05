@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const BottomNavigations = () => {
     const [value, setValue] = React.useState(0);
     return (
-        <div className=" border h-12 rounded-lg bottom-navigation bg-blue-300 border-blue-300">
+        <div className=" border h-12 rounded-lg bottom-navigation bg-violet-300 border-violet-300">
             <div className="flex justify-between items-center ml-4 mr-4 mt-2">
                 <div className="">
                     <Link to="/">

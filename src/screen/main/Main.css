@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     z-index: 200;
-    background-image: linear-gradient(rgb(0, 21, 255), rgb(32, 84, 240));
+
 }
 .main-bottom-bar {
     position: fixed;

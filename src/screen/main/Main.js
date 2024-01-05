@@ -29,8 +29,8 @@ const Main = () => {
 
     return (
         <div className="lg:w-1/4 lg:mx-auto  lg:border lg:rounded-lg lg:shadow-lg main-ui-container ">
-            <div className=" w-full lg:w-1/4   h-16 rounded-b-lg flex justify-between main-navbar">
-                <div className="flex">
+            <div className=" w-full lg:w-1/4 bg-violet-500  h-16 rounded-b-lg flex justify-between main-navbar">
+                <div className="flex ">
                     <div className="w-16">
                         {
                             user?.avatarLogo ? <Link to="/profile">
