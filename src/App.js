@@ -51,6 +51,8 @@ import TenSchools from './screen/suggestions/TenSchools';
 import ALlSettingsList from './screen/settings/ALlSettingsList';
 import OutTransactions from './pages/user/OutTransactions';
 import InTransactions from './pages/user/InTransactions';
+import Limit from './screen/limit/Limit';
+import MonthlyLimit from './screen/limit/MonthlyLimit';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -117,6 +119,8 @@ function App() {
             <Route path="/apply/loan" element={<PrivateRoute><Loan></Loan></PrivateRoute>}></Route>
             <Route path="/savings" element={<PrivateRoute><Savings></Savings></PrivateRoute>}></Route>
             <Route path="/create/savings" element={<PrivateRoute><CreateSavings></CreateSavings></PrivateRoute>}></Route>
+            <Route path="/limit" element={<PrivateRoute><Limit></Limit></PrivateRoute>}></Route>
+            <Route path="/monthly/limit" element={<PrivateRoute><MonthlyLimit></MonthlyLimit></PrivateRoute>}></Route>
             {/* <Route path="/support" element={<PrivateRoute><Support></Support></PrivateRoute>}></Route> */}
             <Route path="/notifications" element={<PrivateRoute><Notifications></Notifications></PrivateRoute>}></Route>
             <Route path="/support" element={<Support></Support>}></Route>

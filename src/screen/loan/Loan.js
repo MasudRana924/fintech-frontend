@@ -18,8 +18,8 @@ const Loan = () => {
                <div className="w-1/4 mx-auto mt-4">
                <TbUserCancel className=" h-12 w-16 text-red-500"></TbUserCancel>
                </div>
-                <p className="text-md text-center mt-4">দুংখিত আপনার ট্রাস্ট-পে একাউন্টটি লোন গ্রহণের উপযুক্ত হয়নি </p>
-                <p className="text-xs text-center mt-4">আর্থিক প্রতিষ্ঠানের লোন প্রদানের নীতিমালার অধীনে লোন নেওয়ার জন্য উপযুক্ত হতে নিয়মিত ট্রাস্ট-পে ব্যাবহার করূণ। </p>
+                <p className="text-md text-center mt-4">দুংখিত পি-ক্যাশে এখনও লোন চালু হয়নি</p>
+                <p className="text-xs text-center mt-4">আর্থিক প্রতিষ্ঠানের লোন প্রদানের নীতিমালার অধীনে লোন নেওয়ার জন্য নিয়মিত ব্যাবহার করূণ। </p>
                 <Link to="/main">
                 {/* <p className="text-sm text-violet-500 text-center mt-4 mb-4">হোম-এ ফিরে যাই</p> */}
                 <button className="mt-4 mb-4 text-violet-500 text-xs border border-violet-500 p-1 rounded-md">হোম-এ ফিরে যাই</button>

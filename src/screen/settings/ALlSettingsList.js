@@ -61,10 +61,10 @@ const ALlSettingsList = () => {
                     </div></Link>
             </div>
             <div className="mt-2">
-                <Link to="/">
+                <Link to="/limit">
                     <div className="m-2 h-10 border borderwhite bg-white border-white flex justify-between">
                         <MdOfflineShare className="text-violet-500 text-2xl mt-1 ml-2"></MdOfflineShare>
-                        <p className="text-sm font-medium mt-2 ml-2">রেফার</p>
+                        <p className="text-sm font-medium mt-2 ml-2">লিমিট </p>
                         <FiArrowRight className="text-gray-400 text-2xl mt-2 mr-2"></FiArrowRight>
                     </div></Link>
             </div>
